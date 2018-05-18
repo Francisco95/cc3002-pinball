@@ -6,8 +6,8 @@ package main.java.logic.gameelements;
  * <p>Objects that are game elements should implement this interface.</p>
  *
  * @author Juan-Pablo Silva
- * @see logic.gameelements.bumper.Bumper
- * @see logic.gameelements.target.Target
+ * @see main.java.logic.gameelements.bumper.Bumper
+ * @see main.java.logic.gameelements.target.Target
  */
 public interface Hittable {
     /**

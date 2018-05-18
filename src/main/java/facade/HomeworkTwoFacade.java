@@ -31,7 +31,7 @@ public class HomeworkTwoFacade {
     }
 
     /**
-     * Gets the instance of {@link logic.bonus.DropTargetBonus} currently in the game.
+     * Gets the instance of {@link main.java.logic.bonus.DropTargetBonus} currently in the game.
      *
      * @return the DropTargetBonus instance
      */
@@ -40,7 +40,7 @@ public class HomeworkTwoFacade {
     }
 
     /**
-     * Gets the instance of {@link logic.bonus.ExtraBallBonus} currently in the game.
+     * Gets the instance of {@link main.java.logic.bonus.ExtraBallBonus} currently in the game.
      *
      * @return the ExtraBallBonus instance
      */
@@ -49,7 +49,7 @@ public class HomeworkTwoFacade {
     }
 
     /**
-     * Gets the instance of {@link logic.bonus.JackPotBonus} currently in the game.
+     * Gets the instance of {@link main.java.logic.bonus.JackPotBonus} currently in the game.
      *
      * @return the JackPotBonus instance
      */
@@ -62,7 +62,7 @@ public class HomeworkTwoFacade {
      *
      * @param name            the name of the table
      * @param numberOfBumpers the number of bumpers in the table
-     * @param prob            the probability a {@link logic.gameelements.bumper.PopBumper}
+     * @param prob            the probability a {@link main.java.logic.gameelements.bumper.PopBumper}
      * @return a new table determined by the parameters
      */
     public Table newPlayableTableWithNoTargets(String name, int numberOfBumpers, double prob) {
@@ -74,12 +74,13 @@ public class HomeworkTwoFacade {
      *
      * @param name                the name of the table
      * @param numberOfBumpers     the number of bumpers in the table
-     * @param prob                the probability a {@link logic.gameelements.bumper.PopBumper}
-     * @param numberOfTargets     the number of {@link logic.gameelements.target.SpotTarget}
-     * @param numberOfDropTargets the number of {@link logic.gameelements.target.DropTarget}
+     * @param prob                the probability a {@link main.java.logic.gameelements.bumper.PopBumper}
+     * @param numberOfTargets     the number of {@link main.java.logic.gameelements.target.SpotTarget}
+     * @param numberOfDropTargets the number of {@link main.java.logic.gameelements.target.DropTarget}
      * @return a new table determined by the parameters
      */
-    public Table newFullPlayableTable(String name, int numberOfBumpers, double prob, int numberOfTargets, int numberOfDropTargets) {
+    public Table newFullPlayableTable(String name, int numberOfBumpers, double prob, int numberOfTargets,
+                                      int numberOfDropTargets) {
         return null;
     }
 

@@ -1,4 +1,4 @@
-package main.javalogic.gameelements.bumper;
+package main.java.logic.gameelements.bumper;
 
 import main.java.logic.gameelements.Hittable;
 
