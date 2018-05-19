@@ -19,9 +19,19 @@ public interface Bonus {
     int timesTriggered();
 
     /**
-     * Trigger the specific action the bonus does and applies it to the {@link Game} object.
+     * Trigger the specific action the bonus does.
      *
-     * @param game the game controller object
      */
-    void trigger(Game game);
+    void trigger();
+
+    /**
+     * allow to differentiate between a bonus of points and a bonus of balls
+     */
+    boolean isBonusOfPoints();
+
+    /**
+     * gets the value of the bonus.
+     * @return value of bonus (integer)
+     */
+    int getBonusValue();
 }
