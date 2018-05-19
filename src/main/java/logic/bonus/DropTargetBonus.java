@@ -1,7 +1,5 @@
 package main.java.logic.bonus;
 
-import main.java.controller.Game;
-
 /**
  * @author Fancisco Muñoz Ponce. on date: 17-05-18
  */
@@ -12,7 +10,17 @@ public class DropTargetBonus implements Bonus {
     }
 
     @Override
-    public void trigger(Game game) {
+    public void trigger() {
 
+    }
+
+    @Override
+    public boolean isBonusOfPoints() {
+        return false;
+    }
+
+    @Override
+    public int getBonusValue() {
+        return 0;
     }
 }
