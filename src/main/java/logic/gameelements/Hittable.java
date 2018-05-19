@@ -24,4 +24,9 @@ public interface Hittable {
      * @return the current score of the object when hit
      */
     int getScore();
+
+    /**
+     * return true if a bonus is triggered by this game element, false if not
+     */
+    boolean bonusTriggered();
 }
