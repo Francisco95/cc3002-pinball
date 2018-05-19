@@ -1,28 +1,25 @@
 package main.java.controller;
 
-import main.java.logic.bonus.Bonus;
-import main.java.logic.gameelements.Hittable;
-
 /**
  * Interface that define Visitor Pattern, in particular this define how the
  * visitor visit methods from different class, this is done combined with
  * observer pattern, idea comes from: <a href="https://stackoverflow.com/a/6608600">http://google.com</a>.
- * Game it will be the visitor and visit a Bonus or Hittable means that game will increase his
+ * Game it will be the visitor and visit a Bonus increase his
  * score/balls by the corresponding amount.
  * @author Fancisco Muñoz Ponce. on date: 19-05-18
  */
 public interface EventVisitor {
     /**
-     * this decide to visit the event Bonus as part of Visit Pattern, this code will run only if the visited
-     * class accept the visit.
-     * @param bonus an instance of Bonus
+     * this decide to visit the event Bonus that give points as part of Visit Pattern,
+     * this code will run only if the visited class accept the visit.
+     * @param pointsBonus the number of points of the bonus
      */
-    void visitBonus(Bonus bonus);
+    void visitBonusOfPoints(int pointsBonus);
 
     /**
-     * this decide to visit the event Hittable as part of Visit Pattern, this code will run onyl if the visited
-     * class accept the visit.
-     * @param hittable an instance of hittable
+     * this decide to visit the event Bonus that give balls as part of Visit Pattern,
+     * this code will run only if the visited class accept the visit.
+     * @param ballsBonus the number of balls of the bonus
      */
-    void visitHittable(Hittable hittable);
+    void visitBonusOfBalls(int ballsBonus);
 }

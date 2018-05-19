@@ -1,8 +1,6 @@
 package main.java.controller;
 
-import main.java.logic.EventAcceptor;
-import main.java.logic.bonus.Bonus;
-import main.java.logic.gameelements.Hittable;
+import main.java.logic.bonus.EventAcceptor;
 
 import java.util.Observable;
 import java.util.Observer;
@@ -12,7 +10,10 @@ import java.util.Observer;
  * in order to communicate with all the other class implement the Observer pattern considering this as
  * the observer and the other classes as Observables, also mix this with a Visit Pattern in order to be able
  * to do the modifications on Game state in a cleaner way, this idea comes from a thread on StackOverflow,
- * which link is: <a href="https://stackoverflow.com/a/6608600">http://google.com</a>
+ * which link is: <a href="https://stackoverflow.com/a/6608600">http://google.com</a> and is principally apply
+ * to Game as the visitor and the Bonus classes as the visited because they can change score or balls.
+ * @see main.java.controller.EventVisitor
+ * @see main.java.logic.bonus.EventAcceptor
  *
  * @author (template)Juan-Pablo Silva, (code)Francisco Muñoz P.
  */
@@ -78,24 +79,30 @@ public class Game implements Observer, EventVisitor{
         this.balls = balls;
     }
 
+    /**
+     * if the message 'arg' is null then apply visitor pattern, or else,
+     * the message should be a number which represente the change in score
+     * @param o the observable, could be a Bonus, a Bumper, a Target or a Table
+     * @param arg the message sended by the observable
+     */
     @Override
     public void update(Observable o, Object arg) {
-        ((EventAcceptor) o).accept(this);
-    }
-
-    @Override
-    public void visitBonus(Bonus bonus) {
-        if (bonus.isBonusOfPoints()){
-            addToScore(bonus.getBonusValue());
+        if (arg == null){
+            ((EventAcceptor) o).accept(this);
         }
         else{
-            addToBalls(bonus.getBonusValue());
+            addToScore((int) arg);
         }
     }
 
     @Override
-    public void visitHittable(Hittable hittable) {
-        addToScore(hittable.getScore());
+    public void visitBonusOfPoints(int pointsBonus) {
+        addToScore(pointsBonus);
+    }
+
+    @Override
+    public void visitBonusOfBalls(int ballsBonus) {
+        addToBalls(balls);
     }
 
 }

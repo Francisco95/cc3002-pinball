@@ -5,7 +5,7 @@ package main.java.logic.gameelements;
  *
  * <p>Objects that are game elements should implement this interface.</p>
  *
- * @author Juan-Pablo Silva
+ * @author (template)Juan-Pablo Silva, (code)Francisco Muñoz
  * @see main.java.logic.gameelements.bumper.Bumper
  * @see main.java.logic.gameelements.target.Target
  */
@@ -13,10 +13,10 @@ public interface Hittable {
     /**
      * Defines that an object have been hit.
      * Implementations should consider the events that a hit to an object can trigger.
-     *
-     * @return the score the player obtained hitting the object
+     * If implemented as Observer Pattern, here should be the notifyObservers() because of
+     * change on state
      */
-    int hit();
+    void hit();
 
     /**
      * Defines that a hittable object has to have a score when it is hit.

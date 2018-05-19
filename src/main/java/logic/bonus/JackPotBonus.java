@@ -2,7 +2,6 @@ package main.java.logic.bonus;
 
 import main.java.controller.EventVisitor;
 import main.java.controller.Game;
-import main.java.logic.EventAcceptor;
 
 import java.util.Observable;
 import java.util.Observer;
@@ -11,8 +10,11 @@ import java.util.Observer;
  * Class that define jackpot bonus.
  * use Singleton Pattern to guarantee only one initialize per game.
  * Use Observable Pattern to receive the message from spotTarget to trigger,
- * Also use Observable Pattern to notice to Game that a jackpot was triggered.
- * because of this, for simplicity, jackpot it will be initialized with a Game instance
+ * Also use Observable Pattern mixed with Visit Pattern to solve the problem of
+ * one observer(Game) and many observables(Bonus, Bumpers, Targets).
+ * @see main.java.logic.bonus.Bonus
+ * @see main.java.controller.Game
+ * @see main.java.logic.gameelements.target.SpotTarget
  * @author Fancisco Muñoz Ponce. on date: 17-05-18
  */
 public class JackPotBonus extends Observable implements Observer, EventAcceptor, Bonus {
@@ -97,11 +99,12 @@ public class JackPotBonus extends Observable implements Observer, EventAcceptor,
     }
 
     /**
+     * Method update from Observer pattern.
      * there is no need for know what the message is. Since the state
      * off {@link main.java.logic.gameelements.target.SpotTarget} only change
      * from active to not active once per game.
      * @param o the observable, in this case, is a SpotTarget
-     * @param arg the message that send, in this case it's not necessary.
+     * @param arg the message that send, in this case isn't necessary.
      */
     @Override
     public void update(Observable o, Object arg) {
@@ -114,6 +117,6 @@ public class JackPotBonus extends Observable implements Observer, EventAcceptor,
 
     @Override
     public void accept(EventVisitor v) {
-        v.visitBonus(this);
+        v.visitBonusOfPoints(jackPotPoints);
     }
 }

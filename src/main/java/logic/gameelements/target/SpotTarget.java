@@ -1,21 +1,19 @@
 package main.java.logic.gameelements.target;
 
-import main.java.controller.EventVisitor;
-import main.java.controller.Game;
-import main.java.logic.EventAcceptor;
-import main.java.logic.bonus.JackPotBonus;
-
 import java.util.Observable;
 import java.util.Observer;
 
 /**
  * Class that define behavior of a spotTarget.
  * Use singleton pattern to guarantee only one initialization per game.
- * Use Observer Pattern to notify observer that win X points.
- * @see Target
+ * Use Observer Pattern to notify observer that win X points(Game) or
+ * to notify a change in active (JackPotBonus).
+ * @see main.java.logic.gameelements.target.Target
+ * @see main.java.controller.Game
+ * @see main.java.logic.bonus.JackPotBonus
  * @author Fancisco Muñoz Ponce. on date: 17-05-18
  */
-public class SpotTarget extends Observable implements EventAcceptor, Target{
+public class SpotTarget extends Observable implements Target{
     /**
      * the current state of the spotTarget, could be active (True) or inactive (False)
      */
@@ -87,23 +85,16 @@ public class SpotTarget extends Observable implements EventAcceptor, Target{
     }
 
     @Override
-    public int hit() {
+    public void hit() {
         if (isActive()) {
             setActiveFalse();
             setChanged();
-            notifyObservers();
-            return pointsGiven;
+            notifyObservers(pointsGiven);
         }
-        return 0;
     }
 
     @Override
     public int getScore() {
         return pointsGiven;
-    }
-
-    @Override
-    public void accept(EventVisitor v) {
-        v.visitHittable(this);
     }
 }
