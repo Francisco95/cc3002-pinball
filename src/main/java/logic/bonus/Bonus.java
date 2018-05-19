@@ -1,9 +1,11 @@
 package main.java.logic.bonus;
 
+import main.java.controller.EventVisitor;
 import main.java.controller.Game;
 
 /**
- * Interface that represents a bonus object.
+ * Interface that represents a bonus object. Also include the accept method used for
+ * the Visitor Pattern
  *
  * @author Juan-Pablo Silva
  * @see ExtraBallBonus
@@ -34,4 +36,10 @@ public interface Bonus {
      * @return value of bonus (integer)
      */
     int getBonusValue();
+
+    /**
+     * this decide to accept the event visitor acording to the Visitor Pattern
+     * @param v an instance of a Visitor.
+     */
+    void accept(EventVisitor v);
 }

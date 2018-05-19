@@ -1,8 +1,5 @@
 package main.java.logic.gameelements.target;
 
-import main.java.controller.EventVisitor;
-import main.java.logic.bonus.EventAcceptor;
-
 import java.util.Observable;
 import java.util.Observer;
 import java.util.Random;

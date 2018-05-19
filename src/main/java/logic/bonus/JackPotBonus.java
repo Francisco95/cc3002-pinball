@@ -17,7 +17,7 @@ import java.util.Observer;
  * @see main.java.logic.gameelements.target.SpotTarget
  * @author Fancisco Muñoz Ponce. on date: 17-05-18
  */
-public class JackPotBonus extends Observable implements Observer, EventAcceptor, Bonus {
+public class JackPotBonus extends Observable implements Observer, Bonus {
     /**
      * Instance of the game controller.
      * @see main.java.controller.Game

@@ -1,6 +1,6 @@
 package main.java.controller;
 
-import main.java.logic.bonus.EventAcceptor;
+import main.java.logic.bonus.Bonus;
 
 import java.util.Observable;
 import java.util.Observer;
@@ -13,7 +13,7 @@ import java.util.Observer;
  * which link is: <a href="https://stackoverflow.com/a/6608600">http://google.com</a> and is principally apply
  * to Game as the visitor and the Bonus classes as the visited because they can change score or balls.
  * @see main.java.controller.EventVisitor
- * @see main.java.logic.bonus.EventAcceptor
+ * @see main.java.logic.bonus.Bonus
  *
  * @author (template)Juan-Pablo Silva, (code)Francisco Muñoz P.
  */
@@ -88,7 +88,7 @@ public class Game implements Observer, EventVisitor{
     @Override
     public void update(Observable o, Object arg) {
         if (arg == null){
-            ((EventAcceptor) o).accept(this);
+            ((Bonus) o).accept(this);
         }
         else{
             addToScore((int) arg);

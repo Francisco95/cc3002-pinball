@@ -17,7 +17,7 @@ import java.util.Observer;
  * @see main.java.logic.gameelements.bumper.Bumper
  * @author Fancisco Muñoz Ponce. on date: 17-05-18
  */
-public class DropTargetBonus extends Observable implements Observer, EventAcceptor, Bonus {
+public class DropTargetBonus extends Observable implements Observer, Bonus {
     @Override
     public int timesTriggered() {
         return 0;
