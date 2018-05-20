@@ -1,4 +1,4 @@
-package main.java.logic.gameelements;
+package logic.gameelements;
 
 /**
  * Interface that represents a hittable object.
@@ -6,8 +6,8 @@ package main.java.logic.gameelements;
  * <p>Objects that are game elements should implement this interface.</p>
  *
  * @author (template)Juan-Pablo Silva, (code)Francisco Muñoz
- * @see main.java.logic.gameelements.bumper.Bumper
- * @see main.java.logic.gameelements.target.Target
+ * @see logic.gameelements.bumper.Bumper
+ * @see logic.gameelements.target.Target
  */
 public interface Hittable {
     /**

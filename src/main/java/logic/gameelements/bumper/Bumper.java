@@ -1,13 +1,12 @@
-package main.java.logic.gameelements.bumper;
+package logic.gameelements.bumper;
 
-import main.java.logic.gameelements.Hittable;
+import logic.gameelements.Hittable;
 
 /**
  * Interface that represents operations related to a bumper behavior.
  *
  * @author Juan-Pablo Silva
- * @see KickerBumper
- * @see PopBumper
+ * @see Hittable
  */
 public interface Bumper extends Hittable {
     /**

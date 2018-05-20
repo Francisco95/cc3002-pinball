@@ -1,7 +1,7 @@
-package main.java.logic.gameelements.bumper;
+package logic.gameelements.bumper;
 
-import main.java.logic.gameelements.target.Target;
-import main.java.logic.table.Table;
+import logic.gameelements.target.Target;
+import logic.table.Table;
 
 import java.util.List;
 

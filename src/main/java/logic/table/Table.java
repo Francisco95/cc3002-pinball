@@ -1,7 +1,7 @@
-package main.java.logic.table;
+package logic.table;
 
-import main.java.logic.gameelements.bumper.Bumper;
-import main.java.logic.gameelements.target.Target;
+import logic.gameelements.bumper.Bumper;
+import logic.gameelements.target.Target;
 
 import java.util.List;
 
@@ -19,14 +19,14 @@ public interface Table {
     String getTableName();
 
     /**
-     * Gets the number of {@link main.java.logic.gameelements.target.DropTarget} in the table.
+     * Gets the number of {@link logic.gameelements.target.DropTarget} in the table.
      *
      * @return the number of DropTargets in the table
      */
     int getNumberOfDropTargets();
 
     /**
-     * Gets the number of {@link main.java.logic.gameelements.target.DropTarget} that are currently dropped or inactive.
+     * Gets the number of {@link logic.gameelements.target.DropTarget} that are currently dropped or inactive.
      *
      * @return the number of DropTargets that are currently inactive
      */
@@ -47,7 +47,7 @@ public interface Table {
     List<Target> getTargets();
 
     /**
-     * Resets all {@link main.java.logic.gameelements.target.DropTarget} in the table. Make them active.
+     * Resets all {@link logic.gameelements.target.DropTarget} in the table. Make them active.
      */
     void resetDropTargets();
 

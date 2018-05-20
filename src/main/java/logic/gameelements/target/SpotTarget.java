@@ -1,4 +1,4 @@
-package main.java.logic.gameelements.target;
+package logic.gameelements.target;
 
 import java.util.Observable;
 import java.util.Observer;
@@ -8,9 +8,8 @@ import java.util.Observer;
  * Use singleton pattern to guarantee only one initialization per game.
  * Use Observer Pattern to notify observer that win X points(Game) or
  * to notify a change in active (JackPotBonus).
- * @see main.java.logic.gameelements.target.Target
- * @see main.java.controller.Game
- * @see main.java.logic.bonus.JackPotBonus
+ * @see controller.Game
+ * @see logic.bonus.JackPotBonus
  * @author Fancisco Muñoz Ponce. on date: 17-05-18
  */
 public class SpotTarget extends Observable implements Target{
@@ -96,5 +95,14 @@ public class SpotTarget extends Observable implements Target{
     @Override
     public int getScore() {
         return pointsGiven;
+    }
+
+    /**
+     * in this case is always true and trigger a JackPotBonus
+     * @return always True; always trigger a JackPotBonus
+     */
+    @Override
+    public boolean bonusTriggered() {
+        return true;
     }
 }

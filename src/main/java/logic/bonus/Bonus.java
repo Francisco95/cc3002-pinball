@@ -1,7 +1,7 @@
-package main.java.logic.bonus;
+package logic.bonus;
 
-import main.java.controller.EventVisitor;
-import main.java.controller.Game;
+import controller.EventVisitor;
+import controller.Game;
 
 /**
  * Interface that represents a bonus object. Also include the accept method used for

@@ -1,6 +1,7 @@
-package main.java.controller;
+package controller;
 
-import main.java.logic.bonus.Bonus;
+import logic.bonus.Bonus;
+import logic.gameelements.Hittable;
 
 import java.util.Observable;
 import java.util.Observer;
@@ -12,12 +13,12 @@ import java.util.Observer;
  * to do the modifications on Game state in a cleaner way, this idea comes from a thread on StackOverflow,
  * which link is: <a href="https://stackoverflow.com/a/6608600">http://google.com</a> and is principally apply
  * to Game as the visitor and the Bonus classes as the visited because they can change score or balls.
- * @see main.java.controller.EventVisitor
- * @see main.java.logic.bonus.Bonus
+ * @see EventVisitor
+ * @see Bonus
  *
  * @author (template)Juan-Pablo Silva, (code)Francisco Muñoz P.
  */
-public class Game implements Observer, EventVisitor{
+public class Game implements Observer, EventVisitor {
 
     /**
      * the number of score in the game
@@ -28,9 +29,16 @@ public class Game implements Observer, EventVisitor{
      */
     private int balls;
 
-    public Game(int initialNumOfBalls) {
-        this.score = 0;
-        this.balls = initialNumOfBalls;
+    public Game(){
+        this(1, 0);
+    }
+    public Game(int initialBalls) {
+        this(initialBalls, 0);
+    }
+
+    public Game(int initialBalls, int initialSocore){
+        this.score = initialSocore;
+        this.balls = initialBalls;
     }
 
     /**
@@ -81,17 +89,29 @@ public class Game implements Observer, EventVisitor{
 
     /**
      * if the message 'arg' is null then apply visitor pattern, or else,
-     * the message should be a number which represente the change in score
+     * augment the score by the amount of 'arg'
+     * Here arg could only be an integer or null and if it is null que observable
+     * can only be an instance of Bonus.
      * @param o the observable, could be a Bonus, a Bumper, a Target or a Table
      * @param arg the message sended by the observable
      */
     @Override
     public void update(Observable o, Object arg) {
         if (arg == null){
-            ((Bonus) o).accept(this);
+            try {
+                ((Bonus) o).accept(this);
+            }
+            catch (ClassCastException e){
+                e.printStackTrace();
+            }
         }
-        else{
-            addToScore((int) arg);
+        else {
+            try {
+                addToScore((int) arg);
+            }
+            catch (ClassCastException e){
+                e.printStackTrace();
+            }
         }
     }
 

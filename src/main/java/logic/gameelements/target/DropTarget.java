@@ -1,4 +1,4 @@
-package main.java.logic.gameelements.target;
+package logic.gameelements.target;
 
 import java.util.Observable;
 import java.util.Observer;
@@ -9,10 +9,11 @@ import java.util.Random;
  * Use of Singleton Pattern to guarantee only 1 instance per game.
  * Use Observer Pattern mixed with visitor pattern to solve
  * problem of one observer(Game) and many observables(targets, bumpers and bonus).
- * @see main.java.logic.gameelements.target.Target
- * @see main.java.controller.Game
- * @see main.java.logic.bonus.DropTargetBonus
- * @see main.java.logic.bonus.ExtraBallBonus
+ * @see logic.gameelements.target.Target
+ * @see controller.Game
+ * @see logic.bonus.DropTargetBonus
+ * @see logic.bonus.ExtraBallBonus
+ * @see
  * @author Fancisco Muñoz Ponce. on date: 17-05-18
  */
 public class DropTarget extends Observable implements Target {
@@ -25,11 +26,18 @@ public class DropTarget extends Observable implements Target {
      */
     private final int pointsGiven = 100;
     /**
-     * the random probability of trigger an {@link main.java.logic.bonus.ExtraBallBonus},
+     * the random probability of trigger an {@link logic.bonus.ExtraBallBonus},
      * this will be a number between [0, 9] both included, since there is 30% of probability
      * of trigger, the number should be 0, 1 or 2. (< 3)
      */
     private Random randomProb;
+
+    /**
+     * the seed for the random number, by default is declared as -1 which means that there
+     * is no seed set, if seed > -1 then set the seed
+     */
+    private int seed = -1;
+
     /**
      * the instance of DropTarget, this is part of Singleton Pattern
      */
@@ -62,7 +70,7 @@ public class DropTarget extends Observable implements Target {
      * @param seed the seed to use
      */
     public void setSeed(int seed){
-        randomProb.setSeed(seed);
+        this.seed = seed;
     }
 
     /**
@@ -74,16 +82,17 @@ public class DropTarget extends Observable implements Target {
             addObserver(o);
     }
 
+    /**
+     * set the Active parameter to 'value'
+     * @param value the new value of 'active', could be true or false
+     */
     public void setActive(boolean value){
         this.active = value;
     }
 
-    public void setTriggerFactor(){
-        randomProb.nextInt(10);
-    }
     @Override
     public boolean isActive() {
-        return false;
+        return active;
     }
 
     @Override
@@ -97,7 +106,6 @@ public class DropTarget extends Observable implements Target {
     public void hit() {
         if (isActive()){
             setActive(false);
-            setTriggerFactor();
             setChanged();
             notifyObservers(pointsGiven);
         }
@@ -106,5 +114,17 @@ public class DropTarget extends Observable implements Target {
     @Override
     public int getScore() {
         return pointsGiven;
+    }
+
+    /**
+     * for this case there is a probability of 3/10 of trigger an ExtraBallBonus when hit() is called.
+     * @return return True if the probability is satisfied.
+     */
+    @Override
+    public boolean bonusTriggered() {
+        if (seed > -1) {
+            randomProb.setSeed(seed);
+        }
+        return randomProb.nextInt(10) < 3;
     }
 }

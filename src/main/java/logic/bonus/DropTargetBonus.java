@@ -1,6 +1,6 @@
-package main.java.logic.bonus;
+package logic.bonus;
 
-import main.java.controller.EventVisitor;
+import controller.EventVisitor;
 
 import java.util.Observable;
 import java.util.Observer;
@@ -11,10 +11,10 @@ import java.util.Observer;
  * Use Observable Pattern to receive the message from Table to trigger when al dropTarget are off,
  * Also use Observable Pattern mixed with Visit Pattern to solve the problem of
  * one observer(Game) and many observables(Bonus, Bumpers, Targets).
- * @see main.java.logic.bonus.Bonus
- * @see main.java.controller.Game
- * @see main.java.logic.table.Board
- * @see main.java.logic.gameelements.bumper.Bumper
+ * @see Bonus
+ * @see controller.Game
+ * @see logic.table.Board
+ * @see logic.gameelements.bumper.Bumper
  * @author Fancisco Muñoz Ponce. on date: 17-05-18
  */
 public class DropTargetBonus extends Observable implements Observer, Bonus {

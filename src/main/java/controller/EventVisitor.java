@@ -1,4 +1,4 @@
-package main.java.controller;
+package controller;
 
 /**
  * Interface that define Visitor Pattern, in particular this define how the
