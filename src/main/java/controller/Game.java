@@ -122,7 +122,7 @@ public class Game implements Observer, EventVisitor {
 
     @Override
     public void visitBonusOfBalls(int ballsBonus) {
-        addToBalls(balls);
+        addToBalls(ballsBonus);
     }
 
 }

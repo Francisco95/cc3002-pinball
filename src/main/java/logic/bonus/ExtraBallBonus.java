@@ -110,7 +110,7 @@ public class ExtraBallBonus extends Observable implements Observer, Bonus {
      * this only can receive a Hittable class.
      * @param o Observable object, should be a Hittable instance
      * @param arg the message
-     * @see main.java.logic.gameelements.Hittable
+     * @see logic.gameelements.Hittable
      */
     @Override
     public void update(Observable o, Object arg) {
