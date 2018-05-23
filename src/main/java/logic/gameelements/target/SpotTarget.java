@@ -55,23 +55,17 @@ public class SpotTarget extends Observable implements Target{
             addObserver(o);
     }
 
+    /**
+     * set the Active parameter to 'value'
+     * @param value the new value of 'active', could be true or false
+     */
+    public void setActive(boolean value){
+        this.active = value;
+    }
+
     @Override
     public boolean isActive() {
         return active;
-    }
-
-    /**
-     * set variable 'active' to True
-     */
-    public void setActiveTrue(){
-        this.active = true;
-    }
-
-    /**
-     * set variable 'active' to False
-     */
-    public void setActiveFalse(){
-        this.active = false;
     }
 
     /**
@@ -79,14 +73,14 @@ public class SpotTarget extends Observable implements Target{
      */
     @Override
     public void reset() {
-        setActiveTrue();
+        setActive(true);
         deleteObservers();
     }
 
     @Override
     public void hit() {
         if (isActive()) {
-            setActiveFalse();
+            setActive(false);
             setChanged();
             notifyObservers(pointsGiven);
         }
