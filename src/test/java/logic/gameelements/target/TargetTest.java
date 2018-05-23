@@ -1,8 +1,8 @@
+package logic.gameelements.target;
+
 import controller.Game;
 import logic.bonus.ExtraBallBonus;
 import logic.bonus.JackPotBonus;
-import logic.gameelements.target.DropTarget;
-import logic.gameelements.target.SpotTarget;
 import org.junit.After;
 import org.junit.Before;
 import org.junit.Test;
@@ -94,10 +94,20 @@ public class TargetTest {
     public void reset() {
         assertTrue(spotTarget.isActive());
         assertTrue(dropTarget.isActive());
+        spotTarget.setActive(false);
+        dropTarget.setActive(false);
+        assertFalse(spotTarget.isActive());
+        assertFalse(dropTarget.isActive());
         spotTarget.reset();
         dropTarget.reset();
         assertTrue(spotTarget.isActive());
         assertTrue(dropTarget.isActive());
+
+        // and since reset erase the observers, use hit() dosent change Game
+        spotTarget.hit();
+        dropTarget.hit();
+        assertEquals(score, game.getScore());
+        assertEquals(balls, game.getBalls());
     }
 
     /**
@@ -112,6 +122,11 @@ public class TargetTest {
         assertEquals(expected, dropTarget.bonusTriggered());
         assertEquals(expected, dropTarget.bonusTriggered());
         assertEquals(expected, dropTarget.bonusTriggered());
+
+        // for spotTarget the bonus is alwasy triggered
+        assertTrue(spotTarget.bonusTriggered());
+        assertTrue(spotTarget.bonusTriggered());
+        assertTrue(spotTarget.bonusTriggered());
     }
     /**
      * test that it actually change the score/balls on Game instance and also after hit() is not active anymore
@@ -123,7 +138,7 @@ public class TargetTest {
         assertTrue(spotTarget.isActive());
         assertTrue(dropTarget.isActive());
 
-        score = game.getScore() + jackPot.getBonusValue() + dropTarget.getScore();
+        score = game.getScore() + jackPot.getBonusValue() + dropTarget.getScore() + spotTarget.getScore();
         balls = game.getBalls() + extraBall.getBonusValue();
         spotTarget.hit();
         // set the seed in a way to get a triggered
