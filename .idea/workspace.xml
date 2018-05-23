@@ -2,28 +2,13 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="5c0df648-bc0e-4a98-aea7-63ac5c545235" name="Default" comment="">
-      <change afterPath="$PROJECT_DIR$/src/test/java/TargetTest.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/classes/.gitkeep" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/cc3002-pinball.iml" beforeDir="false" afterPath="$PROJECT_DIR$/cc3002-pinball.iml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/controller/EventVisitor.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/controller/EventVisitor.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/controller/Game.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/controller/Game.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/facade/HomeworkTwoFacade.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/facade/HomeworkTwoFacade.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/logic/bonus/Bonus.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/logic/bonus/Bonus.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/logic/bonus/DropTargetBonus.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/logic/bonus/DropTargetBonus.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/logic/bonus/ExtraBallBonus.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/logic/bonus/ExtraBallBonus.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/logic/bonus/JackPotBonus.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/logic/bonus/JackPotBonus.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/logic/gameelements/Hittable.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/logic/gameelements/Hittable.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/logic/gameelements/bumper/Bumper.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/logic/gameelements/bumper/Bumper.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/logic/gameelements/bumper/KickerBumper.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/logic/gameelements/bumper/KickerBumper.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/logic/gameelements/bumper/PopBumper.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/logic/gameelements/bumper/PopBumper.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/logic/gameelements/target/DropTarget.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/logic/gameelements/target/DropTarget.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/logic/gameelements/target/SpotTarget.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/logic/gameelements/target/SpotTarget.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/logic/gameelements/target/Target.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/logic/gameelements/target/Target.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/logic/table/Board.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/logic/table/Board.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/logic/table/Table.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/logic/table/Table.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/logic/gameelements/TargetTest.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/TargetTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/logic/gameelements/target/TargetTest.java" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <ignored path="$PROJECT_DIR$/target/" />
@@ -35,7 +20,7 @@
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
   <component name="CoverageDataManager">
-    <SUITE FILE_PATH="coverage/cc3002_pinball$All_in_cc3002_pinball.ic" NAME="All in cc3002-pinball Coverage Results" MODIFIED="1526779622392" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" />
+    <SUITE FILE_PATH="coverage/cc3002_pinball$All_in_cc3002_pinball.ic" NAME="All in cc3002-pinball Coverage Results" MODIFIED="1527115602289" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" />
     <SUITE FILE_PATH="coverage/cc3002_pinball$TargetTest.ic" NAME="TargetTest Coverage Results" MODIFIED="1526776639590" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false">
       <FILTER>test.java.logic.gameelements.*</FILTER>
     </SUITE>
@@ -46,14 +31,83 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="Game.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/controller/Game.java">
+      <file leaf-file-name="TargetTest.java" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/src/test/java/logic/gameelements/target/TargetTest.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-525">
-              <caret line="16" column="8" selection-start-line="16" selection-start-column="8" selection-end-line="16" selection-end-column="8" />
+            <state relative-caret-position="116">
+              <caret line="140" column="105" selection-start-line="140" selection-start-column="105" selection-end-line="140" selection-end-column="105" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="SpotTarget.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/java/logic/gameelements/target/SpotTarget.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="198">
+              <caret line="88" column="13" lean-forward="true" selection-start-line="88" selection-start-column="13" selection-end-line="88" selection-end-column="13" />
+              <folding>
+                <element signature="imports" expanded="true" />
+                <element signature="e#2651#2652#0" expanded="true" />
+                <element signature="e#2678#2679#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="Game.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/java/controller/Game.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="180">
+              <caret line="115" column="5" lean-forward="true" selection-start-line="115" selection-start-column="5" selection-end-line="115" selection-end-column="5" />
+              <folding>
+                <element signature="imports" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="JAVA/logic.gameelements.target" pinned="false" current-in-tab="false">
+        <entry file="uml://JAVA/logic.gameelements.target">
+          <provider selected="true" editor-type-id="UmlEditorProvider">
+            <state>
+              <ID>JAVA</ID>
+              <OriginalElement>logic.gameelements.target</OriginalElement>
+              <nodes>
+                <node x="0.0" y="424.0">logic.gameelements.target.TargetTest</node>
+                <node x="268.0" y="142.0">logic.gameelements.target.SpotTarget</node>
+                <node x="0.0" y="130.0">logic.gameelements.target.DropTarget</node>
+                <node x="181.5" y="0.0">logic.gameelements.target.Target</node>
+              </nodes>
+              <notes />
+              <edges>
+                <edge source="logic.gameelements.target.SpotTarget" target="logic.gameelements.target.Target">
+                  <point x="0.0" y="-112.5" />
+                  <point x="392.0" y="105.0" />
+                  <point x="296.25" y="105.0" />
+                  <point x="38.25" y="40.0" />
+                </edge>
+                <edge source="logic.gameelements.target.DropTarget" target="logic.gameelements.target.Target">
+                  <point x="0.0" y="-124.5" />
+                  <point x="124.0" y="105.0" />
+                  <point x="219.75" y="105.0" />
+                  <point x="-38.25" y="40.0" />
+                </edge>
+              </edges>
+              <settings layout="Hierarchic Group" zoom="1.0" x="-74.0" y="280.0" />
+              <SelectedNodes>
+                <node>logic.gameelements.target.SpotTarget</node>
+              </SelectedNodes>
+              <Categories>
+                <Category>Constructors</Category>
+                <Category>Methods</Category>
+                <Category>Properties</Category>
+                <Category />
+              </Categories>
+              <SCOPE>All</SCOPE>
+              <VISIBILITY>private</VISIBILITY>
             </state>
           </provider>
         </entry>
@@ -61,75 +115,12 @@
       <file leaf-file-name="DropTarget.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/java/logic/gameelements/target/DropTarget.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="225">
-              <caret line="15" column="7" selection-start-line="15" selection-start-column="7" selection-end-line="15" selection-end-column="7" />
+            <state relative-caret-position="-192">
+              <caret line="89" column="11" selection-start-line="89" selection-start-column="11" selection-end-line="89" selection-end-column="11" />
               <folding>
                 <element signature="imports" expanded="true" />
-                <element signature="e#2327#2328#0" expanded="true" />
-                <element signature="e#2359#2360#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="KickerBumper.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/logic/gameelements/bumper/KickerBumper.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="240">
-              <caret line="28" column="20" selection-start-line="28" selection-start-column="20" selection-end-line="28" selection-end-column="20" />
-              <folding>
-                <element signature="imports" expanded="true" />
-                <element signature="e#309#310#0" expanded="true" />
-                <element signature="e#336#337#0" expanded="true" />
-                <element signature="e#393#394#0" expanded="true" />
-                <element signature="e#417#418#0" expanded="true" />
-                <element signature="e#482#483#0" expanded="true" />
-                <element signature="e#506#507#0" expanded="true" />
-                <element signature="e#560#561#0" expanded="true" />
-                <element signature="e#587#588#0" expanded="true" />
-                <element signature="e#641#642#0" expanded="true" />
-                <element signature="e#668#669#0" expanded="true" />
-                <element signature="e#841#842#0" expanded="true" />
-                <element signature="e#869#870#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="Bumper.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/logic/gameelements/bumper/Bumper.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="150">
-              <caret line="10" column="32" selection-start-line="10" selection-start-column="32" selection-end-line="10" selection-end-column="32" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="TargetTest.java" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/src/test/java/TargetTest.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="120">
-              <caret line="8" lean-forward="true" selection-start-line="8" selection-end-line="8" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="PopBumper.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/logic/gameelements/bumper/PopBumper.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state>
-              <caret column="8" selection-start-column="8" selection-end-column="8" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="ExtraBallBonus.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/logic/bonus/ExtraBallBonus.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="270">
-              <caret line="18" column="8" selection-start-line="18" selection-start-column="8" selection-end-line="18" selection-end-column="8" />
-              <folding>
-                <element signature="imports" expanded="true" />
+                <element signature="e#3254#3255#0" expanded="true" />
+                <element signature="e#3288#3289#0" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -141,9 +132,9 @@
     <option name="RECENT_TEMPLATES">
       <list>
         <option value="Arquillian JUnit Test Class" />
-        <option value="JUnit4 Test Class" />
         <option value="Interface" />
         <option value="Class" />
+        <option value="JUnit4 Test Class" />
       </list>
     </option>
   </component>
@@ -161,23 +152,26 @@
         <option value="$PROJECT_DIR$/src/main/java/logic/EventAcceptor.java" />
         <option value="$PROJECT_DIR$/src/main/java/logic/table/board.java" />
         <option value="$PROJECT_DIR$/src/main/java/controller/EventVisitor.java" />
-        <option value="$PROJECT_DIR$/src/main/java/controller/Game.java" />
         <option value="$PROJECT_DIR$/src/main/java/logic/bonus/Bonus.java" />
         <option value="$PROJECT_DIR$/src/main/java/logic/table/Table.java" />
         <option value="$PROJECT_DIR$/src/main/java/logic/table/Board.java" />
         <option value="$PROJECT_DIR$/src/main/java/logic/bonus/JackPotBonus.java" />
         <option value="$PROJECT_DIR$/src/main/java/logic/bonus/DropTargetBonus.java" />
-        <option value="$PROJECT_DIR$/src/main/java/logic/gameelements/target/SpotTarget.java" />
         <option value="$PROJECT_DIR$/src/main/java/logic/gameelements/Hittable.java" />
         <option value="$PROJECT_DIR$/src/main/java/logic/gameelements/target/Target.java" />
-        <option value="$PROJECT_DIR$/src/main/java/logic/bonus/ExtraBallBonus.java" />
         <option value="$PROJECT_DIR$/src/main/java/logic/gameelements/target/DropTarget.java" />
-        <option value="$PROJECT_DIR$/src/main/java/logic/gameelements/bumper/KickerBumper.java" />
         <option value="$PROJECT_DIR$/src/main/java/logic/gameelements/bumper/Bumper.java" />
         <option value="$PROJECT_DIR$/src/main/java/logic/gameelements/bumper/PopBumper.java" />
         <option value="$PROJECT_DIR$/src/main/java/facade/HomeworkTwoFacade.java" />
-        <option value="$PROJECT_DIR$/src/test/java/logic/gameelements/TargetTest.java" />
         <option value="$PROJECT_DIR$/src/test/java/TargetTest.java" />
+        <option value="$PROJECT_DIR$/src/test/java/logic/gameelements/TargetTest.java" />
+        <option value="$PROJECT_DIR$/src/test/java/logic/bonus/JackPotBonusTest.java" />
+        <option value="$PROJECT_DIR$/src/main/java/logic/bonus/ExtraBallBonus.java" />
+        <option value="$PROJECT_DIR$/src/main/java/controller/Game.java" />
+        <option value="$PROJECT_DIR$/src/main/java/logic/gameelements/bumper/KickerBumper.java" />
+        <option value="$PROJECT_DIR$/src/test/java/logic/gameelements/bumper/BumperTest.java" />
+        <option value="$PROJECT_DIR$/src/main/java/logic/gameelements/target/SpotTarget.java" />
+        <option value="$PROJECT_DIR$/src/test/java/logic/gameelements/target/TargetTest.java" />
       </list>
     </option>
   </component>
@@ -198,9 +192,6 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
-      <pane id="Scope" />
-      <pane id="AndroidView" />
-      <pane id="PackagesPane" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -313,18 +304,27 @@
             <path>
               <item name="cc3002-pinball" type="b2602c69:ProjectViewProjectNode" />
               <item name="cc3002-pinball" type="462c0819:PsiDirectoryNode" />
-              <item name="target" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="test" type="462c0819:PsiDirectoryNode" />
+              <item name="java" type="462c0819:PsiDirectoryNode" />
+              <item name="gameelements" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="cc3002-pinball" type="b2602c69:ProjectViewProjectNode" />
               <item name="cc3002-pinball" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="test" type="462c0819:PsiDirectoryNode" />
+              <item name="java" type="462c0819:PsiDirectoryNode" />
+              <item name="gameelements" type="462c0819:PsiDirectoryNode" />
               <item name="target" type="462c0819:PsiDirectoryNode" />
-              <item name="classes" type="462c0819:PsiDirectoryNode" />
             </path>
           </expand>
           <select />
         </subPane>
       </pane>
+      <pane id="Scope" />
+      <pane id="AndroidView" />
+      <pane id="PackagesPane" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -337,15 +337,19 @@
     <property name="last_opened_file_path" value="$PROJECT_DIR$/.." />
     <property name="nodejs_interpreter_path.stuck_in_default_project" value="undefined stuck path" />
     <property name="nodejs_npm_path_reset_for_default_project" value="true" />
-    <property name="project.structure.last.edited" value="Modules" />
+    <property name="project.structure.last.edited" value="Artifacts" />
     <property name="project.structure.proportion" value="0.15" />
     <property name="project.structure.side.proportion" value="0.2" />
   </component>
   <component name="RecentsManager">
     <key name="CreateTestDialog.RecentsKey">
+      <recent name="logic.gameelements.bumper" />
+      <recent name="logic.bonus" />
       <recent name="test.java.logic.gameelements" />
     </key>
     <key name="MoveClassesOrPackagesDialog.RECENTS_KEY">
+      <recent name="logic.gameelements.target" />
+      <recent name="logic.gameelements" />
       <recent name="" />
     </key>
     <key name="CreateTestDialog.Recents.Supers">
@@ -388,20 +392,20 @@
       </option>
       <patterns />
     </configuration>
-    <configuration name="TargetTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+    <configuration name="BumperTest.bonusTriggered" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="cc3002-pinball" />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="test.java.logic.gameelements.*" />
+          <option name="PATTERN" value="logic.gameelements.bumper.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
       <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
       <option name="ALTERNATIVE_JRE_PATH" />
-      <option name="PACKAGE_NAME" value="test.java.logic.gameelements" />
-      <option name="MAIN_CLASS_NAME" value="test.java.logic.gameelements.TargetTest" />
-      <option name="METHOD_NAME" />
-      <option name="TEST_OBJECT" value="class" />
+      <option name="PACKAGE_NAME" value="logic.gameelements.bumper" />
+      <option name="MAIN_CLASS_NAME" value="logic.gameelements.bumper.BumperTest" />
+      <option name="METHOD_NAME" value="bonusTriggered" />
+      <option name="TEST_OBJECT" value="method" />
       <option name="VM_PARAMETERS" value="-ea" />
       <option name="PARAMETERS" />
       <option name="WORKING_DIRECTORY" value="%MODULE_WORKING_DIR%" />
@@ -411,18 +415,18 @@
       </option>
       <patterns />
     </configuration>
-    <configuration name="TargetTest.hit" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+    <configuration name="BumperTest.hit" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="cc3002-pinball" />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="test.java.logic.gameelements.*" />
+          <option name="PATTERN" value="logic.gameelements.bumper.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
       <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
       <option name="ALTERNATIVE_JRE_PATH" />
-      <option name="PACKAGE_NAME" value="test.java.logic.gameelements" />
-      <option name="MAIN_CLASS_NAME" value="test.java.logic.gameelements.TargetTest" />
+      <option name="PACKAGE_NAME" value="logic.gameelements.bumper" />
+      <option name="MAIN_CLASS_NAME" value="logic.gameelements.bumper.BumperTest" />
       <option name="METHOD_NAME" value="hit" />
       <option name="TEST_OBJECT" value="method" />
       <option name="VM_PARAMETERS" value="-ea" />
@@ -434,19 +438,19 @@
       </option>
       <patterns />
     </configuration>
-    <configuration name="TargetTest.reset" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+    <configuration name="BumperTest.upgrade" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="cc3002-pinball" />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="test.java.logic.gameelements.*" />
+          <option name="PATTERN" value="logic.gameelements.bumper.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
       <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
       <option name="ALTERNATIVE_JRE_PATH" />
-      <option name="PACKAGE_NAME" value="test.java.logic.gameelements" />
-      <option name="MAIN_CLASS_NAME" value="test.java.logic.gameelements.TargetTest" />
-      <option name="METHOD_NAME" value="reset" />
+      <option name="PACKAGE_NAME" value="logic.gameelements.bumper" />
+      <option name="MAIN_CLASS_NAME" value="logic.gameelements.bumper.BumperTest" />
+      <option name="METHOD_NAME" value="upgrade" />
       <option name="TEST_OBJECT" value="method" />
       <option name="VM_PARAMETERS" value="-ea" />
       <option name="PARAMETERS" />
@@ -457,20 +461,20 @@
       </option>
       <patterns />
     </configuration>
-    <configuration name="TargetTest.setSeed" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+    <configuration name="TargetTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="cc3002-pinball" />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="test.java.logic.gameelements.*" />
+          <option name="PATTERN" value="logic.gameelements.target.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
       <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
       <option name="ALTERNATIVE_JRE_PATH" />
-      <option name="PACKAGE_NAME" value="test.java.logic.gameelements" />
-      <option name="MAIN_CLASS_NAME" value="test.java.logic.gameelements.TargetTest" />
-      <option name="METHOD_NAME" value="setSeed" />
-      <option name="TEST_OBJECT" value="method" />
+      <option name="PACKAGE_NAME" value="logic.gameelements.target" />
+      <option name="MAIN_CLASS_NAME" value="logic.gameelements.target.TargetTest" />
+      <option name="METHOD_NAME" />
+      <option name="TEST_OBJECT" value="class" />
       <option name="VM_PARAMETERS" value="-ea" />
       <option name="PARAMETERS" />
       <option name="WORKING_DIRECTORY" value="%MODULE_WORKING_DIR%" />
@@ -519,19 +523,19 @@
       <listeners />
     </configuration>
     <list>
-      <item itemvalue="JUnit.TargetTest.reset" />
+      <item itemvalue="JUnit.BumperTest.upgrade" />
+      <item itemvalue="JUnit.BumperTest.hit" />
       <item itemvalue="JUnit.TargetTest" />
-      <item itemvalue="JUnit.TargetTest.hit" />
-      <item itemvalue="JUnit.TargetTest.setSeed" />
+      <item itemvalue="JUnit.BumperTest.bonusTriggered" />
       <item itemvalue="JUnit.All in cc3002-pinball" />
     </list>
     <recent_temporary>
       <list>
         <item itemvalue="JUnit.All in cc3002-pinball" />
+        <item itemvalue="JUnit.BumperTest.bonusTriggered" />
         <item itemvalue="JUnit.TargetTest" />
-        <item itemvalue="JUnit.TargetTest.setSeed" />
-        <item itemvalue="JUnit.TargetTest.hit" />
-        <item itemvalue="JUnit.TargetTest.reset" />
+        <item itemvalue="JUnit.BumperTest.hit" />
+        <item itemvalue="JUnit.BumperTest.upgrade" />
       </list>
     </recent_temporary>
   </component>
@@ -548,44 +552,45 @@
       <workItem from="1526595413287" duration="5172000" />
       <workItem from="1526681927778" duration="19365000" />
       <workItem from="1526760709303" duration="14007000" />
-      <workItem from="1526776011812" duration="3623000" />
+      <workItem from="1526776011812" duration="5054000" />
+      <workItem from="1527108166533" duration="7296000" />
     </task>
     <servers />
   </component>
   <component name="TestHistory">
-    <history-entry file="TargetTest_setSeed - 2018.05.19 at 20h 36m 03s.xml">
-      <configuration name="TargetTest.setSeed" configurationId="JUnit" />
+    <history-entry file="BumperTest_bonusTriggered - 2018.05.23 at 18h 16m 16s.xml">
+      <configuration name="BumperTest.bonusTriggered" configurationId="JUnit" />
     </history-entry>
-    <history-entry file="TargetTest - 2018.05.19 at 20h 36m 14s.xml">
-      <configuration name="TargetTest" configurationId="JUnit" />
+    <history-entry file="BumperTest_bonusTriggered - 2018.05.23 at 18h 16m 40s.xml">
+      <configuration name="BumperTest.bonusTriggered" configurationId="JUnit" />
     </history-entry>
-    <history-entry file="TargetTest - 2018.05.19 at 20h 37m 17s.xml">
-      <configuration name="TargetTest" configurationId="JUnit" />
+    <history-entry file="BumperTest_bonusTriggered - 2018.05.23 at 18h 18m 06s.xml">
+      <configuration name="BumperTest.bonusTriggered" configurationId="JUnit" />
     </history-entry>
-    <history-entry file="TargetTest - 2018.05.19 at 20h 37m 20s.xml">
-      <configuration name="TargetTest" configurationId="JUnit" />
+    <history-entry file="BumperTest_bonusTriggered - 2018.05.23 at 18h 19m 17s.xml">
+      <configuration name="BumperTest.bonusTriggered" configurationId="JUnit" />
     </history-entry>
-    <history-entry file="All_in_cc3002-pinball - 2018.05.19 at 21h 19m 37s.xml">
+    <history-entry file="BumperTest_bonusTriggered - 2018.05.23 at 18h 19m 27s.xml">
+      <configuration name="BumperTest.bonusTriggered" configurationId="JUnit" />
+    </history-entry>
+    <history-entry file="All_in_cc3002-pinball - 2018.05.23 at 18h 19m 39s.xml">
       <configuration name="All in cc3002-pinball" configurationId="JUnit" />
     </history-entry>
-    <history-entry file="All_in_cc3002-pinball - 2018.05.19 at 21h 19m 45s.xml">
+    <history-entry file="All_in_cc3002-pinball - 2018.05.23 at 18h 21m 31s.xml">
       <configuration name="All in cc3002-pinball" configurationId="JUnit" />
     </history-entry>
-    <history-entry file="All_in_cc3002-pinball - 2018.05.19 at 21h 23m 04s.xml">
+    <history-entry file="All_in_cc3002-pinball - 2018.05.23 at 18h 23m 36s.xml">
       <configuration name="All in cc3002-pinball" configurationId="JUnit" />
     </history-entry>
-    <history-entry file="All_in_cc3002-pinball - 2018.05.19 at 21h 23m 07s.xml">
+    <history-entry file="All_in_cc3002-pinball - 2018.05.23 at 18h 28m 23s.xml">
       <configuration name="All in cc3002-pinball" configurationId="JUnit" />
     </history-entry>
-    <history-entry file="All_in_cc3002-pinball - 2018.05.19 at 21h 24m 36s.xml">
-      <configuration name="All in cc3002-pinball" configurationId="JUnit" />
-    </history-entry>
-    <history-entry file="All_in_cc3002-pinball - 2018.05.19 at 21h 27m 03s.xml">
+    <history-entry file="All_in_cc3002-pinball - 2018.05.23 at 18h 44m 11s.xml">
       <configuration name="All in cc3002-pinball" configurationId="JUnit" />
     </history-entry>
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="42167000" />
+    <option name="totallyTimeSpent" value="50894000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="39" y="-4" width="1327" height="772" extended-state="6" />
@@ -602,11 +607,11 @@
       <window_info anchor="bottom" id="Database Changes" order="8" show_stripe_button="false" />
       <window_info anchor="bottom" id="Version Control" order="7" />
       <window_info anchor="bottom" id="Run" order="2" visible="true" weight="0.32917318" />
-      <window_info anchor="right" id="Coverage" order="9" side_tool="true" weight="0.32943013" />
-      <window_info anchor="bottom" id="Terminal" order="9" />
+      <window_info active="true" anchor="right" x="1416" y="52" width="466" height="475" id="Coverage" order="9" side_tool="true" type="WINDOWED" visible="true" weight="0.3637783" />
+      <window_info anchor="bottom" id="Terminal" order="9" weight="0.32917318" />
       <window_info id="Capture Tool" order="6" />
       <window_info id="Designer" order="3" />
-      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.25214675" />
+      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.27556595" />
       <window_info anchor="right" id="Database" order="6" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
@@ -616,9 +621,9 @@
       <window_info anchor="bottom" id="Debug" order="3" weight="0.39937598" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
       <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
+      <window_info anchor="right" x="0" y="0" width="281" height="572" id="Documentation" order="10" side_tool="true" weight="0.32943013" />
       <window_info anchor="bottom" id="Find" order="1" weight="0.32917318" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
-      <window_info anchor="right" x="0" y="0" width="281" height="572" id="Documentation" side_tool="true" weight="0.32943013" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
       <window_info anchor="bottom" id="Inspection Results" order="10" weight="0.32917318" />
@@ -632,44 +637,17 @@
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
-      <option name="time" value="3" />
+      <option name="time" value="9" />
     </breakpoint-manager>
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/src/main/java/controller/Game.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="600">
-          <caret line="40" column="34" selection-start-line="40" selection-start-column="34" selection-end-line="40" selection-end-column="34" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/logic/bonus/JackPotBonus.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1725">
-          <caret line="115" column="32" lean-forward="true" selection-start-line="115" selection-start-column="32" selection-end-line="115" selection-end-column="32" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/logic/bonus/ExtraBallBonus.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1545">
-          <caret line="103" column="7" lean-forward="true" selection-start-line="103" selection-start-column="7" selection-end-line="103" selection-end-column="7" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/test/java/TargetTest.java">
+    <entry file="file://$PROJECT_DIR$/src/test/java/logic/gameelements/target/TargetTest.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="1710">
           <caret line="114" column="50" selection-start-line="114" selection-start-column="50" selection-end-line="114" selection-end-column="50" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
@@ -679,8 +657,8 @@
           <caret line="35" column="7" lean-forward="true" selection-start-line="35" selection-start-column="7" selection-end-line="35" selection-end-column="7" />
           <folding>
             <element signature="imports" expanded="true" />
-            <element signature="e#2327#2328#0" expanded="true" />
-            <element signature="e#2359#2360#0" expanded="true" />
+            <element signature="e#3254#3255#0" expanded="true" />
+            <element signature="e#3288#3289#0" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -689,9 +667,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="885">
           <caret line="74" column="43" selection-start-line="74" selection-start-column="43" selection-end-line="74" selection-end-column="43" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -710,10 +685,13 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/test/java/TargetTest.java">
+    <entry file="file://$PROJECT_DIR$/src/test/java/logic/gameelements/target/TargetTest.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="885">
           <caret line="68" column="109" selection-start-line="68" selection-start-column="109" selection-end-line="68" selection-end-column="109" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
@@ -733,8 +711,8 @@
           <caret line="85" column="26" lean-forward="true" selection-start-line="85" selection-start-column="26" selection-end-line="85" selection-end-column="26" />
           <folding>
             <element signature="imports" expanded="true" />
-            <element signature="e#2596#2597#0" expanded="true" />
-            <element signature="e#2624#2625#0" expanded="true" />
+            <element signature="e#2651#2652#0" expanded="true" />
+            <element signature="e#2678#2679#0" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -743,9 +721,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="990">
           <caret line="82" column="38" selection-start-line="82" selection-start-column="38" selection-end-line="82" selection-end-column="38" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -769,8 +744,8 @@
           <caret line="8" column="8" selection-start-line="8" selection-start-column="8" selection-end-line="8" selection-end-column="21" />
           <folding>
             <element signature="imports" expanded="true" />
-            <element signature="e#2596#2597#0" expanded="true" />
-            <element signature="e#2624#2625#0" expanded="true" />
+            <element signature="e#2651#2652#0" expanded="true" />
+            <element signature="e#2678#2679#0" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -853,9 +828,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="45">
           <caret line="3" column="23" lean-forward="true" selection-start-line="3" selection-start-column="23" selection-end-line="3" selection-end-column="23" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -863,9 +835,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="735">
           <caret line="49" column="25" selection-start-line="49" selection-start-column="25" selection-end-line="49" selection-end-column="25" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -876,30 +845,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/logic/bonus/JackPotBonus.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="918">
-          <caret line="101" column="18" lean-forward="true" selection-start-line="101" selection-start-column="18" selection-end-line="101" selection-end-column="18" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/logic/gameelements/target/Target.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="30">
           <caret line="2" column="7" lean-forward="true" selection-start-line="2" selection-start-column="7" selection-end-line="2" selection-end-column="7" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/logic/gameelements/target/SpotTarget.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="210">
-          <caret line="14" column="56" selection-start-line="14" selection-start-column="56" selection-end-line="14" selection-end-column="56" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -914,29 +863,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="240">
           <caret line="16" column="8" lean-forward="true" selection-start-line="16" selection-start-column="8" selection-end-line="16" selection-end-column="8" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/controller/Game.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-525">
-          <caret line="16" column="8" selection-start-line="16" selection-start-column="8" selection-end-line="16" selection-end-column="8" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/logic/bonus/ExtraBallBonus.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="270">
-          <caret line="18" column="8" selection-start-line="18" selection-start-column="8" selection-end-line="18" selection-end-column="8" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -947,74 +873,255 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/logic/gameelements/target/DropTarget.java">
+    <entry file="file://$PROJECT_DIR$/src/main/java/facade/HomeworkTwoFacade.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="225">
-          <caret line="15" column="7" selection-start-line="15" selection-start-column="7" selection-end-line="15" selection-end-column="7" />
+        <state relative-caret-position="435">
+          <caret line="78" column="55" lean-forward="true" selection-start-line="78" selection-start-column="55" selection-end-line="78" selection-end-column="55" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/test/java/BumperTest.java" />
+    <entry file="file://$PROJECT_DIR$/src/test/java/logic/gameelements/bonus/dddd.java" />
+    <entry file="file://$PROJECT_DIR$/src/test/java/logic/bonus/JackPotBonusTest.java" />
+    <entry file="file://$PROJECT_DIR$/src/main/java/logic/bonus/JackPotBonus.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="313">
+          <caret line="21" column="13" selection-start-line="21" selection-start-column="13" selection-end-line="21" selection-end-column="13" />
           <folding>
             <element signature="imports" expanded="true" />
-            <element signature="e#2327#2328#0" expanded="true" />
-            <element signature="e#2359#2360#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/logic/gameelements/bumper/PopBumper.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="75">
+          <caret line="5" column="13" selection-start-line="5" selection-start-column="13" selection-end-line="5" selection-end-column="13" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/logic/gameelements/bumper/Bumper.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="124">
+          <caret line="10" column="32" selection-start-line="10" selection-start-column="32" selection-end-line="10" selection-end-column="32" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/logic/bonus/ExtraBallBonus.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="168">
+          <caret line="118" column="26" lean-forward="true" selection-start-line="118" selection-start-column="26" selection-end-line="118" selection-end-column="26" />
+          <folding>
+            <element signature="imports" expanded="true" />
+            <element signature="e#2098#2099#0" expanded="true" />
+            <element signature="e#2142#2143#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/test/java/logic/gameelements/bumper/BumperTest.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1578">
+          <caret line="205" column="7" selection-start-line="205" selection-start-column="7" selection-end-line="205" selection-end-column="7" />
+          <folding>
+            <element signature="imports" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/logic/gameelements/bumper/KickerBumper.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="240">
-          <caret line="28" column="20" selection-start-line="28" selection-start-column="20" selection-end-line="28" selection-end-column="20" />
+        <state relative-caret-position="-12">
+          <caret line="106" lean-forward="true" selection-start-line="106" selection-end-line="106" />
           <folding>
             <element signature="imports" expanded="true" />
-            <element signature="e#309#310#0" expanded="true" />
-            <element signature="e#336#337#0" expanded="true" />
-            <element signature="e#393#394#0" expanded="true" />
-            <element signature="e#417#418#0" expanded="true" />
-            <element signature="e#482#483#0" expanded="true" />
-            <element signature="e#506#507#0" expanded="true" />
-            <element signature="e#560#561#0" expanded="true" />
-            <element signature="e#587#588#0" expanded="true" />
-            <element signature="e#641#642#0" expanded="true" />
-            <element signature="e#668#669#0" expanded="true" />
-            <element signature="e#841#842#0" expanded="true" />
-            <element signature="e#869#870#0" expanded="true" />
+            <element signature="e#1488#1489#0" expanded="true" />
+            <element signature="e#1520#1521#0" expanded="true" />
+            <element signature="e#2123#2124#0" expanded="true" />
+            <element signature="e#2156#2157#0" expanded="true" />
+            <element signature="e#1956#1957#0" expanded="true" />
+            <element signature="e#1992#1993#0" expanded="true" />
+            <element signature="e#2041#2042#0" expanded="true" />
+            <element signature="e#2105#2106#0" expanded="true" />
+            <element signature="e#2512#2513#0" expanded="true" />
+            <element signature="e#2546#2547#0" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/facade/HomeworkTwoFacade.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="435">
-          <caret line="78" column="55" lean-forward="true" selection-start-line="78" selection-start-column="55" selection-end-line="78" selection-end-column="55" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/logic/gameelements/bumper/Bumper.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="150">
-          <caret line="10" column="32" selection-start-line="10" selection-start-column="32" selection-end-line="10" selection-end-column="32" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/logic/gameelements/bumper/PopBumper.java">
-      <provider selected="true" editor-type-id="text-editor">
+    <entry file="uml://JAVA/">
+      <provider selected="true" editor-type-id="UmlEditorProvider">
         <state>
-          <caret column="8" selection-start-column="8" selection-end-column="8" />
+          <ID>JAVA</ID>
+          <OriginalElement />
+          <nodes>
+            <node x="" y="">com</node>
+            <node x="" y="">controller</node>
+            <node x="" y="">netscape</node>
+            <node x="" y="">junit</node>
+            <node x="" y="">oracle</node>
+            <node x="" y="">org</node>
+            <node x="" y="">facade</node>
+            <node x="" y="">sun</node>
+            <node x="" y="">META-INF</node>
+            <node x="" y="">jdk</node>
+            <node x="" y="">groovyjarjarasm</node>
+            <node x="" y="">java</node>
+            <node x="" y="">groovy</node>
+            <node x="" y="">javax</node>
+            <node x="" y="">groovyjarjarcommonscli</node>
+            <node x="" y="">logic</node>
+            <node x="" y="">javafx</node>
+            <node x="" y="">groovyjarjarantlr</node>
+          </nodes>
+          <notes />
+          <edges />
+          <settings layout="Hierarchic Group" zoom="0.7416173570019724" x="256.0" y="331.5" />
+          <SelectedNodes />
+          <Categories>
+            <Category>Fields</Category>
+            <Category>Constructors</Category>
+            <Category>Methods</Category>
+            <Category>Properties</Category>
+            <Category />
+          </Categories>
+          <SCOPE>All</SCOPE>
+          <VISIBILITY>private</VISIBILITY>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/target/classes/.gitkeep">
-      <provider selected="true" editor-type-id="text-editor" />
+    <entry file="uml://JavaScript-modules-diagram//home/pancho/IdeaProjects/cc3002-pinball/src">
+      <provider selected="true" editor-type-id="UmlEditorProvider">
+        <state>
+          <ID>JavaScript-modules-diagram</ID>
+          <OriginalElement>$PROJECT_DIR$/src</OriginalElement>
+          <nodes />
+          <notes />
+          <edges />
+          <settings layout="Hierarchic Group" zoom="1.0" x="464.0" y="188.0" />
+          <SelectedNodes />
+          <Categories>
+            <Category>All</Category>
+          </Categories>
+          <VISIBILITY>Details</VISIBILITY>
+        </state>
+      </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/test/java/.gitkeep">
-      <provider selected="true" editor-type-id="text-editor" />
+    <entry file="uml://MODULES/mdl-cc3002-pinball">
+      <provider selected="true" editor-type-id="UmlEditorProvider">
+        <state>
+          <ID>MODULES</ID>
+          <OriginalElement>mdl-cc3002-pinball</OriginalElement>
+          <nodes>
+            <node x="" y="">mdl-cc3002-pinball</node>
+          </nodes>
+          <notes />
+          <edges />
+          <settings layout="Hierarchic Group" zoom="1.0" x="338.0" y="15.5" />
+          <SelectedNodes />
+          <Categories />
+        </state>
+      </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/test/java/TargetTest.java">
+    <entry file="uml://JavaScript-modules-diagram//home/pancho/IdeaProjects/cc3002-pinball/src/main">
+      <provider selected="true" editor-type-id="UmlEditorProvider">
+        <state>
+          <ID>JavaScript-modules-diagram</ID>
+          <OriginalElement>$PROJECT_DIR$/src/main</OriginalElement>
+          <nodes />
+          <notes />
+          <edges />
+          <settings layout="Hierarchic Group" zoom="1.0" x="464.0" y="188.0" />
+          <SelectedNodes />
+          <Categories>
+            <Category>All</Category>
+          </Categories>
+          <VISIBILITY>Details</VISIBILITY>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/controller/Game.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="120">
-          <caret line="8" lean-forward="true" selection-start-line="8" selection-end-line="8" />
+        <state relative-caret-position="180">
+          <caret line="115" column="5" lean-forward="true" selection-start-line="115" selection-start-column="5" selection-end-line="115" selection-end-column="5" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="uml://JAVA/logic.gameelements.target">
+      <provider selected="true" editor-type-id="UmlEditorProvider">
+        <state>
+          <ID>JAVA</ID>
+          <OriginalElement>logic.gameelements.target</OriginalElement>
+          <nodes>
+            <node x="0.0" y="424.0">logic.gameelements.target.TargetTest</node>
+            <node x="268.0" y="142.0">logic.gameelements.target.SpotTarget</node>
+            <node x="0.0" y="130.0">logic.gameelements.target.DropTarget</node>
+            <node x="181.5" y="0.0">logic.gameelements.target.Target</node>
+          </nodes>
+          <notes />
+          <edges>
+            <edge source="logic.gameelements.target.SpotTarget" target="logic.gameelements.target.Target">
+              <point x="0.0" y="-112.5" />
+              <point x="392.0" y="105.0" />
+              <point x="296.25" y="105.0" />
+              <point x="38.25" y="40.0" />
+            </edge>
+            <edge source="logic.gameelements.target.DropTarget" target="logic.gameelements.target.Target">
+              <point x="0.0" y="-124.5" />
+              <point x="124.0" y="105.0" />
+              <point x="219.75" y="105.0" />
+              <point x="-38.25" y="40.0" />
+            </edge>
+          </edges>
+          <settings layout="Hierarchic Group" zoom="1.0" x="-74.0" y="280.0" />
+          <SelectedNodes>
+            <node>logic.gameelements.target.SpotTarget</node>
+          </SelectedNodes>
+          <Categories>
+            <Category>Constructors</Category>
+            <Category>Methods</Category>
+            <Category>Properties</Category>
+            <Category />
+          </Categories>
+          <SCOPE>All</SCOPE>
+          <VISIBILITY>private</VISIBILITY>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/logic/gameelements/target/DropTarget.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-192">
+          <caret line="89" column="11" selection-start-line="89" selection-start-column="11" selection-end-line="89" selection-end-column="11" />
+          <folding>
+            <element signature="imports" expanded="true" />
+            <element signature="e#3254#3255#0" expanded="true" />
+            <element signature="e#3288#3289#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/logic/gameelements/target/SpotTarget.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="198">
+          <caret line="88" column="13" lean-forward="true" selection-start-line="88" selection-start-column="13" selection-end-line="88" selection-end-column="13" />
+          <folding>
+            <element signature="imports" expanded="true" />
+            <element signature="e#2651#2652#0" expanded="true" />
+            <element signature="e#2678#2679#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/test/java/logic/gameelements/target/TargetTest.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="116">
+          <caret line="140" column="105" selection-start-line="140" selection-start-column="105" selection-end-line="140" selection-end-column="105" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
@@ -1075,7 +1182,6 @@
             <option name="proportions">
               <list>
                 <option value="0.2" />
-                <option value="0.6" />
               </list>
             </option>
           </splitter-proportions>
