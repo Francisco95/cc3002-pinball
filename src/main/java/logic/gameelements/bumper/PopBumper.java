@@ -1,6 +1,10 @@
 package logic.gameelements.bumper;
 
 /**
+ * Class that define behavior of a kicker bumper
+ * Use of Observer Pattern to notify observers that win X points (Game)
+ * or to notify a trigger of bonus (ExtraBallBonus)
+ * all this behavior is defined in {@link logic.gameelements.bumper.AbstractBumper}.
  * @author Fancisco Muñoz Ponce. on date: 17-05-18
  */
 public class PopBumper extends AbstractBumper{
