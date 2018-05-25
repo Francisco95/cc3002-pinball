@@ -94,7 +94,6 @@ public abstract class AbstractTarget  extends Observable implements Target {
     public void reset() {
         setActive(true);
         setSeed(-1);
-        deleteObservers();
     }
 
     @Override
