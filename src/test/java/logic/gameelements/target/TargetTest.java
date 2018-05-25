@@ -27,29 +27,15 @@ public class TargetTest {
         game = new Game(balls, score);
         jackPot = JackPotBonus.getInstance();
         extraBall = ExtraBallBonus.getInstance();
-        spotTarget = SpotTarget.getInstance();
-        dropTarget = DropTarget.getInstance();
+        spotTarget = new SpotTarget();
+        dropTarget = new DropTarget();
         // then add the observerx
         spotTarget.setObservers(game, jackPot);
         dropTarget.setObservers(game, extraBall);
         jackPot.setObservers(game);
         extraBall.setObservers(game);
     }
-
-    @After
-    public void resetAll(){
-        spotTarget.reset();
-        dropTarget.reset();
-        balls = 1;
-        score = 0;
-        game.setScore(score);
-        game.setBalls(balls);
-        spotTarget.setObservers(game, jackPot);
-        dropTarget.setObservers(game, extraBall);
-        jackPot.setCounterTriggers(0);
-        extraBall.setCounterTriggers(0);
-    }
-
+    
     /**
      * test that method isActive() return as expected.
      * Also check that method hit() set Active to false.
@@ -66,23 +52,6 @@ public class TargetTest {
         dropTarget.hit();
         assertEquals(expected, spotTarget.isActive());
         assertEquals(expected, dropTarget.isActive());
-    }
-
-    /**
-     * check that after set active to False, cannot instantiate again to re-activate the spot
-     */
-    @Test
-    public void getInstance() {
-        assertTrue(spotTarget.isActive());
-        assertTrue(dropTarget.isActive());
-        spotTarget.hit();
-        dropTarget.hit();
-        assertFalse(spotTarget.isActive());
-        assertFalse(dropTarget.isActive());
-        spotTarget = SpotTarget.getInstance();
-        dropTarget = DropTarget.getInstance();
-        assertFalse(spotTarget.isActive());
-        assertFalse(dropTarget.isActive());
     }
 
     /**

@@ -4,7 +4,6 @@ import java.util.Random;
 
 /**
  * class that define the behavior of DropTarget.
- * Use of Singleton Pattern to guarantee only 1 instance per game.
  * Use of Observer Pattern to notify observers that win X points (Game)
  * or to notify a trigger of bonus (ExtraBallBonus).
  * All of this behavior is defined in {@link logic.gameelements.target.AbstractTarget}.
@@ -17,29 +16,13 @@ import java.util.Random;
  */
 public class DropTarget extends AbstractTarget {
 
-    /**
-     * the instance of DropTarget, this is part of Singleton Pattern
-     */
-    private static DropTarget instance = null;
 
     /**
      * constructor declared as private for singleton pattern
      * by default, set active to true and create instance of Random()
      */
-    private DropTarget() {
+    public DropTarget() {
         super(true, 100, new Random());
-    }
-
-    /**
-     * the generator of instance for Singleton Pattern, this will generate
-     * a new instance of DropTarget only if there is no previous instance.
-     * @return instance of SpotTarget
-     */
-    public static DropTarget getInstance(){
-        if (instance == null){
-            instance = new DropTarget();
-        }
-        return instance;
     }
 
     /**
