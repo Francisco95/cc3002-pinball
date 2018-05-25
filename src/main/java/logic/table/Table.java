@@ -1,5 +1,9 @@
 package logic.table;
 
+import controller.Game;
+import logic.bonus.DropTargetBonus;
+import logic.bonus.ExtraBallBonus;
+import logic.bonus.JackPotBonus;
 import logic.gameelements.bumper.Bumper;
 import logic.gameelements.target.Target;
 
@@ -40,11 +44,34 @@ public interface Table {
     List<Bumper> getBumpers();
 
     /**
+     * set the {@link List} of {@link logic.gameelements.target.Target} only if
+     * this list wasn't defined before. This force to use this method only once
+     * per new board.
+     *
+     * @param jackPotBonus                  instance of {@link JackPotBonus}
+     * @param extraBallBonus                instance of {@link ExtraBallBonus}
+     * @param dropTargetBonus               instance of {@link DropTargetBonus}
+     * @param game                          instance of {@link Game}
+     */
+    void setTargets(JackPotBonus jackPotBonus, ExtraBallBonus extraBallBonus,
+                    DropTargetBonus dropTargetBonus, Game game);
+
+    /**
      * Gets the {@link List} of {@link Target}s in the table.
      *
      * @return the targets in the table
      */
     List<Target> getTargets();
+
+    /**
+     * set the {@link List} of {@link logic.gameelements.bumper.Bumper} only if
+     * this list wasn't defined before. This force to use this method only once
+     * per new board.
+     *
+     * @param extraBallBonus        instance of {@link ExtraBallBonus}
+     * @param game                  instance of {@link Game}
+     */
+    void setBumpers(ExtraBallBonus extraBallBonus, Game game);
 
     /**
      * Resets all {@link logic.gameelements.target.DropTarget} in the table. Make them active.

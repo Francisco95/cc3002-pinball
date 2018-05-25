@@ -35,10 +35,7 @@ public abstract class AbstractTarget  extends Observable implements Target {
         this.randomProb = randomProb;
     }
 
-    /**
-     * as part of Observer Pattern, this set the new observers that observe this observable.
-     * @param observers instances of observers
-     */
+    @Override
     public void setObservers(Observer...observers){
         for (Observer o : observers)
             addObserver(o);

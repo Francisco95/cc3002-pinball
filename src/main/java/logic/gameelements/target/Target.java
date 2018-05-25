@@ -2,6 +2,8 @@ package logic.gameelements.target;
 
 import logic.gameelements.Hittable;
 
+import java.util.Observer;
+
 /**
  * Interface that represents operations related to a target behavior.
  *
@@ -20,4 +22,10 @@ public interface Target extends Hittable {
      * Resets the state of a target making it active again.
      */
     void reset();
+
+    /**
+     * as part of Observer Pattern, this set the new observers that observe this observable.
+     * @param observers instances of observers
+     */
+    void setObservers(Observer... observers);
 }

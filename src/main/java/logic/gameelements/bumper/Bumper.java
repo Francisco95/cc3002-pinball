@@ -2,6 +2,8 @@ package logic.gameelements.bumper;
 
 import logic.gameelements.Hittable;
 
+import java.util.Observer;
+
 /**
  * Interface that represents operations related to a bumper behavior.
  *
@@ -32,4 +34,10 @@ public interface Bumper extends Hittable {
      * Downgrades a bumper making {@link #isUpgraded()} return false.
      */
     void downgrade();
+
+    /**
+     * as part of Observer Pattern, this set the new observers that observe this observable.
+     * @param observers instances of observers
+     */
+    void setObservers(Observer...observers);
 }

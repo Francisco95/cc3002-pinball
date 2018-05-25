@@ -29,13 +29,13 @@ public class TargetTest {
         extraBall = ExtraBallBonus.getInstance();
         spotTarget = new SpotTarget();
         dropTarget = new DropTarget();
-        // then add the observerx
+        // then add the observers
         spotTarget.setObservers(game, jackPot);
         dropTarget.setObservers(game, extraBall);
         jackPot.setObservers(game);
         extraBall.setObservers(game);
     }
-    
+
     /**
      * test that method isActive() return as expected.
      * Also check that method hit() set Active to false.
@@ -57,7 +57,6 @@ public class TargetTest {
     /**
      * test that the only valid way to change the state of SpotTarget/dropTarget (means re-activate) is by reset.
      * This consider that setActive is created just to test and internal use.
-     * also reset  do a clear of the list of observables.
      */
     @Test
     public void reset() {
@@ -71,12 +70,6 @@ public class TargetTest {
         dropTarget.reset();
         assertTrue(spotTarget.isActive());
         assertTrue(dropTarget.isActive());
-
-        // and since reset erase the observers, use hit() dosent change Game
-        spotTarget.hit();
-        dropTarget.hit();
-        assertEquals(score, game.getScore());
-        assertEquals(balls, game.getBalls());
     }
 
     /**
@@ -125,7 +118,7 @@ public class TargetTest {
     }
 
     /**
-     * check that do hit() just after a reset without add the jackPot/extraBall
+     * check that do hit() without add the jackPot/extraBall
      * observer doesn't produce change in game score/balls
      */
     @Test
@@ -134,6 +127,9 @@ public class TargetTest {
         assertEquals(balls, game.getBalls());
         spotTarget.reset();
         dropTarget.reset();
+        spotTarget.deleteObservers();
+        dropTarget.deleteObservers();
+
         assertEquals(score, game.getScore());
         assertEquals(balls, game.getBalls());
         spotTarget.hit();
