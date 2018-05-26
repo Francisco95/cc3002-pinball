@@ -1,6 +1,5 @@
 package logic.table;
 
-import controller.EventVisitor;
 import controller.Game;
 import logic.bonus.DropTargetBonus;
 import logic.bonus.ExtraBallBonus;
@@ -21,9 +20,9 @@ import java.util.*;
  * this is going to be an observable.
  * Also use Double Dispatch to simplify actions of Board,
  * Targets and Bumpers.
- * @see logic.gameelements.target.Target
- * @see logic.gameelements.bumper.Bumper
- * @see controller.Game
+ * @see Target
+ * @see Bumper
+ * @see Game
  * @see facade.HomeworkTwoFacade
  *
  * @author Fancisco Muñoz Ponce. on date: 19-05-18
@@ -153,13 +152,19 @@ public class Board extends Observable implements Table {
 
     @Override
     public void resetDropTargets() {
-        for (Target t : targets){
-            t.reset();
+        if (targets == null || targets.size() == 0)
+            return;
+
+        for (int i = 0; i < numberOfDropTargets; i++){
+            targets.get(i).reset();
         }
     }
 
     @Override
     public void upgradeAllBumpers() {
+        if (bumpers == null)
+            return;
+
         for (Bumper b: bumpers){
             b.upgrade();
         }
