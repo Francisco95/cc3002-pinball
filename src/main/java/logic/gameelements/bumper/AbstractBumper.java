@@ -1,5 +1,7 @@
 package logic.gameelements.bumper;
 
+import logic.bonus.Bonus;
+
 import java.util.Observable;
 import java.util.Observer;
 import java.util.Random;
@@ -8,9 +10,12 @@ import java.util.Random;
  * Abstraction of some common behavior of any bumper,
  * since all the bumpers are used as observable,
  * we use that class here.
+ * Also bumpers observe to {@link logic.bonus.DropTargetBonus}
+ * waiting for the time to upgrade when the bonus is triggered.
+ *
  * @author Fancisco Muñoz Ponce. on date: 23-05-18
  */
-public abstract class AbstractBumper extends Observable implements Bumper{
+public abstract class AbstractBumper extends Observable implements Bumper, Observer{
 
     /**
      * keep count of the remaining hits the bumper has to receive to upgrade,
@@ -120,5 +125,19 @@ public abstract class AbstractBumper extends Observable implements Bumper{
             randomProb.setSeed(seed);
         }
         return randomProb.nextInt(10) == 0;
+    }
+
+    /**
+     * for now there are only one observable and it is a {@link logic.bonus.DropTargetBonus},
+     * if another observable is set, then te code will fail.
+     * receive a message from this observable, no matter what message is, will means
+     * to upgrade the bumper.
+     *
+     * @param o the observable
+     * @param arg the message from the observable
+     */
+    @Override
+    public void update(Observable o, Object arg) {
+        upgrade();
     }
 }

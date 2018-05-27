@@ -25,17 +25,17 @@ public class TableTest {
     private Game game;
 
     @Before
-    public void setUp() throws Exception {
+    public void setUp() {
         table = new Board();
         extraBallBonus = ExtraBallBonus.getInstance();
         jackPotBonus = JackPotBonus.getInstance();
-        dropTargetBonus = new DropTargetBonus(); // not implemented yet
+        dropTargetBonus = DropTargetBonus.getInstance();
         game = new Game(2, 0);
 
         //set observers
         extraBallBonus.setObservers(game);
         jackPotBonus.setObservers(game);
-        //dropTargetBonus.setObservers(game); // not implemented yet
+        dropTargetBonus.setObservers(game);
     }
 
     /**
@@ -46,7 +46,7 @@ public class TableTest {
      */
     @Test
     public void initializers(){
-        // alreade initialized table as empty, this is not valid to start a game.
+        // already initialized table as empty, this is not valid to start a game.
         assertEquals("", table.getTableName());
         assertNull(table.getBumpers());
         assertNull(table.getTargets());
@@ -218,9 +218,8 @@ public class TableTest {
         table.setBumpers(extraBallBonus, game);
         table.setTargets(jackPotBonus, extraBallBonus, dropTargetBonus, game);
         // the score should be += 2 * jackpotBonus + 100 * numOfDropTargets + dropTargetBonus
-        // but the dropTargetBonus interaction is not implemented yet
         int score = game.getScore() + jackPotBonus.getBonusValue() * 2 +
-                100 * numDropTargets;
+                100 * numDropTargets + dropTargetBonus.getBonusValue();
         int balls = game.getBalls();
         int cJPB = jackPotBonus.timesTriggered() + 2;
         int cEBB = extraBallBonus.timesTriggered();

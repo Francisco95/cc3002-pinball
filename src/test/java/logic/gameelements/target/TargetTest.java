@@ -3,13 +3,16 @@ package logic.gameelements.target;
 import controller.Game;
 import logic.bonus.ExtraBallBonus;
 import logic.bonus.JackPotBonus;
-import org.junit.After;
 import org.junit.Before;
 import org.junit.Test;
 
 import static org.junit.Assert.*;
 
 /**
+ * test the interactions of one single DropTarget and SpotTarget.
+ * to see tests of interaction of many targets and bumpers, specially
+ * the interaction with the DropTargetBonus go to {@link logic.table.TableTest}
+ * or {@link logic.bonus.BonusTest}.
  * @author Fancisco Muñoz Ponce. on date: 18-05-18
  */
 public class TargetTest {
@@ -21,7 +24,7 @@ public class TargetTest {
     private int score, balls;
 
     @Before
-    public void setUp() throws Exception {
+    public void setUp() {
         balls = 1;
         score = 0;
         game = new Game(balls, score);
@@ -43,19 +46,18 @@ public class TargetTest {
     @Test
     public void isActive() {
         // at first should be true
-        boolean expected = true;
-        assertEquals(expected, spotTarget.isActive());
-        assertEquals(expected, dropTarget.isActive());
+        assertTrue(spotTarget.isActive());
+        assertTrue(dropTarget.isActive());
         //then set to false and check this
-        expected = false;
         spotTarget.hit();
         dropTarget.hit();
-        assertEquals(expected, spotTarget.isActive());
-        assertEquals(expected, dropTarget.isActive());
+        assertFalse(spotTarget.isActive());
+        assertFalse(dropTarget.isActive());
     }
 
     /**
-     * test that the only valid way to change the state of SpotTarget/dropTarget (means re-activate) is by reset.
+     * test that the only valid way to change the state of SpotTarget/dropTarget
+     * (means re-activate) is by reset.
      * This consider that setActive is created just to test and internal use.
      */
     @Test
@@ -91,7 +93,8 @@ public class TargetTest {
         assertTrue(spotTarget.bonusTriggered());
     }
     /**
-     * test that it actually change the score/balls on Game instance and also after hit() is not active anymore
+     * test that it actually change the score/balls on Game instance and also after hit()
+     * is not active anymore
      */
     @Test
     public void hit() {
@@ -100,7 +103,8 @@ public class TargetTest {
         assertTrue(spotTarget.isActive());
         assertTrue(dropTarget.isActive());
 
-        score = game.getScore() + jackPot.getBonusValue() + dropTarget.getScore() + spotTarget.getScore();
+        score = game.getScore() + jackPot.getBonusValue() +
+                dropTarget.getScore() + spotTarget.getScore();
         balls = game.getBalls() + extraBall.getBonusValue();
         spotTarget.hit();
         // set the seed in a way to get a triggered
