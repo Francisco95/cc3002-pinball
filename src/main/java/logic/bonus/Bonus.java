@@ -1,5 +1,6 @@
 package logic.bonus;
 
+import controller.EventAcceptor;
 import controller.EventVisitor;
 import controller.Game;
 
@@ -12,7 +13,7 @@ import controller.Game;
  * @see JackPotBonus
  * @see DropTargetBonus
  */
-public interface Bonus {
+public interface Bonus extends EventAcceptor, EventVisitor {
     /**
      * Gets the number of times the bonus has been triggered.
      *
@@ -27,19 +28,11 @@ public interface Bonus {
     void trigger();
 
     /**
-     * allow to differentiate between a bonus of points and a bonus of balls
-     */
-    boolean isBonusOfPoints();
-
-    /**
      * gets the value of the bonus.
      * @return value of bonus (integer)
      */
     int getBonusValue();
 
-    /**
-     * this decide to accept the event visitor acording to the Visitor Pattern
-     * @param v an instance of a Visitor.
-     */
-    void accept(EventVisitor v);
+    boolean isBonusOfBalls();
+
 }

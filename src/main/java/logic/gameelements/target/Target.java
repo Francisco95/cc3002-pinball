@@ -1,5 +1,6 @@
 package logic.gameelements.target;
 
+import controller.EventAcceptor;
 import logic.gameelements.Hittable;
 
 import java.util.Observer;
@@ -10,7 +11,7 @@ import java.util.Observer;
  * @author Juan-Pablo Silva
  * @see Hittable
  */
-public interface Target extends Hittable {
+public interface Target extends Hittable, EventAcceptor {
     /**
      * Gets whether the target is currently active or not.
      *
@@ -28,4 +29,6 @@ public interface Target extends Hittable {
      * @param observers instances of observers
      */
     void setObservers(Observer... observers);
+
+    boolean isADropTarget();
 }

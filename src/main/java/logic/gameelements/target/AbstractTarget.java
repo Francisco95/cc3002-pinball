@@ -1,5 +1,10 @@
 package logic.gameelements.target;
 
+import controller.Game;
+import logic.bonus.Bonus;
+import logic.gameelements.bumper.Bumper;
+import logic.table.Table;
+
 import java.util.Observable;
 import java.util.Observer;
 import java.util.Random;
@@ -28,11 +33,17 @@ public abstract class AbstractTarget  extends Observable implements Target {
      */
     private int seed;
 
-    public AbstractTarget(boolean active, int score, Random randomProb){
+    /**
+     * this says if the target is a dropTarget or not
+     */
+    private boolean aDropTarget;
+
+    public AbstractTarget(boolean active, int score, Random randomProb, boolean aDropTarget){
         this.active = active;
         this.score = score;
         this.seed = -1;
         this.randomProb = randomProb;
+        this.aDropTarget = aDropTarget;
     }
 
     @Override
@@ -105,5 +116,35 @@ public abstract class AbstractTarget  extends Observable implements Target {
     @Override
     public int getScore() {
         return score;
+    }
+
+    @Override
+    public boolean isADropTarget() {
+        return aDropTarget;
+    }
+
+    @Override
+    public void acceptFromGame(Game game) {
+        game.visitTarget(this);
+    }
+
+    @Override
+    public void acceptFromBumper(Bumper bumper) {
+        // do nothing
+    }
+
+    @Override
+    public void acceptFromTarget(Target target) {
+        // do nothing
+    }
+
+    @Override
+    public void acceptFromTable(Table table) {
+        table.visitTarget(this);
+    }
+
+    @Override
+    public void acceptFromBonus(Bonus bonus) {
+        bonus.visitTarget(this);
     }
 }

@@ -1,6 +1,11 @@
 package logic.gameelements.bumper;
 
 
+import controller.Game;
+import logic.bonus.Bonus;
+import logic.gameelements.target.Target;
+import logic.table.Table;
+
 /**
  * Class that define behavior of a kicker bumper
  * Use of Observer Pattern to notify observers that win X points (Game)

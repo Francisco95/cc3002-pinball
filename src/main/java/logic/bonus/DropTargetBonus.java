@@ -1,10 +1,10 @@
 package logic.bonus;
 
-import controller.EventVisitor;
+import logic.gameelements.bumper.Bumper;
 import logic.gameelements.target.DropTarget;
-
-import java.util.Observable;
-import java.util.Observer;
+import logic.gameelements.target.Target;
+import logic.table.GameTable;
+import logic.table.Table;
 
 /**
  * Class that define drop target bonus.
@@ -15,16 +15,11 @@ import java.util.Observer;
  *
  * @see Bonus
  * @see controller.Game
- * @see logic.table.Board
+ * @see GameTable
  * @see logic.gameelements.bumper.Bumper
  * @author Fancisco Muñoz Ponce. on date: 17-05-18
  */
-public class DropTargetBonus extends Observable implements Observer, Bonus {
-
-    /**
-     * count the number of triggers done so far now.
-     */
-    private int counterTriggers;
+public class DropTargetBonus extends AbstractBonus{
 
     /**
      * count the number of drop targets dropped
@@ -32,16 +27,12 @@ public class DropTargetBonus extends Observable implements Observer, Bonus {
     private int counterOfDroppedDropTargets;
 
     /**
-     * value of the bonus, in this case is 1000000 points
-     */
-    private final int bonusValue = 1000000;
-    /**
      * the instance of DropTargetBonus, this is part of Singleton Pattern
      */
     private static DropTargetBonus instance = null;
 
     private DropTargetBonus(){
-        this.counterTriggers = 0;
+        super(1000000, false);
         this.counterOfDroppedDropTargets = 0;
     }
 
@@ -58,82 +49,36 @@ public class DropTargetBonus extends Observable implements Observer, Bonus {
         return instance;
     }
 
-    /**
-     * as part of Observer Pattern, this set the new observers that observe
-     * this observable.
-     *
-     * @param observers instances of observers
-     */
-    public void setObservers(Observer...observers){
-        for (Observer o : observers)
-            addObserver(o);
-    }
-
-    /**
-     * set the counter of triggers, this could be used to reset the Game but
-     * it was created for testing purpose.
-     *
-     * @param value the new value to set.
-     */
-    public void setCounterTriggers(int value){
-        this.counterTriggers = value;
-    }
-
-    private void upgradeCounterOfDroppedDropTargets(DropTarget dropTarget){
-        if (!dropTarget.isActive())
+    private void visitADropTarget(DropTarget dropTarget){
+        if (!dropTarget.isActive()){
             counterOfDroppedDropTargets++;
-    }
-
-    @Override
-    public int timesTriggered() {
-        return counterTriggers;
-    }
-
-    @Override
-    public void trigger() {
-        counterTriggers++;
-        setChanged();
-        notifyObservers();
-    }
-
-    @Override
-    public boolean isBonusOfPoints() {
-        return true;
-    }
-
-    @Override
-    public int getBonusValue() {
-        return bonusValue;
-    }
-
-    /**
-     * for now there are only one type of observable and it
-     * is a {@link logic.gameelements.target.DropTarget},
-     * if another observable is set, then te code will fail.
-     * receive a message of change from this observer will mean that it was hit()
-     * and then changed to non-active, then add this to a counter.
-     * When this counter reach the number of observables then trigger the bonus
-     *
-     * @param o the observable
-     * @param arg the message from the observable
-     */
-    @Override
-    public void update(Observable o, Object arg) {
-        try{
-            upgradeCounterOfDroppedDropTargets((DropTarget)o);
         }
-        catch (ClassCastException e){
-            e.printStackTrace();
-        }
-        finally {
-            if (counterOfDroppedDropTargets == countObservers()){
-                trigger();
-            }
+        if (counterOfDroppedDropTargets == countObservers()){
+            trigger();
         }
     }
 
     @Override
-    public void accept(EventVisitor v) {
-        v.visitBonusOfPoints(bonusValue);
+    public void visitBumper(Bumper bumper) {
+        // do nothing
+    }
+
+    @Override
+    public void visitTarget(Target target) {
+        if (target.isADropTarget()){
+            visitADropTarget((DropTarget) target);
+        }
+    }
+
+    @Override
+    public void visitTable(Table table) {
+        if (table.getCurrentlyDroppedDropTargets() == table.getNumberOfDropTargets()){
+            trigger();
+        }
+    }
+
+    @Override
+    public void acceptFromBumper(Bumper bumper) {
+        // do nothing
     }
 }

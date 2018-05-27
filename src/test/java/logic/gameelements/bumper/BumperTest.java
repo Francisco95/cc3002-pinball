@@ -45,7 +45,7 @@ public class BumperTest {
         game.setScore(score);
         kickerBumper.downgrade();
         popBumper.downgrade();
-        extraBallBonus.setCounterTriggers(0);
+        extraBallBonus.resetCounterTriggers();
     }
 
     /**

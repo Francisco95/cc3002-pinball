@@ -22,7 +22,7 @@ public class DropTarget extends AbstractTarget {
      * by default, set active to true and create instance of Random()
      */
     public DropTarget() {
-        super(true, 100, new Random());
+        super(true, 100, new Random(), true);
     }
 
     /**

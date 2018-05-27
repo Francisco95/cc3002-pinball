@@ -4,12 +4,12 @@ import controller.Game;
 import logic.bonus.DropTargetBonus;
 import logic.bonus.ExtraBallBonus;
 import logic.bonus.JackPotBonus;
+import logic.gameelements.target.DropTarget;
 import logic.gameelements.target.Target;
 import logic.gameelements.bumper.Bumper;
 import org.junit.Before;
 import org.junit.Test;
 
-import java.util.ArrayList;
 import java.util.List;
 
 import static org.junit.Assert.*;
@@ -18,20 +18,27 @@ import static org.junit.Assert.*;
  * @author Fancisco Muñoz Ponce. on date: 24-05-18
  */
 public class TableTest {
-    private Board table;
+    private Table emptyTable, noTargetTable, fullTable;
     private ExtraBallBonus extraBallBonus;
     private JackPotBonus jackPotBonus;
     private DropTargetBonus dropTargetBonus;
     private Game game;
+    private int numOfTargets, numOfBumpers, numOfDropTargets;
 
     @Before
     public void setUp() {
-        table = new Board();
         extraBallBonus = ExtraBallBonus.getInstance();
         jackPotBonus = JackPotBonus.getInstance();
         dropTargetBonus = DropTargetBonus.getInstance();
         game = new Game(2, 0);
 
+        numOfBumpers = 5;
+        numOfTargets = 6;
+        numOfDropTargets = 3;
+        emptyTable = GameTable.getEmptyTable();
+        noTargetTable = GameTable.getTableWithoutTargets(game, "noTargetTable", numOfBumpers, 0.5);
+        fullTable = GameTable.getFullTable(game, "fullTable", numOfBumpers, 0.5,
+                numOfDropTargets, numOfTargets);
         //set observers
         extraBallBonus.setObservers(game);
         jackPotBonus.setObservers(game);
@@ -40,129 +47,79 @@ public class TableTest {
 
     /**
      * test different ways of initialize the Table, there are 3 options:
-     * - empty table with no name or lists of targets/bumpersa
+     * - empty table without name and lists of targets/bumpersa
      * - table without targets
      * - full table with name, targets and bumpers
      */
     @Test
     public void initializers(){
-        // already initialized table as empty, this is not valid to start a game.
-        assertEquals("", table.getTableName());
-        assertNull(table.getBumpers());
-        assertNull(table.getTargets());
+        // for the empty table
         // this is equal to get method isPlayableTable() as false
-        assertFalse(table.isPlayableTable());
+        assertFalse(emptyTable.isPlayableTable());
 
-        // now try the initialization without targets
-        table = new Board("tableName", 5, 0.5);
-        table.setBumpers(extraBallBonus, game);
-        assertEquals("tableName", table.getTableName());
-        assertNotNull(table.getBumpers());
-        assertNull(table.getTargets());
+        // for the table without targets
         // this is equal to get method isPlayableTable() as true
-        assertTrue(table.isPlayableTable());
+        assertTrue(noTargetTable.isPlayableTable());
 
-        //  now try the initialization of full table
-        table  = new Board("tableName", 5, 0.5,
-                2, 4);
-        table.setBumpers(extraBallBonus, game);
-        table.setTargets(jackPotBonus, extraBallBonus, dropTargetBonus, game);
-        assertEquals("tableName", table.getTableName());
-        assertNotNull(table.getBumpers());
-        assertNotNull(table.getTargets());
+        // for the full table
         // this is equal to get method isPlayableTable() as true
-        assertTrue(table.isPlayableTable());
+        assertTrue(fullTable.isPlayableTable());
     }
 
     /**
-     * test that set target actually set the expected number of targets,
-     * and even if the table was initialized empty, can run this and create an empty list
+     * test that when create every type of table automatically create a list of targets or not
      */
     @Test
-    public void setTargets() {
-        // table is already empty
-        assertEquals("", table.getTableName());
-        assertNull(table.getBumpers());
-        assertNull(table.getTargets());
-        // set the targets
-        table.setTargets(jackPotBonus, extraBallBonus, dropTargetBonus, game);
-        // now se that the targets are 0
-        assertEquals(0, table.getTargets().size());
+    public void createTargets() {
+        // for the empty table there are no targets created
+        assertNull(emptyTable.getTargets());
 
-        // lets try for a table initialized correctly
-        table  = new Board("tableName", 5, 0.5,
-                2, 4);
-        table.setTargets(jackPotBonus, extraBallBonus, dropTargetBonus, game);
-        // this will lead to a list of targets of size 4
-        assertEquals(4, table.getTargets().size());
+        // same for the table without targets
+        assertNull(noTargetTable.getTargets());
 
-        // and even with this the table still is not 'playable'
-        assertFalse(table.isPlayableTable());
-
-        // its necessary to set the bumpers.
-        table.setBumpers(extraBallBonus, game);
-
-        // to get a 'playable' table
-        assertTrue(table.isPlayableTable());
+        // for the full table
+        assertNotNull(fullTable.getTargets());
     }
 
     /**
-     * test that set bumpers actually set the expected number of bumpers,
-     * and even if the table was initialized empty, can run this and create an empty list.
+     * test that when create every type of table automatically create a list of bumpers or not
      */
     @Test
-    public void setBumpers() {
-        // table is already empty
-        assertEquals("", table.getTableName());
-        assertNull(table.getBumpers());
-        assertNull(table.getTargets());
-        // set the bumpers
-        table.setBumpers(extraBallBonus, game);
-        // now se that the targets are 0
-        assertEquals(0, table.getBumpers().size());
+    public void createBumpers() {
+        // for the empty table there are no bumpers created
+        assertNull(emptyTable.getBumpers());
 
-        // lets try for a table initialized correctly
-        table  = new Board("tableName", 5, 0.5,
-                2, 4);
-        table.setBumpers(extraBallBonus, game);
-        // this will lead to a list of targets of size 4
-        assertEquals(5, table.getBumpers().size());
+        // for the table without targets sould be bumpers created
+        assertNotNull(noTargetTable.getBumpers());
+
+        // same for the full table
+        assertNotNull(fullTable.getBumpers());
     }
 
     /**
-     * test that this method actually add 1 to the counter of dropped dropTargets
+     * test that this method actually add 1 to the counter of dropped dropTargets,
+     * this method is used when visit a target that is a dropTarget not active.
+     * Isolating the call to this method should work for every type of table.
      */
     @Test
     public void addDropedToCounter() {
-        assertEquals(0, table.getCurrentlyDroppedDropTargets());
-        table.addDropedToCounter();
-        assertEquals(1, table.getCurrentlyDroppedDropTargets());
-    }
+        DropTarget dropTarget = new DropTarget();
+        dropTarget.setActive(false);
 
-    /**
-     * test that setCounterOfDropped actually set the variable counterOfDropped to the value,
-     * this variable is returned by the getCurrentlyDroppedDropTargets but if the
-     * list of targets is not null, the method getCurrentlyDroppedTargets will return
-     * allways the number of dropped dropTarget, no matter what value we set this before
-     */
-    @Test
-    public void setCounterOfDropped() {
-        assertNull(table.getTargets());
-        int original = table.getCurrentlyDroppedDropTargets();
-        table.setCounterOfDropped(-112);
-        assertNotEquals(original, table.getCurrentlyDroppedDropTargets());
-        assertEquals(-112, table.getCurrentlyDroppedDropTargets());
+        // for the empty table
+        int initialCounter = emptyTable.getCurrentlyDroppedDropTargets();
+        emptyTable.visitTarget(dropTarget);
+        assertEquals(initialCounter + 1, emptyTable.getCurrentlyDroppedDropTargets());
 
-        // now try with a valid 'playable' table
-        table  = new Board("tableName", 5, 0.5,
-                2, 4);
-        table.setBumpers(extraBallBonus, game);
-        table.setTargets(jackPotBonus, extraBallBonus, dropTargetBonus, game);
-        assertNotNull(table.getTargets());
-        original = table.getCurrentlyDroppedDropTargets();
-        table.setCounterOfDropped(-112);
-        assertEquals(original, table.getCurrentlyDroppedDropTargets());
+        // for the no target table
+        initialCounter = noTargetTable.getCurrentlyDroppedDropTargets();
+        noTargetTable.visitTarget(dropTarget);
+        assertEquals(initialCounter + 1, noTargetTable.getCurrentlyDroppedDropTargets());
 
+        // for the full table
+        initialCounter = fullTable.getCurrentlyDroppedDropTargets();
+        fullTable.visitTarget(dropTarget);
+        assertEquals(initialCounter + 1, fullTable.getCurrentlyDroppedDropTargets());
     }
 
     /**
@@ -170,20 +127,14 @@ public class TableTest {
      */
     @Test
     public void getTableName() {
-        // at first the empty table has name ""
-        assertEquals("", table.getTableName());
+        // for empty table
+        assertEquals("", emptyTable.getTableName());
 
-        // if we create a table without targets defining a name
-        table = new Board("tableWithoutTargets", 5, 0.5);
-        table.setBumpers(extraBallBonus, game);
-        assertEquals("tableWithoutTargets", table.getTableName());
+        // for no target table
+        assertEquals("noTargetTable", noTargetTable.getTableName());
 
-        // finally try with a table with targets and bumpers
-        table  = new Board("tableFull", 5, 0.5,
-                2, 4);
-        table.setBumpers(extraBallBonus, game);
-        table.setTargets(jackPotBonus, extraBallBonus, dropTargetBonus, game);
-        assertEquals("tableFull", table.getTableName());
+        // for full table
+        assertEquals("fullTable", fullTable.getTableName());
 
     }
 
@@ -192,81 +143,58 @@ public class TableTest {
      */
     @Test
     public void getNumberOfDropTargets() {
-        // originally we have an empty table with 0 dropTargets
-        assertEquals(0, table.getNumberOfDropTargets());
+        // for empty table
+        assertEquals(0, emptyTable.getNumberOfDropTargets());
 
-        // try with a table created with targets
-        int numDropTargets = 2;
-        table  = new Board("tableFull", 5, 0.5,
-                numDropTargets, 4);
-        // its necessary to set the bumper and targets every time that a new table is created
-        table.setBumpers(extraBallBonus, game);
-        table.setTargets(jackPotBonus, extraBallBonus, dropTargetBonus, game);
-        assertEquals(numDropTargets, table.getNumberOfDropTargets());
+        // for no target table
+        assertEquals(0, noTargetTable.getNumberOfDropTargets());
+
+        // for full table
+        assertEquals(numOfDropTargets, fullTable.getNumberOfDropTargets());
     }
 
     /**
-     * test for the number of dropped dropTargets, for this we create a 'playable' table,
-     * set some targets and then call hit to the targets. this will mean that the score on
-     * game will change and also the counter on the bonus
+     * test for the number of dropped dropTargets
      */
     @Test
     public void getCurrentlyDroppedDropTargets() {
-        int numDropTargets = 4;
-        table  = new Board("tableFull", 5, 0.5,
-                numDropTargets, numDropTargets + 2);
-        table.setBumpers(extraBallBonus, game);
-        table.setTargets(jackPotBonus, extraBallBonus, dropTargetBonus, game);
-        // the score should be += 2 * jackpotBonus + 100 * numOfDropTargets + dropTargetBonus
-        int score = game.getScore() + jackPotBonus.getBonusValue() * 2 +
-                100 * numDropTargets + dropTargetBonus.getBonusValue();
-        int balls = game.getBalls();
-        int cJPB = jackPotBonus.timesTriggered() + 2;
-        int cEBB = extraBallBonus.timesTriggered();
-        int cDTB = dropTargetBonus.timesTriggered() + 1;
+        // empty table
+        assertEquals(0, emptyTable.getCurrentlyDroppedDropTargets());
 
-        //at first the game score is 0
-        assertEquals(0, game.getScore());
-        for (Target t : table.getTargets()){
-            t.hit();
+        // no target table
+        assertEquals(0, noTargetTable.getCurrentlyDroppedDropTargets());
+
+        // full table, for this manually call hit() for targets
+        // first for only one target that we know is a dropTarget
+        fullTable.getTargets().get(0).hit();
+        assertEquals(1, fullTable.getCurrentlyDroppedDropTargets());
+        fullTable.getTargets().get(0).reset();
+        // here should use method resetDropTarget from table to reset the counter of dropped
+        // bu we dont want to test that here so the counter will remain with the 1
+        assertEquals(1, fullTable.getCurrentlyDroppedDropTargets());
+        // then for all the targets
+        for (Target target : fullTable.getTargets()){
+            target.hit();
         }
-        // all the bumpers should be upgraded, this is not implemented yet
-        // test the other results
-        assertEquals(cJPB, jackPotBonus.timesTriggered());
-        assertTrue(cEBB <= extraBallBonus.timesTriggered());
-        assertTrue(balls <= game.getBalls());
-//        assertEquals(cDTB, dropTargetBonus.timesTriggered());
-        assertEquals(score, game.getScore());
-
+        assertEquals(1 + numOfDropTargets, fullTable.getCurrentlyDroppedDropTargets());
     }
 
     /**
      * test that getBumpers() actually return the {@link List} of {@link Bumper}s
+     * with the corresponding number of bumpers
      */
     @Test
     public void getBumpers() {
-        // fo the empty table this will return a null list
-        assertNull(table.getBumpers());
+        // empty table
+        assertNull(emptyTable.getBumpers());
 
-        int numberOfBumpers = 5;
-        // for a table without targets and table full will return the actual list
-        table  = new Board("tableFull", numberOfBumpers, 0.5);
-        table.setBumpers(extraBallBonus, game);
-        assertNotNull(table.getBumpers());
-        assertEquals(numberOfBumpers, table.getBumpers().size());
-        for (Bumper b : table.getBumpers()){
+        // no target table
+        assertNotNull(noTargetTable.getBumpers());
+        assertEquals(numOfBumpers, noTargetTable.getBumpers().size());
+        for (Bumper b : noTargetTable.getBumpers()){
             assertNotNull(b);
         }
-
-        table  = new Board("tableFull", numberOfBumpers, 0.5,
-                4, 6);
-        table.setBumpers(extraBallBonus, game);
-        table.setTargets(jackPotBonus, extraBallBonus, dropTargetBonus, game);
-        assertNotNull(table.getBumpers());
-        assertEquals(numberOfBumpers, table.getBumpers().size());
-        for (Bumper b : table.getBumpers()){
-            assertNotNull(b);
-        }
+        // same with full table
     }
 
     /**
@@ -274,23 +202,15 @@ public class TableTest {
      */
     @Test
     public void getTargets() {
-        // fo the empty table this will return a null list
-        assertNull(table.getTargets());
+        // empty table
+        assertNull(emptyTable.getBumpers());
 
-        // for a table without targets will return also a null list
-        table  = new Board("tableFull", 5, 0.5);
-        table.setBumpers(extraBallBonus, game);
-        assertNull(table.getTargets());
+        // same with no target table
 
-        // for a table full will return the actual list
-        int numberOfTargets= 5;
-        table  = new Board("tableFull", 5, 0.5,
-                numberOfTargets - 2, numberOfTargets);
-        table.setBumpers(extraBallBonus, game);
-        table.setTargets(jackPotBonus, extraBallBonus, dropTargetBonus, game);
-        assertNotNull(table.getTargets());
-        assertEquals(numberOfTargets, table.getTargets().size());
-        for (Target t : table.getTargets()){
+        // full table
+        assertNotNull(fullTable.getTargets());
+        assertEquals(numOfTargets, fullTable.getTargets().size());
+        for (Target t : fullTable.getTargets()){
             assertNotNull(t);
         }
     }
@@ -300,37 +220,28 @@ public class TableTest {
      */
     @Test
     public void resetDropTargets() {
-        // in an empty table this will still run but doesn't change anything
-        assertNull(table.getTargets());
-        table.resetDropTargets();
-        assertNull(table.getTargets());
-        // this is the same for a table without targets
+        // empty table
+        assertNull(emptyTable.getTargets());
+        emptyTable.resetDropTargets();
+        assertNull(emptyTable.getTargets());
 
-
-        // for a full table with targets and bumpers
-        int numberOfDropTargets = 6;
-        int numberOfTargets = numberOfDropTargets + 3;
-        // create a full table with targets
-        table  = new Board("tableFull", 5, 0.5,
-                numberOfDropTargets, numberOfTargets);
-        table.setBumpers(extraBallBonus, game);
-        table.setTargets(jackPotBonus, extraBallBonus, dropTargetBonus, game);
-        assertNotNull(table.getTargets());
+        // no targets table, same result.
+        // full table
+        assertNotNull(fullTable.getTargets());
         // we are going to hit() all the targets.
-        for (Target t: table.getTargets()){
+        for (Target t: fullTable.getTargets()){
             t.hit();
         }
         // then reset the dropTargets
-        table.resetDropTargets();
-
+        fullTable.resetDropTargets();
         // the fisrt 'numberOfDropTargets' elements of the list are dropTargets
-        List<Target> targets = table.getTargets();
+        List<Target> targets = fullTable.getTargets();
         int i = 0;
-        while (i < numberOfDropTargets){
+        while (i < numOfDropTargets){
             assertTrue(targets.get(i).isActive());
             i++;
         }
-        while (i < numberOfTargets){
+        while (i < numOfTargets){
             assertFalse(targets.get(i).isActive());
             i++;
         }
@@ -341,24 +252,32 @@ public class TableTest {
      */
     @Test
     public void upgradeAllBumpers() {
-        // in an empty table this will still run but doesn't change anything
-        assertNull(table.getBumpers());
-        table.upgradeAllBumpers();
-        assertNull(table.getBumpers());
+        // empty table
+        assertNull(emptyTable.getBumpers());
+        emptyTable.upgradeAllBumpers();
+        assertNull(emptyTable.getBumpers());
 
-        // for a table without targets we get:
-        table  = new Board("tableWithoutTargets", 5, 0.5);
-        table.setBumpers(extraBallBonus, game);
+        // no targets table
         // check that all bumper are not upgraded
-        for (Bumper b: table.getBumpers()){
+        for (Bumper b: noTargetTable.getBumpers()){
             assertFalse(b.isUpgraded());
         }
-        // the upgrade and check
-        table.upgradeAllBumpers();
-        for (Bumper b: table.getBumpers()){
+        // then upgrade and check
+        noTargetTable.upgradeAllBumpers();
+        for (Bumper b: noTargetTable.getBumpers()){
             assertTrue(b.isUpgraded());
         }
-        // this will be the same result for a table with targets and bumpers
+
+        // full table
+        // check that all bumper are not upgraded
+        for (Bumper b: fullTable.getBumpers()){
+            assertFalse(b.isUpgraded());
+        }
+        // then upgrade and check
+        fullTable.upgradeAllBumpers();
+        for (Bumper b: fullTable.getBumpers()){
+            assertTrue(b.isUpgraded());
+        }
     }
 
     /**
@@ -367,41 +286,19 @@ public class TableTest {
      */
     @Test
     public void isPlayableTable() {
-        // with an empty table this will be false because the name is "" and the bumper list is null
-        assertEquals("", table.getTableName());
-        assertNull(table.getBumpers());
-        assertFalse(table.isPlayableTable());
-        // also the targets are null
-        assertNull(table.getTargets());
+        // empty table
+        assertEquals("", emptyTable.getTableName());
+        assertNull(emptyTable.getBumpers());
+        assertFalse(emptyTable.isPlayableTable());
 
-        // with a table without target it will be a playable table
-        table  = new Board("tableWithoutTargets", 5, 0.5);
-        table.setBumpers(extraBallBonus, game);
-        assertEquals("tableWithoutTargets", table.getTableName());
-        assertNotNull(table.getBumpers());
-        assertNull(table.getTargets());
-        assertTrue(table.isPlayableTable());
+        // no target table
+        assertEquals("noTargetTable", noTargetTable.getTableName());
+        assertNotNull(noTargetTable.getBumpers());
+        assertTrue(noTargetTable.isPlayableTable());
 
-        // for a full table we wet true from isPlayableTable()
-        table  = new Board("tableFull", 5, 0.5,
-                4, 4);
-        table.setBumpers(extraBallBonus, game);
-        table.setTargets(jackPotBonus, extraBallBonus, dropTargetBonus, game);
-        assertEquals("tableFull", table.getTableName());
-        assertNotNull(table.getBumpers());
-        assertNotNull(table.getTargets());
-        assertTrue(table.isPlayableTable());
-
-        // one important thing is that for an empty table we can generate
-        // the lists of bumpers and targets as void but the name cannot
-        // be changed after the instance was created so the table will still
-        // be not playable. Name marks the difference.
-        table = new Board();
-        table.setBumpers(extraBallBonus, game);
-        table.setTargets(jackPotBonus, extraBallBonus, dropTargetBonus, game);
-        assertEquals("", table.getTableName());
-        assertNotNull(table.getBumpers());
-        assertNotNull(table.getTargets());
-        assertFalse(table.isPlayableTable());
+        // full table
+        assertEquals("fullTable", fullTable.getTableName());
+        assertNotNull(noTargetTable.getBumpers());
+        assertTrue(noTargetTable.isPlayableTable());
     }
 }

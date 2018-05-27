@@ -1,20 +1,21 @@
 package logic.table;
 
-import controller.Game;
-import logic.bonus.DropTargetBonus;
-import logic.bonus.ExtraBallBonus;
-import logic.bonus.JackPotBonus;
+import controller.EventAcceptor;
+import controller.EventVisitor;
 import logic.gameelements.bumper.Bumper;
+import logic.gameelements.target.DropTarget;
 import logic.gameelements.target.Target;
 
 import java.util.List;
 
 /**
  * Interface that represents the basics of a table to be played on.
+ * This interface its extended from {@link EventAcceptor}
+ * and {@link EventVisitor} to generalize interactions between different objects.
  *
- * @author Juan-Pablo Silva
+ * @author Juan-Pablo Silva, modified by Francisco Muñoz.
  */
-public interface Table {
+public interface Table extends EventAcceptor, EventVisitor {
     /**
      * Gets the table name.
      *
@@ -44,34 +45,11 @@ public interface Table {
     List<Bumper> getBumpers();
 
     /**
-     * set the {@link List} of {@link logic.gameelements.target.Target} only if
-     * this list wasn't defined before. This force to use this method only once
-     * per new board.
-     *
-     * @param jackPotBonus                  instance of {@link JackPotBonus}
-     * @param extraBallBonus                instance of {@link ExtraBallBonus}
-     * @param dropTargetBonus               instance of {@link DropTargetBonus}
-     * @param game                          instance of {@link Game}
-     */
-    void setTargets(JackPotBonus jackPotBonus, ExtraBallBonus extraBallBonus,
-                    DropTargetBonus dropTargetBonus, Game game);
-
-    /**
      * Gets the {@link List} of {@link Target}s in the table.
      *
      * @return the targets in the table
      */
     List<Target> getTargets();
-
-    /**
-     * set the {@link List} of {@link logic.gameelements.bumper.Bumper} only if
-     * this list wasn't defined before. This force to use this method only once
-     * per new board.
-     *
-     * @param extraBallBonus        instance of {@link ExtraBallBonus}
-     * @param game                  instance of {@link Game}
-     */
-    void setBumpers(ExtraBallBonus extraBallBonus, Game game);
 
     /**
      * Resets all {@link logic.gameelements.target.DropTarget} in the table. Make them active.
@@ -89,4 +67,5 @@ public interface Table {
      * @return true if the table is playable, false otherwise
      */
     boolean isPlayableTable();
+
 }

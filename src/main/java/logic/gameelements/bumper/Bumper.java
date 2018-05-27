@@ -1,5 +1,7 @@
 package logic.gameelements.bumper;
 
+import controller.EventAcceptor;
+import controller.EventVisitor;
 import logic.gameelements.Hittable;
 
 import java.util.Observer;
@@ -10,7 +12,8 @@ import java.util.Observer;
  * @author Juan-Pablo Silva
  * @see Hittable
  */
-public interface Bumper extends Hittable {
+public interface Bumper extends Hittable, EventAcceptor {
+
     /**
      * Gets the remaining hits the bumper has to receive to upgrade.
      *

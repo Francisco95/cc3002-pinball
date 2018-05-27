@@ -1,5 +1,9 @@
 package logic.gameelements.target;
 
+import controller.Game;
+import logic.bonus.Bonus;
+import logic.gameelements.bumper.Bumper;
+
 /**
  * Class that define behavior of a spotTarget.
  * Use Observer Pattern to notify observer that win X points(Game) or
@@ -11,7 +15,7 @@ package logic.gameelements.target;
 public class SpotTarget extends AbstractTarget{
 
     public SpotTarget() {
-        super(true, 0, null);
+        super(true, 0, null, false);
     }
 
     /**

@@ -1,7 +1,11 @@
 package logic.bonus;
 
-import controller.EventVisitor;
+import controller.EventAcceptor;
+import controller.Game;
 import logic.gameelements.Hittable;
+import logic.gameelements.bumper.Bumper;
+import logic.gameelements.target.DropTarget;
+import logic.gameelements.target.Target;
 
 import java.util.Observable;
 import java.util.Observer;
@@ -19,32 +23,19 @@ import java.util.Observer;
  * @see logic.gameelements.bumper.Bumper
  * @author Fancisco Muñoz Ponce. on date: 17-05-18
  */
-public class ExtraBallBonus extends Observable implements Observer, Bonus {
+public class ExtraBallBonus extends AbstractBonus {
 
-    /**
-     * count the number of triggers done so far now.
-     */
-    private int counterTriggers;
-
-    /**
-     * value of the bonus, in this case is 1 extra ball
-     */
-    private final int bonusValue = 1;
     /**
      * the instance of JackpotBonus, this is part of Singleton Pattern
      */
     private static ExtraBallBonus instance = null;
 
-    /**
-     * tell if this bonus give points or not (the other case is when give extra balls)
-     */
-    private boolean bonusOfPoints = false;
 
     /**
      * constructor declared as private for Singleton Pattern
      */
     private ExtraBallBonus() {
-        this.counterTriggers = 0;
+        super(1, true);
     }
 
     /**
@@ -59,68 +50,28 @@ public class ExtraBallBonus extends Observable implements Observer, Bonus {
         return instance;
     }
 
-    /**
-     * as part of Observer Pattern, this set the new observers that observe
-     * this observable.
-     *
-     * @param observers instances of observers
-     */
-    public void setObservers(Observer...observers){
-        for (Observer o : observers)
-            addObserver(o);
-    }
-
-    public void setCounterTriggers(int value){
-        this.counterTriggers = value;
-    }
-
-    @Override
-    public int timesTriggered() {
-        return counterTriggers;
-    }
-
-    @Override
-    public void trigger() {
-        counterTriggers++;
-        setChanged();
-        notifyObservers();
-    }
-
-    @Override
-    public boolean isBonusOfPoints() {
-        return false;
-    }
-
-    @Override
-    public int getBonusValue() {
-        return bonusValue;
-    }
-
-    @Override
-    public void accept(EventVisitor v) {
-        v.visitBonusOfBalls(bonusValue);
-    }
-
-    /**
-     * Method update from Observer pattern.
-     * there is no need for know what the message is.
-     * In this case receive a Hittable object which could be a DropTarget
-     * or a type of Bumper, then check method bonusTriggered() to know if this
-     * bonus should be triggered or not.
-     * this only can receive a Hittable class.
-     * @param o Observable object, should be a Hittable instance
-     * @param arg the message
-     * @see logic.gameelements.Hittable
-     */
-    @Override
-    public void update(Observable o, Object arg) {
-        try {
-            if (((Hittable) o).bonusTriggered()) {
-                trigger();
-            }
+    public void visitADropTarget(DropTarget dropTarget){
+        if (dropTarget.bonusTriggered()){
+            trigger();
         }
-        catch (ClassCastException e){
-            e.printStackTrace();
+    }
+
+    @Override
+    public void acceptFromBumper(Bumper bumper) {
+        // do nothing
+    }
+
+    @Override
+    public void visitBumper(Bumper bumper) {
+        if (bumper.bonusTriggered()){
+            trigger();
+        }
+    }
+
+    @Override
+    public void visitTarget(Target target) {
+        if (target.isADropTarget()){
+            visitADropTarget((DropTarget) target);
         }
     }
 }

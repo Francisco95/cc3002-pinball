@@ -2,6 +2,9 @@ package controller;
 
 import logic.bonus.Bonus;
 import logic.gameelements.Hittable;
+import logic.gameelements.bumper.Bumper;
+import logic.gameelements.target.Target;
+import logic.table.Table;
 
 import java.util.Observable;
 import java.util.Observer;
@@ -87,6 +90,10 @@ public class Game implements Observer, EventVisitor {
         this.balls = balls;
     }
 
+    public void visitHittable(Hittable hittable){
+        addToScore(hittable.getScore());
+    }
+
     /**
      * if the message 'arg' is null then apply visitor pattern, or else,
      * augment the score by the amount of 'arg'
@@ -97,32 +104,30 @@ public class Game implements Observer, EventVisitor {
      */
     @Override
     public void update(Observable o, Object arg) {
-        if (arg == null){
-            try {
-                ((Bonus) o).accept(this);
-            }
-            catch (ClassCastException e){
-                e.printStackTrace();
-            }
-        }
-        else {
-            try {
-                addToScore((int) arg);
-            }
-            catch (ClassCastException e){
-                e.printStackTrace();
-            }
-        }
+        ((EventAcceptor) o).acceptFromGame(this);
     }
 
     @Override
-    public void visitBonusOfPoints(int pointsBonus) {
-        addToScore(pointsBonus);
+    public void visitBonus(Bonus bonus) {
+        if (bonus.isBonusOfBalls())
+            addToBalls(bonus.getBonusValue());
+        else
+            addToScore(bonus.getBonusValue());
     }
 
     @Override
-    public void visitBonusOfBalls(int ballsBonus) {
-        addToBalls(ballsBonus);
+    public void visitBumper(Bumper bumper) {
+        visitHittable(bumper);
+    }
+
+    @Override
+    public void visitTarget(Target target) {
+        visitHittable(target);
+    }
+
+    @Override
+    public void visitTable(Table table) {
+
     }
 
 }

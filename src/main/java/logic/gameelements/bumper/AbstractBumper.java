@@ -1,6 +1,10 @@
 package logic.gameelements.bumper;
 
+import controller.EventAcceptor;
+import controller.Game;
 import logic.bonus.Bonus;
+import logic.gameelements.target.Target;
+import logic.table.Table;
 
 import java.util.Observable;
 import java.util.Observer;
@@ -15,7 +19,7 @@ import java.util.Random;
  *
  * @author Fancisco Muñoz Ponce. on date: 23-05-18
  */
-public abstract class AbstractBumper extends Observable implements Bumper, Observer{
+public abstract class AbstractBumper extends Observable implements Bumper {
 
     /**
      * keep count of the remaining hits the bumper has to receive to upgrade,
@@ -127,17 +131,28 @@ public abstract class AbstractBumper extends Observable implements Bumper, Obser
         return randomProb.nextInt(10) == 0;
     }
 
-    /**
-     * for now there are only one observable and it is a {@link logic.bonus.DropTargetBonus},
-     * if another observable is set, then te code will fail.
-     * receive a message from this observable, no matter what message is, will means
-     * to upgrade the bumper.
-     *
-     * @param o the observable
-     * @param arg the message from the observable
-     */
     @Override
-    public void update(Observable o, Object arg) {
-        upgrade();
+    public void acceptFromGame(Game game) {
+        game.visitBumper(this);
+    }
+
+    @Override
+    public void acceptFromBonus(Bonus bonus) {
+        bonus.visitBumper(this);
+    }
+
+    @Override
+    public void acceptFromBumper(Bumper bumper) {
+        // do nothing
+    }
+
+    @Override
+    public void acceptFromTarget(Target target) {
+        // do nothing
+    }
+
+    @Override
+    public void acceptFromTable(Table table) {
+        // do nothing
     }
 }
