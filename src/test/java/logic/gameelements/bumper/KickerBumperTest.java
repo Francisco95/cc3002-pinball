@@ -15,7 +15,7 @@ import static org.junit.Assert.*;
 
 /**
  * tests for KickerBumper, here we don test interaction
- * of many Bumpers with table, for that go to {@link logic.table.TableTest}
+ * of many Bumpers with table, for that go to {@link logic.table.GameTableTest}
  *
  * @author Fancisco Muñoz Ponce. on date: 27-05-18
  */

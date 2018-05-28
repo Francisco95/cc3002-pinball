@@ -16,7 +16,7 @@ import static org.junit.Assert.*;
 /**
  * tests for {@link DropTarget}, here we don't consider the
  * interaction of many Targets with a {@link Table}, for that
- * interaction go to {@link logic.table.TableTest}.
+ * interaction go to {@link logic.table.GameTableTest}.
  *
  * @author Fancisco Muñoz Ponce. on date: 27-05-18
  */
