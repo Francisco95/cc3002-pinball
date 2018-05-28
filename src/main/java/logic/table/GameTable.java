@@ -47,6 +47,9 @@ public class GameTable extends Observable implements Table {
                 t.setObservers(this);
             }
         }
+
+        // add the DropTargetBonus observer
+        setObservers(DropTargetBonus.getInstance());
     }
 
     /**
