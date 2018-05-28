@@ -111,11 +111,26 @@ public class SpotTargetTest {
     }
 
     /**
+     * check that do hit() without add the jackPot/extraBall
+     * observer doesn't produce change in game score/balls
+     */
+    @Test
+    public void hitAfterReset(){
+        assertEquals(score, game.getScore());
+        spotTarget.reset();
+        spotTarget.deleteObservers();
+        assertEquals(score, game.getScore());
+        spotTarget.hit();
+        assertEquals(score, game.getScore());
+
+    }
+
+    /**
      * go to {@link DropTargetTest}
      */
     @Test
     public void getScore() {
-        // tested in tests for dropTarget, common behavior
+        // tested in hit() and hitAfterReset()
     }
 
     /**
