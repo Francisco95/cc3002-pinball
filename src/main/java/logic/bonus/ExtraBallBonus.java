@@ -6,6 +6,7 @@ import logic.gameelements.Hittable;
 import logic.gameelements.bumper.Bumper;
 import logic.gameelements.target.DropTarget;
 import logic.gameelements.target.Target;
+import logic.table.Table;
 
 import java.util.Observable;
 import java.util.Observer;
@@ -57,11 +58,6 @@ public class ExtraBallBonus extends AbstractBonus {
     }
 
     @Override
-    public void acceptFromBumper(Bumper bumper) {
-        // do nothing
-    }
-
-    @Override
     public void visitBumper(Bumper bumper) {
         if (bumper.bonusTriggered()){
             trigger();
@@ -73,5 +69,10 @@ public class ExtraBallBonus extends AbstractBonus {
         if (target.isADropTarget()){
             visitADropTarget((DropTarget) target);
         }
+    }
+
+    @Override
+    public void visitTable(Table table) {
+        // do nothing
     }
 }

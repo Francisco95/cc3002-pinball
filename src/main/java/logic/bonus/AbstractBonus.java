@@ -3,6 +3,7 @@ package logic.bonus;
 import controller.EventAcceptor;
 import controller.EventVisitor;
 import controller.Game;
+import logic.gameelements.bumper.Bumper;
 import logic.gameelements.target.Target;
 import logic.table.Table;
 
@@ -88,6 +89,11 @@ public abstract class AbstractBonus extends Observable implements Bonus{
     }
 
     @Override
+    public void acceptFromBumper(Bumper bumper) {
+        // do nothing
+    }
+
+    @Override
     public void acceptFromTarget(Target target) {
         // do nothing
     }
@@ -99,11 +105,6 @@ public abstract class AbstractBonus extends Observable implements Bonus{
 
     @Override
     public void visitBonus(Bonus bonus) {
-        // do nothing
-    }
-
-    @Override
-    public void visitTable(Table table) {
         // do nothing
     }
 }

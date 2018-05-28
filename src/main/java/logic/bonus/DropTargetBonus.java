@@ -49,15 +49,6 @@ public class DropTargetBonus extends AbstractBonus{
         return instance;
     }
 
-    private void visitADropTarget(DropTarget dropTarget){
-        if (!dropTarget.isActive()){
-            counterOfDroppedDropTargets++;
-        }
-        if (counterOfDroppedDropTargets == countObservers()){
-            trigger();
-        }
-    }
-
     @Override
     public void visitBumper(Bumper bumper) {
         // do nothing
@@ -65,20 +56,14 @@ public class DropTargetBonus extends AbstractBonus{
 
     @Override
     public void visitTarget(Target target) {
-        if (target.isADropTarget()){
-            visitADropTarget((DropTarget) target);
-        }
+        // do nothing
     }
 
     @Override
     public void visitTable(Table table) {
-        if (table.getCurrentlyDroppedDropTargets() == table.getNumberOfDropTargets()){
+        if (table.isPlayableTable() &&
+                table.getCurrentlyDroppedDropTargets() == table.getNumberOfDropTargets()){
             trigger();
         }
-    }
-
-    @Override
-    public void acceptFromBumper(Bumper bumper) {
-        // do nothing
     }
 }

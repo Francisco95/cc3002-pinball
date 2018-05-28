@@ -6,6 +6,7 @@ import logic.gameelements.Hittable;
 import logic.gameelements.bumper.Bumper;
 import logic.gameelements.target.SpotTarget;
 import logic.gameelements.target.Target;
+import logic.table.Table;
 
 import java.util.Observable;
 import java.util.Observer;
@@ -56,11 +57,6 @@ public class JackPotBonus extends AbstractBonus {
     }
 
     @Override
-    public void acceptFromBumper(Bumper bumper) {
-        // do nothing
-    }
-
-    @Override
     public void visitBumper(Bumper bumper) {
         // do nothing
     }
@@ -70,5 +66,10 @@ public class JackPotBonus extends AbstractBonus {
         if (!target.isADropTarget()){
             visitASpotTarget((SpotTarget) target);
         }
+    }
+
+    @Override
+    public void visitTable(Table table) {
+        // do nothing
     }
 }
