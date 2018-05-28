@@ -70,18 +70,10 @@ public abstract class AbstractTarget  extends Observable implements Target {
     }
 
     /**
-     * get the seed value of the random probability.
-     * @return the seed value
-     */
-    public int getSeed(){
-        return seed;
-    }
-
-    /**
      * set the seed to the instance of Random()
      */
     public void setSeedToRandomProb(){
-        if (getSeed() > -1 && randomProb != null) {
+        if (seed > -1 && randomProb != null) {
             randomProb.setSeed(seed);
         }
     }

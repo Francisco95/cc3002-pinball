@@ -17,7 +17,7 @@ import static org.junit.Assert.*;
 /**
  * test interactions of many targets/bumpers with the bonuses
  * to see more specific tests for interactions go
- * to {@link logic.gameelements.target.TargetTest} or
+ * to {@link logic.gameelements.target.DropTargetTest} or
  * {@link logic.gameelements.bumper.BumperTest}.
  * Also test some specific behavior of the bonuses.
  *
