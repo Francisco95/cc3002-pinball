@@ -2,8 +2,12 @@ package facade;
 
 import controller.Game;
 import logic.bonus.Bonus;
+import logic.bonus.DropTargetBonus;
+import logic.bonus.ExtraBallBonus;
+import logic.bonus.JackPotBonus;
 import logic.gameelements.bumper.Bumper;
 import logic.gameelements.target.Target;
+import logic.table.GameTable;
 import logic.table.Table;
 
 import java.util.List;
@@ -22,39 +26,67 @@ public class HomeworkTwoFacade {
     private Game game;
 
     /**
+     * Instance of the table where to play
+     *
+     * @see Table
+     */
+    private Table table;
+
+    /**
+     * General constructor, it receive an Instance of Game
+     * and create a default non-playable Table instance.
+     *
+     * @param game Instance of Game
+     */
+    public HomeworkTwoFacade(Game game) {
+        this.game = game;
+        this.table = GameTable.getEmptyTable();
+    }
+
+    /**
+     * Default constructor, create both instances by default.
+     */
+    public HomeworkTwoFacade(){
+        this(new Game());
+    }
+
+    /**
      * Gets whether the current table is playable or not.
      *
      * @return true if the current table is playable, false otherwise
      */
     public boolean isPlayableTable() {
-        return false;
+        return table.isPlayableTable();
     }
 
     /**
      * Gets the instance of {@link logic.bonus.DropTargetBonus} currently in the game.
+     * Since this Instance is created by Singleton pattern, we just need to do getInstance()
      *
      * @return the DropTargetBonus instance
      */
     public Bonus getDropTargetBonus() {
-        return null;
+        return DropTargetBonus.getInstance();
     }
 
     /**
      * Gets the instance of {@link logic.bonus.ExtraBallBonus} currently in the game.
+     * Since this Instance is created by Singleton pattern, we just need to do getInstance()
      *
      * @return the ExtraBallBonus instance
      */
     public Bonus getExtraBallBonus() {
-        return null;
+        return ExtraBallBonus.getInstance();
     }
 
     /**
      * Gets the instance of {@link logic.bonus.JackPotBonus} currently in the game.
+     * Since this Instance is created by Singleton pattern, we just need to do getInstance()
      *
      * @return the JackPotBonus instance
      */
     public Bonus getJackPotBonus() {
-        return null;
+        return JackPotBonus.getInstance();
     }
 
     /**
@@ -66,7 +98,9 @@ public class HomeworkTwoFacade {
      * @return a new table determined by the parameters
      */
     public Table newPlayableTableWithNoTargets(String name, int numberOfBumpers, double prob) {
-        return null;
+        Table tmpTable =  GameTable.getTableWithoutTargets(name, numberOfBumpers, prob);
+        tmpTable.setGameElementsObservers(game);
+        return tmpTable;
     }
 
     /**
@@ -81,7 +115,9 @@ public class HomeworkTwoFacade {
      */
     public Table newFullPlayableTable(String name, int numberOfBumpers, double prob, int numberOfTargets,
                                       int numberOfDropTargets) {
-        return null;
+        Table tmpTable = GameTable.getFullTable(name, numberOfBumpers, prob, numberOfDropTargets, numberOfTargets);
+        tmpTable.setGameElementsObservers(game);
+        return tmpTable;
     }
 
     /**
@@ -91,7 +127,7 @@ public class HomeworkTwoFacade {
      * @see Bumper
      */
     public List<Bumper> getBumpers() {
-        return null;
+        return table.getBumpers();
     }
 
     /**
@@ -101,7 +137,7 @@ public class HomeworkTwoFacade {
      * @see Target
      */
     public List<Target> getTargets() {
-        return null;
+        return table.getTargets();
     }
 
     /**
@@ -110,7 +146,7 @@ public class HomeworkTwoFacade {
      * @return the name of the current table
      */
     public String getTableName() {
-        return null;
+        return table.getTableName();
     }
 
     /**
@@ -119,7 +155,7 @@ public class HomeworkTwoFacade {
      * @return the number of available balls
      */
     public int getAvailableBalls() {
-        return 0;
+        return game.getBalls();
     }
 
     /**
@@ -128,7 +164,7 @@ public class HomeworkTwoFacade {
      * @return the earned score
      */
     public int getCurrentScore() {
-        return 0;
+        return game.getScore();
     }
 
     /**
@@ -138,7 +174,7 @@ public class HomeworkTwoFacade {
      * @see Table
      */
     public Table getCurrentTable() {
-        return null;
+        return table;
     }
 
     /**
@@ -147,16 +183,18 @@ public class HomeworkTwoFacade {
      * @param newTable the new table
      */
     public void setGameTable(Table newTable) {
-
+        table = newTable;
+        table.setGameElementsObservers(game);
     }
 
     /**
-     * Reduces the number of available balls and returns the new number.
+     * Reduces the number of available balls by 1 and returns the new number.
      *
      * @return the new number of available balls
      */
     public int dropBall() {
-        return 0;
+        game.dropBall();
+        return game.getBalls();
     }
 
     /**
@@ -165,6 +203,6 @@ public class HomeworkTwoFacade {
      * @return true if the game is over, false otherwise
      */
     public boolean gameOver() {
-        return false;
+        return game.isGameOver();
     }
 }
