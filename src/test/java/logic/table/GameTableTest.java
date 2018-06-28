@@ -41,9 +41,12 @@ public class GameTableTest {
         numOfTargets = 6;
         numOfDropTargets = 3;
         emptyTable = GameTable.getEmptyTable();
-        noTargetTable = GameTable.getTableWithoutTargets(game, "noTargetTable", numOfBumpers, 0.5);
-        fullTable = GameTable.getFullTable(game, "fullTable", numOfBumpers, 0.5,
+        emptyTable.setGameElementsObservers(game);
+        noTargetTable = GameTable.getTableWithoutTargets("noTargetTable", numOfBumpers, 0.5);
+        noTargetTable.setGameElementsObservers(game);
+        fullTable = GameTable.getFullTable("fullTable", numOfBumpers, 0.5,
                 numOfDropTargets, numOfTargets);
+        fullTable.setGameElementsObservers(game);
         //set observers
         extraBallBonus.setObservers(game);
         jackPotBonus.setObservers(game);
@@ -385,8 +388,9 @@ public class GameTableTest {
      */
     @Test
     public void acceptFromTable() {
-        Table table = GameTable.getFullTable(game, "table", 11, 0.7,
+        Table table = GameTable.getFullTable("table", 11, 0.7,
                 13, 17);
+        table.setGameElementsObservers(game);
         assertTrue(table.isPlayableTable());
         assertEquals("table", table.getTableName());
         assertEquals(0, table.getCurrentlyDroppedDropTargets());
@@ -570,8 +574,9 @@ public class GameTableTest {
      */
     @Test
     public void visitTable() {
-        Table table = GameTable.getFullTable(game, "table", 3, 0.05,
+        Table table = GameTable.getFullTable("table", 3, 0.05,
                 6, 7);
+        table.setGameElementsObservers(game);
 
         assertEquals(0, table.getCurrentlyDroppedDropTargets());
         assertEquals(0, emptyTable.getCurrentlyDroppedDropTargets());
