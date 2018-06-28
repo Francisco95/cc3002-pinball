@@ -59,6 +59,11 @@ public abstract class AbstractBumper extends Observable implements Bumper {
             addObserver(o);
     }
 
+    @Override
+    public void deleteAllObservers() {
+        deleteObservers();
+    }
+
     /**
      * check after a hit if the kicker bumper should be upgraded.
      */

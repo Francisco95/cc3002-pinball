@@ -119,8 +119,9 @@ public class JackPotBonusTest {
      */
     @Test
     public void visitTable() {
-        Table table = GameTable.getFullTable(game, "table", 5, 0.2,
+        Table table = GameTable.getFullTable("table", 5, 0.2,
                 5, 8);
+        table.setGameElementsObservers(game);
         assertTrue(table.isPlayableTable());
         assertEquals(0, table.getCurrentlyDroppedDropTargets());
         int count = jackPotBonus.timesTriggered();
@@ -239,7 +240,8 @@ public class JackPotBonusTest {
      */
     @Test
     public void acceptFromTable() {
-        Table table = GameTable.getTableWithoutTargets(game, "table", 6, 0.3);
+        Table table = GameTable.getTableWithoutTargets("table", 6, 0.3);
+        table.setGameElementsObservers(game);
         assertTrue(table.isPlayableTable());
         assertEquals(0, table.getCurrentlyDroppedDropTargets());
         int count = jackPotBonus.timesTriggered();

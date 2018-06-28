@@ -136,8 +136,9 @@ public class ExtraBallBonusTest {
      */
     @Test
     public void visitTable() {
-        Table table = GameTable.getFullTable(game, "table", 9, 0.2,
+        Table table = GameTable.getFullTable( "table", 9, 0.2,
                 5, 8);
+        table.setGameElementsObservers(game);
         assertTrue(table.isPlayableTable());
         assertEquals(0, table.getCurrentlyDroppedDropTargets());
         int count = extraBallBonus.timesTriggered();
@@ -248,7 +249,8 @@ public class ExtraBallBonusTest {
      */
     @Test
     public void acceptFromTable() {
-        Table table = GameTable.getTableWithoutTargets(game, "table", 7, 0.3);
+        Table table = GameTable.getTableWithoutTargets("table", 7, 0.3);
+        table.setGameElementsObservers(game);
         assertTrue(table.isPlayableTable());
         assertEquals(0, table.getCurrentlyDroppedDropTargets());
         int count = extraBallBonus.timesTriggered();

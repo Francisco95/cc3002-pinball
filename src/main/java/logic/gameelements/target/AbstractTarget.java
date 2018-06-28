@@ -52,6 +52,11 @@ public abstract class AbstractTarget  extends Observable implements Target {
             addObserver(o);
     }
 
+    @Override
+    public void deleteAllObservers() {
+        deleteObservers();
+    }
+
     /**
      * set the Active parameter to 'value'
      * @param value the new value of 'active', could be true or false

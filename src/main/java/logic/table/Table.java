@@ -2,11 +2,13 @@ package logic.table;
 
 import controller.EventAcceptor;
 import controller.EventVisitor;
+import controller.Game;
 import logic.gameelements.bumper.Bumper;
 import logic.gameelements.target.DropTarget;
 import logic.gameelements.target.Target;
 
 import java.util.List;
+import java.util.Observer;
 
 /**
  * Interface that represents the basics of a table to be played on.
@@ -67,5 +69,18 @@ public interface Table extends EventAcceptor, EventVisitor {
      * @return true if the table is playable, false otherwise
      */
     boolean isPlayableTable();
+
+    /**
+     * Set (or reset) all possible Observers Instances of every {@link logic.gameelements}.
+     * This include an Instance of Game and instances of all the three types
+     * of game bonuses, which objects are obtained through getInstance()
+     * of Singleton Pattern.
+     *
+     * This method should be ran every time an Instance of Table is created and every time
+     * that you may want to change the Game instance by a new one.
+     *
+     * @param game Instance of Game
+     */
+    void setGameElementsObservers(Game game);
 
 }

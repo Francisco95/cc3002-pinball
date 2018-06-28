@@ -1,6 +1,9 @@
 package controller;
 
 import logic.bonus.Bonus;
+import logic.bonus.DropTargetBonus;
+import logic.bonus.ExtraBallBonus;
+import logic.bonus.JackPotBonus;
 import logic.gameelements.Hittable;
 import logic.gameelements.bumper.Bumper;
 import logic.gameelements.target.Target;
@@ -14,7 +17,7 @@ import java.util.Observer;
  * in order to communicate with all the other class implement the Observer pattern considering this as
  * the observer and the other classes as Observables, also mix this with a Visit Pattern in order to be able
  * to do the modifications on Game state in a cleaner way, this idea comes from a thread on StackOverflow,
- * which link is: <a href="https://stackoverflow.com/a/6608600">http://google.com</a> and is principally apply
+ * which link is: <a href="https://stackoverflow.com/a/6608600">https://stackoverflow.com</a> and is principally apply
  * to Game as the visitor and the Bonus classes as the visited because they can change score or balls.
  * @see EventVisitor
  * @see Bonus
@@ -31,6 +34,12 @@ public class Game implements Observer, EventVisitor {
      * the number of balls in the game
      */
     private int balls;
+
+    private DropTargetBonus dropTargetBonus;
+
+    private ExtraBallBonus extraBallBonus;
+
+    private JackPotBonus jackPotBonus;
 
     public Game(){
         this(1, 0);
@@ -88,6 +97,14 @@ public class Game implements Observer, EventVisitor {
      */
     public void setBalls(int balls) {
         this.balls = balls;
+    }
+
+    public void dropBall(){
+        this.balls--;
+    }
+
+    public boolean isGameOver(){
+        return balls <= 0;
     }
 
     public void visitHittable(Hittable hittable){

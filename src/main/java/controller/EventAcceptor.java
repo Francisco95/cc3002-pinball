@@ -43,4 +43,10 @@ public interface EventAcceptor {
      * @param observers instances of observers
      */
     void setObservers(Observer... observers);
+
+    /**
+     * as part of Observer Pattern, this method will delete all current observers from the list
+     * of observers
+     */
+    void deleteAllObservers();
 }

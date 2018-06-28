@@ -41,13 +41,6 @@ public class GameTable extends Observable implements Table {
         this.bumpers = bumpers;
         this.numberOfDropTargets = numberOfDropTargets;
 
-        // add to targets this as observer only if targets is not null
-        if (this.targets != null) {
-            for (Target t : this.targets) {
-                t.setObservers(this);
-            }
-        }
-
         // add the DropTargetBonus observer
         setObservers(DropTargetBonus.getInstance());
     }
@@ -62,11 +55,10 @@ public class GameTable extends Observable implements Table {
         return new GameTable("", null, null, 0);
     }
 
-    /**
+    /**git ad
      * Create a new {@link Table} with {@link Bumper}s and without {@link Target}s,
      * this will be a Table called 'TableName'.
      *
-     * @param game                      instance of {@link Game}
      * @param tableName                 the name that {@link Table} will have.
      * @param numberOfBumpers           the number of {@link Bumper}s to create
      *                                  in the {@link Table}.
@@ -75,8 +67,8 @@ public class GameTable extends Observable implements Table {
      *
      * @return                          the instance of {@link Table}
      */
-    public static Table getTableWithoutTargets(Game game, String tableName, int numberOfBumpers, double prob){
-        List<Bumper> bumpers = createBumpers(game, numberOfBumpers, prob);
+    public static Table getTableWithoutTargets(String tableName, int numberOfBumpers, double prob){
+        List<Bumper> bumpers = createBumpers(numberOfBumpers, prob);
         return new GameTable(tableName, bumpers, null, 0);
     }
 
@@ -84,7 +76,6 @@ public class GameTable extends Observable implements Table {
      * Create a new Full {@link Table} with {@link Bumper}s and {@link Target}s,
      * this will be a Table called 'TableName'.
      *
-     * @param game                      instance of {@link Game}
      * @param tableName                 the name that {@link Table} will have.
      * @param numberOfBumpers           the number of {@link Bumper}s to create
      *                                  in the {@link Table}.
@@ -98,10 +89,10 @@ public class GameTable extends Observable implements Table {
      *
      * @return                          the instance of {@link Table}
      */
-    public static Table getFullTable(Game game, String tableName, int numberOfBumpers, double prob,
+    public static Table getFullTable(String tableName, int numberOfBumpers, double prob,
                                      int numberOfDropTargets, int numberOfTargets){
-        List<Target> targets = createTargets(game, numberOfDropTargets, numberOfTargets);
-        List<Bumper> bumpers = createBumpers(game, numberOfBumpers, prob);
+        List<Target> targets = createTargets(numberOfDropTargets, numberOfTargets);
+        List<Bumper> bumpers = createBumpers(numberOfBumpers, prob);
         return new GameTable(tableName, bumpers, targets, numberOfDropTargets);
     }
 
@@ -154,30 +145,24 @@ public class GameTable extends Observable implements Table {
      * static method getInstance() give the current created {@link ExtraBallBonus}
      * or create the corresponding instance.
      *
-     * @param game                      instance of {@link Game}
      * @param numberOfDropTargets       number of {@link DropTarget}s to create
      * @param numberOfTargets           the number of {@link Target}s to create
      *
      * @return                          a {@link List} of {@link Target}s
      */
-    private static List<Target> createTargets(Game game, int numberOfDropTargets, int numberOfTargets) {
+    private static List<Target> createTargets(int numberOfDropTargets, int numberOfTargets) {
 
         ArrayList<Target> targets = new ArrayList<>();
-        JackPotBonus jackPotBonus = JackPotBonus.getInstance();
-        ExtraBallBonus extraBallBonus = ExtraBallBonus.getInstance();
-        DropTargetBonus dropTargetBonus = DropTargetBonus.getInstance();
 
         Target auxTarget;
         int i = 0;
         while (i < numberOfDropTargets) {
             auxTarget = new DropTarget();
-            auxTarget.setObservers(game, dropTargetBonus, extraBallBonus);
             targets.add(auxTarget);
             i++;
         }
         while (i < numberOfTargets) {
             auxTarget = new SpotTarget();
-            auxTarget.setObservers(game, jackPotBonus);
             targets.add(auxTarget);
             i++;
         }
@@ -191,20 +176,17 @@ public class GameTable extends Observable implements Table {
      * static method getInstance() give the current created {@link ExtraBallBonus}
      * or create the corresponding instance.
      *
-     * @param game                      instance of the current {@link Game}
      * @param numberOfBumpers           number of {@link Bumper}s to create
      * @param prob                      the probability of create a {@link PopBumper}
      *
      * @return                          a {@link List} of {@link Bumper}s
      */
-    private static List<Bumper> createBumpers(Game game, int numberOfBumpers, double prob) {
-        ExtraBallBonus extraBallBonus = ExtraBallBonus.getInstance();
+    private static List<Bumper> createBumpers(int numberOfBumpers, double prob) {
         Random randomProb = new Random();
         ArrayList<Bumper> bumpers = new ArrayList<>();
         Bumper auxBumper;
         for (int i = 0; i < numberOfBumpers; i++){
             auxBumper = newBumper(randomProb, prob);
-            auxBumper.setObservers(extraBallBonus, game);
             bumpers.add(auxBumper);
         }
         return bumpers;
@@ -294,6 +276,31 @@ public class GameTable extends Observable implements Table {
     public void setObservers(Observer... observers) {
         for (Observer o : observers)
             addObserver(o);
+    }
+
+    @Override
+    public void deleteAllObservers() {
+        deleteObservers();
+    }
+
+    @Override
+    public void setGameElementsObservers(Game game){
+        JackPotBonus jackPotBonus = JackPotBonus.getInstance();
+        ExtraBallBonus extraBallBonus = ExtraBallBonus.getInstance();
+        DropTargetBonus dropTargetBonus = DropTargetBonus.getInstance();
+
+        if (bumpers != null) {
+            for (Bumper bumper : bumpers) {
+                bumper.deleteAllObservers();
+                bumper.setObservers(game, extraBallBonus, jackPotBonus, dropTargetBonus);
+            }
+        }
+        if (targets != null) {
+            for (Target target : targets) {
+                target.deleteAllObservers();
+                target.setObservers(this, game, extraBallBonus, jackPotBonus, dropTargetBonus);
+            }
+        }
     }
 
     @Override

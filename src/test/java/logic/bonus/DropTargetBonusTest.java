@@ -108,8 +108,9 @@ public class DropTargetBonusTest {
      */
     @Test
     public void visitTable() {
-        Table table = GameTable.getFullTable(game, "table", 4, 0.1,
+        Table table = GameTable.getFullTable("table", 4, 0.1,
                 7, 11);
+        table.setGameElementsObservers(game);
 
         // first for the case when the table doesnt have all the dropTargets non-active,
         // set one dropTarget to false
@@ -267,7 +268,8 @@ public class DropTargetBonusTest {
      */
     @Test
     public void acceptFromTable() {
-        Table table = GameTable.getTableWithoutTargets(game, "table", 4, 0.3);
+        Table table = GameTable.getTableWithoutTargets("table", 4, 0.3);
+        table.setGameElementsObservers(game);
         assertTrue(table.isPlayableTable());
         assertEquals(0, table.getCurrentlyDroppedDropTargets());
         int count = dropTargetBonus.timesTriggered();

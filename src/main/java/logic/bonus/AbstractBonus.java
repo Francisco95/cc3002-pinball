@@ -52,6 +52,11 @@ public abstract class AbstractBonus extends Observable implements Bonus{
     }
 
     @Override
+    public void deleteAllObservers() {
+        deleteObservers();
+    }
+
+    @Override
     public int timesTriggered() {
         return counterTriggers;
     }
