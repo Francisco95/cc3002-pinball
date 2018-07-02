@@ -165,49 +165,51 @@
               <ID>JAVA</ID>
               <OriginalElement>logic.table</OriginalElement>
               <nodes>
-                <node x="341.5" y="0.0">interactions.AcceptObservation</node>
-                <node x="167.25" y="596.0">logic.table.GameTable</node>
-                <node x="419.5" y="274.0">logic.table.Table</node>
-                <node x="0.0" y="250.0">interactions.DefaultInteractions</node>
-                <node x="22.5" y="24.5">interactions.ReceiveChanges</node>
+                <node x="319.0" y="0.0">interactions.AcceptObservation</node>
+                <node x="118.75" y="596.0">logic.table.GameTable</node>
+                <node x="3.5" y="274.0">logic.table.Table</node>
+                <node x="319.0" y="250.0">interactions.DefaultInteractions</node>
+                <node x="0.0" y="24.5">interactions.ReceiveChanges</node>
               </nodes>
               <notes />
               <edges>
                 <edge source="logic.table.Table" target="interactions.AcceptObservation">
                   <point x="71.25" y="-124.0" />
-                  <point x="97.25" y="100.0" />
+                  <point x="217.25" y="230.0" />
+                  <point x="416.25" y="230.0" />
+                  <point x="-97.25" y="100.0" />
                 </edge>
                 <edge source="interactions.DefaultInteractions" target="interactions.AcceptObservation">
                   <point x="97.25" y="-148.0" />
-                  <point x="291.75" y="230.0" />
-                  <point x="438.75" y="230.0" />
-                  <point x="-97.25" y="100.0" />
+                  <point x="97.25" y="100.0" />
                 </edge>
                 <edge source="logic.table.GameTable" target="interactions.DefaultInteractions">
-                  <point x="-105.5" y="-292.5" />
-                  <point x="272.75" y="571.0" />
-                  <point x="194.5" y="571.0" />
+                  <point x="105.5" y="-292.5" />
+                  <point x="435.25" y="571.0" />
+                  <point x="513.5" y="571.0" />
                   <point x="0.0" y="148.0" />
                 </edge>
                 <edge source="logic.table.Table" target="interactions.ReceiveChanges">
                   <point x="-71.25" y="-124.0" />
-                  <point x="490.75" y="220.0" />
-                  <point x="246.75" y="220.0" />
-                  <point x="74.75" y="75.5" />
+                  <point x="-74.75" y="75.5" />
                 </edge>
                 <edge source="logic.table.GameTable" target="logic.table.Table">
-                  <point x="105.5" y="-292.5" />
-                  <point x="483.75" y="571.0" />
-                  <point x="562.0" y="571.0" />
+                  <point x="-105.5" y="-292.5" />
+                  <point x="224.25" y="571.0" />
+                  <point x="146.0" y="571.0" />
                   <point x="0.0" y="124.0" />
                 </edge>
                 <edge source="interactions.DefaultInteractions" target="interactions.ReceiveChanges">
                   <point x="-97.25" y="-148.0" />
-                  <point x="-74.75" y="75.5" />
+                  <point x="416.25" y="220.0" />
+                  <point x="224.25" y="220.0" />
+                  <point x="74.75" y="75.5" />
                 </edge>
               </edges>
-              <settings layout="Hierarchic Group" zoom="1.0" x="365.5" y="283.5" />
-              <SelectedNodes />
+              <settings layout="Hierarchic Group" zoom="1.0" x="365.5" y="907.5" />
+              <SelectedNodes>
+                <node>interactions.ReceiveChanges</node>
+              </SelectedNodes>
               <Categories>
                 <Category>Fields</Category>
                 <Category>Constructors</Category>
@@ -369,154 +371,7 @@
               <item name="cc3002-pinball" type="462c0819:PsiDirectoryNode" />
               <item name="src" type="462c0819:PsiDirectoryNode" />
               <item name="main" type="462c0819:PsiDirectoryNode" />
-              <item name="java" type="462c0819:PsiDirectoryNode" />
-              <item name="controller" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="cc3002-pinball" type="b2602c69:ProjectViewProjectNode" />
-              <item name="cc3002-pinball" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="462c0819:PsiDirectoryNode" />
-              <item name="java" type="462c0819:PsiDirectoryNode" />
-              <item name="facade" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="cc3002-pinball" type="b2602c69:ProjectViewProjectNode" />
-              <item name="cc3002-pinball" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="462c0819:PsiDirectoryNode" />
-              <item name="java" type="462c0819:PsiDirectoryNode" />
-              <item name="interactions" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="cc3002-pinball" type="b2602c69:ProjectViewProjectNode" />
-              <item name="cc3002-pinball" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="462c0819:PsiDirectoryNode" />
-              <item name="java" type="462c0819:PsiDirectoryNode" />
-              <item name="logic" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="cc3002-pinball" type="b2602c69:ProjectViewProjectNode" />
-              <item name="cc3002-pinball" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="462c0819:PsiDirectoryNode" />
-              <item name="java" type="462c0819:PsiDirectoryNode" />
-              <item name="logic" type="462c0819:PsiDirectoryNode" />
-              <item name="bonus" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="cc3002-pinball" type="b2602c69:ProjectViewProjectNode" />
-              <item name="cc3002-pinball" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="462c0819:PsiDirectoryNode" />
-              <item name="java" type="462c0819:PsiDirectoryNode" />
-              <item name="logic" type="462c0819:PsiDirectoryNode" />
-              <item name="gameelements" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="cc3002-pinball" type="b2602c69:ProjectViewProjectNode" />
-              <item name="cc3002-pinball" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="462c0819:PsiDirectoryNode" />
-              <item name="java" type="462c0819:PsiDirectoryNode" />
-              <item name="logic" type="462c0819:PsiDirectoryNode" />
-              <item name="gameelements" type="462c0819:PsiDirectoryNode" />
-              <item name="bumper" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="cc3002-pinball" type="b2602c69:ProjectViewProjectNode" />
-              <item name="cc3002-pinball" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="462c0819:PsiDirectoryNode" />
-              <item name="java" type="462c0819:PsiDirectoryNode" />
-              <item name="logic" type="462c0819:PsiDirectoryNode" />
-              <item name="gameelements" type="462c0819:PsiDirectoryNode" />
-              <item name="target" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="cc3002-pinball" type="b2602c69:ProjectViewProjectNode" />
-              <item name="cc3002-pinball" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="462c0819:PsiDirectoryNode" />
-              <item name="java" type="462c0819:PsiDirectoryNode" />
-              <item name="logic" type="462c0819:PsiDirectoryNode" />
-              <item name="table" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="cc3002-pinball" type="b2602c69:ProjectViewProjectNode" />
-              <item name="cc3002-pinball" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="462c0819:PsiDirectoryNode" />
               <item name="resources" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="cc3002-pinball" type="b2602c69:ProjectViewProjectNode" />
-              <item name="cc3002-pinball" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="test" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="cc3002-pinball" type="b2602c69:ProjectViewProjectNode" />
-              <item name="cc3002-pinball" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="test" type="462c0819:PsiDirectoryNode" />
-              <item name="java" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="cc3002-pinball" type="b2602c69:ProjectViewProjectNode" />
-              <item name="cc3002-pinball" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="test" type="462c0819:PsiDirectoryNode" />
-              <item name="java" type="462c0819:PsiDirectoryNode" />
-              <item name="logic" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="cc3002-pinball" type="b2602c69:ProjectViewProjectNode" />
-              <item name="cc3002-pinball" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="test" type="462c0819:PsiDirectoryNode" />
-              <item name="java" type="462c0819:PsiDirectoryNode" />
-              <item name="logic" type="462c0819:PsiDirectoryNode" />
-              <item name="bonus" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="cc3002-pinball" type="b2602c69:ProjectViewProjectNode" />
-              <item name="cc3002-pinball" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="test" type="462c0819:PsiDirectoryNode" />
-              <item name="java" type="462c0819:PsiDirectoryNode" />
-              <item name="logic" type="462c0819:PsiDirectoryNode" />
-              <item name="gameelements" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="cc3002-pinball" type="b2602c69:ProjectViewProjectNode" />
-              <item name="cc3002-pinball" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="test" type="462c0819:PsiDirectoryNode" />
-              <item name="java" type="462c0819:PsiDirectoryNode" />
-              <item name="logic" type="462c0819:PsiDirectoryNode" />
-              <item name="gameelements" type="462c0819:PsiDirectoryNode" />
-              <item name="bumper" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="cc3002-pinball" type="b2602c69:ProjectViewProjectNode" />
-              <item name="cc3002-pinball" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="test" type="462c0819:PsiDirectoryNode" />
-              <item name="java" type="462c0819:PsiDirectoryNode" />
-              <item name="logic" type="462c0819:PsiDirectoryNode" />
-              <item name="gameelements" type="462c0819:PsiDirectoryNode" />
-              <item name="target" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="cc3002-pinball" type="b2602c69:ProjectViewProjectNode" />
-              <item name="cc3002-pinball" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="test" type="462c0819:PsiDirectoryNode" />
-              <item name="java" type="462c0819:PsiDirectoryNode" />
-              <item name="logic" type="462c0819:PsiDirectoryNode" />
-              <item name="table" type="462c0819:PsiDirectoryNode" />
             </path>
           </expand>
           <select />
@@ -548,6 +403,9 @@
       <recent name="logic.bonus" />
       <recent name="logic.gameelements.bumper" />
       <recent name="logic.gameelements.target" />
+    </key>
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/diagrams" />
     </key>
     <key name="MoveClassesOrPackagesDialog.RECENTS_KEY">
       <recent name="logic.gameelements.target" />
@@ -785,7 +643,7 @@
       <workItem from="1527454254212" duration="31297000" />
       <workItem from="1530151698061" duration="5994000" />
       <workItem from="1530311661366" duration="597000" />
-      <workItem from="1530485908035" duration="17094000" />
+      <workItem from="1530485908035" duration="17803000" />
     </task>
     <servers />
   </component>
@@ -822,7 +680,7 @@
     </history-entry>
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="154391000" />
+    <option name="totallyTimeSpent" value="155100000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="39" y="-4" width="1327" height="772" extended-state="6" />
@@ -877,20 +735,6 @@
     <option name="FILTER_TARGETS" value="false" />
   </component>
   <component name="editorHistoryManager">
-    <entry file="jar:///usr/lib/jvm/java-8-oracle/src.zip!/java/util/Vector.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="26">
-          <caret line="631" column="40" lean-forward="true" selection-start-line="631" selection-start-column="40" selection-end-line="631" selection-end-column="40" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/logic/gameelements/Hittable.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="249">
-          <caret line="30" column="29" selection-start-line="30" selection-start-column="29" selection-end-line="30" selection-end-column="29" />
-        </state>
-      </provider>
-    </entry>
     <entry file="uml://JavaScript-modules-diagram//home/pancho/IdeaProjects/cc3002-pinball/src/main">
       <provider selected="true" editor-type-id="UmlEditorProvider">
         <state>
@@ -905,41 +749,6 @@
             <Category>All</Category>
           </Categories>
           <VISIBILITY>Details</VISIBILITY>
-        </state>
-      </provider>
-    </entry>
-    <entry file="uml://JAVA/">
-      <provider selected="true" editor-type-id="UmlEditorProvider">
-        <state>
-          <ID>JAVA</ID>
-          <OriginalElement />
-          <nodes>
-            <node x="169.0" y="380.0">com</node>
-            <node x="249.0" y="76.0">controller</node>
-            <node x="204.0" y="152.0">netscape</node>
-            <node x="0.0" y="380.0">junit</node>
-            <node x="368.0" y="228.0">oracle</node>
-            <node x="162.0" y="456.0">org</node>
-            <node x="185.0" y="228.0">facade</node>
-            <node x="0.0" y="456.0">sun</node>
-            <node x="0.0" y="152.0">META-INF</node>
-            <node x="323.0" y="456.0">jdk</node>
-            <node x="0.0" y="76.0">groovyjarjarasm</node>
-            <node x="335.0" y="380.0">java</node>
-            <node x="0.0" y="228.0">groovy</node>
-            <node x="179.0" y="304.0">javax</node>
-            <node x="0.0" y="0.0">groovyjarjarcommonscli</node>
-            <node x="352.0" y="304.0">logic</node>
-            <node x="0.0" y="304.0">javafx</node>
-            <node x="303.0" y="0.0">groovyjarjarantlr</node>
-          </nodes>
-          <notes />
-          <edges />
-          <settings layout="Hierarchic Group" zoom="0.7000000000000001" x="217.00000000000006" y="243.5" />
-          <SelectedNodes />
-          <Categories />
-          <SCOPE>All</SCOPE>
-          <VISIBILITY>private</VISIBILITY>
         </state>
       </provider>
     </entry>
@@ -1885,55 +1694,301 @@
         </state>
       </provider>
     </entry>
+    <entry file="uml://JAVA/">
+      <provider selected="true" editor-type-id="UmlEditorProvider">
+        <state>
+          <ID>JAVA</ID>
+          <OriginalElement />
+          <nodes>
+            <node x="" y="">logic.gameelements.Hittable</node>
+            <node x="" y="">controller</node>
+            <node x="" y="">logic.gameelements.bumper</node>
+            <node x="" y="">interactions</node>
+            <node x="" y="">logic.table</node>
+            <node x="" y="">logic.gameelements.target</node>
+            <node x="" y="">logic.bonus</node>
+          </nodes>
+          <notes />
+          <edges />
+          <settings layout="Hierarchic Group" zoom="1.0" x="375.5" y="273.5" />
+          <SelectedNodes />
+          <Categories>
+            <Category>Properties</Category>
+            <Category>Methods</Category>
+            <Category>Constructors</Category>
+            <Category>Fields</Category>
+            <Category>Inner Classes</Category>
+          </Categories>
+          <SCOPE>All</SCOPE>
+          <VISIBILITY>private</VISIBILITY>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/diagrams/fullDiagram.uml">
+      <provider selected="true" editor-type-id="UmlEditorProvider">
+        <state>
+          <ID>JAVA</ID>
+          <OriginalElement />
+          <nodes>
+            <node x="1007.5" y="714.0">controller.Game</node>
+            <node x="256.7499999999998" y="48.0">logic.gameelements.Hittable</node>
+            <node x="800.0" y="1302.0">logic.gameelements.target.SpotTarget</node>
+            <node x="75.5666666666666" y="713.5">logic.gameelements.bumper.AbstractBumper</node>
+            <node x="266.0" y="1241.0">logic.gameelements.bumper.PopBumper</node>
+            <node x="532.0" y="1302.0">logic.gameelements.target.DropTarget</node>
+            <node x="592.5" y="726.0">logic.gameelements.target.AbstractTarget</node>
+            <node x="1351.5666666666666" y="1265.5">logic.bonus.JackPotBonus</node>
+            <node x="1574.3749999999998" y="24.5">interactions.ReceiveChanges</node>
+            <node x="29.816666666666606" y="344.0">logic.gameelements.bumper.Bumper</node>
+            <node x="0.0" y="1241.0">logic.gameelements.bumper.KickerBumper</node>
+            <node x="720.3749999999998" y="0.0">interactions.AcceptObservation</node>
+            <node x="2132.125" y="1253.5">logic.bonus.ExtraBallBonus</node>
+            <node x="1762.5" y="773.5">logic.bonus.AbstractBonus</node>
+            <node x="1927.25" y="344.0">logic.bonus.Bonus</node>
+            <node x="1320.5" y="606.0">logic.table.GameTable</node>
+            <node x="1494.5" y="284.0">logic.table.Table</node>
+            <node x="1801.1249999999998" y="1265.5">logic.bonus.DropTargetBonus</node>
+            <node x="590.25" y="344.0">logic.gameelements.target.Target</node>
+            <node x="959.5" y="260.0">interactions.DefaultInteractions</node>
+          </nodes>
+          <notes />
+          <edges>
+            <edge source="controller.Game" target="interactions.DefaultInteractions">
+              <point x="0.0" y="-184.5" />
+              <point x="0.0" y="148.0" />
+            </edge>
+            <edge source="interactions.DefaultInteractions" target="interactions.AcceptObservation">
+              <point x="-97.25" y="-148.0" />
+              <point x="1056.75" y="240.0" />
+              <point x="963.4999999999998" y="240.0" />
+              <point x="48.625" y="100.0" />
+            </edge>
+            <edge source="logic.bonus.Bonus" target="interactions.ReceiveChanges">
+              <point x="0.0" y="-64.0" />
+              <point x="2030.25" y="240.0" />
+              <point x="1823.5416666666665" y="240.0" />
+              <point x="99.66666666666674" y="75.5" />
+            </edge>
+            <edge source="logic.gameelements.target.Target" target="interactions.AcceptObservation">
+              <point x="50.5" y="-64.0" />
+              <point x="741.75" y="240.0" />
+              <point x="866.2499999999998" y="240.0" />
+              <point x="-48.625" y="100.0" />
+            </edge>
+            <edge source="logic.gameelements.bumper.PopBumper" target="logic.gameelements.bumper.AbstractBumper">
+              <point x="0.0" y="-101.0" />
+              <point x="389.0" y="1216.0" />
+              <point x="350.8166666666666" y="1216.0" />
+              <point x="91.75" y="185.0" />
+            </edge>
+            <edge source="logic.table.Table" target="interactions.AcceptObservation">
+              <point x="-71.25" y="-124.0" />
+              <point x="1565.75" y="230.0" />
+              <point x="1060.75" y="230.0" />
+              <point x="145.8750000000001" y="100.0" />
+            </edge>
+            <edge source="logic.gameelements.bumper.KickerBumper" target="logic.gameelements.bumper.AbstractBumper">
+              <point x="0.0" y="-101.0" />
+              <point x="123.0" y="1216.0" />
+              <point x="167.3166666666666" y="1216.0" />
+              <point x="-91.75" y="185.0" />
+            </edge>
+            <edge source="logic.gameelements.bumper.Bumper" target="logic.gameelements.Hittable">
+              <point x="-68.75" y="-64.0" />
+              <point x="98.5666666666666" y="220.0" />
+              <point x="318.7499999999998" y="220.0" />
+              <point x="-62.0" y="52.0" />
+            </edge>
+            <edge source="logic.gameelements.target.DropTarget" target="logic.gameelements.target.AbstractTarget">
+              <point x="0.0" y="-40.0" />
+              <point x="656.0" y="1216.0" />
+              <point x="691.25" y="1216.0" />
+              <point x="-98.75" y="172.5" />
+            </edge>
+            <edge source="logic.bonus.AbstractBonus" target="interactions.DefaultInteractions">
+              <point x="-89.25" y="-125.0" />
+              <point x="1851.75" y="576.0" />
+              <point x="1309.6000000000001" y="576.0" />
+              <point x="155.60000000000014" y="148.0" />
+            </edge>
+            <edge source="logic.gameelements.bumper.AbstractBumper" target="logic.gameelements.bumper.Bumper">
+              <point x="-91.75" y="-185.0" />
+              <point x="0.0" y="64.0" />
+            </edge>
+            <edge source="interactions.DefaultInteractions" target="interactions.ReceiveChanges">
+              <point x="97.25" y="-148.0" />
+              <point x="1251.25" y="240.0" />
+              <point x="1624.208333333333" y="240.0" />
+              <point x="-99.66666666666674" y="75.5" />
+            </edge>
+            <edge source="logic.bonus.ExtraBallBonus" target="logic.bonus.AbstractBonus">
+              <point x="0.0" y="-88.5" />
+              <point x="2287.625" y="1216.0" />
+              <point x="2060.0" y="1216.0" />
+              <point x="119.0" y="125.0" />
+            </edge>
+            <edge source="logic.table.GameTable" target="interactions.DefaultInteractions">
+              <point x="-105.5" y="-292.5" />
+              <point x="1426.0" y="586.0" />
+              <point x="1231.8000000000002" y="586.0" />
+              <point x="77.80000000000018" y="148.0" />
+            </edge>
+            <edge source="logic.table.Table" target="interactions.ReceiveChanges">
+              <point x="71.25" y="-124.0" />
+              <point x="1708.25" y="240.0" />
+              <point x="1723.8749999999998" y="240.0" />
+              <point x="0.0" y="75.5" />
+            </edge>
+            <edge source="logic.bonus.DropTargetBonus" target="logic.bonus.AbstractBonus">
+              <point x="0.0" y="-76.5" />
+              <point x="1956.6249999999998" y="1216.0" />
+              <point x="1941.0" y="1216.0" />
+              <point x="0.0" y="125.0" />
+            </edge>
+            <edge source="logic.gameelements.bumper.Bumper" target="interactions.AcceptObservation">
+              <point x="68.75" y="-64.0" />
+              <point x="236.0666666666666" y="230.0" />
+              <point x="768.9999999999998" y="230.0" />
+              <point x="-145.875" y="100.0" />
+            </edge>
+            <edge source="logic.gameelements.target.Target" target="logic.gameelements.Hittable">
+              <point x="-50.5" y="-64.0" />
+              <point x="640.75" y="220.0" />
+              <point x="442.7499999999998" y="220.0" />
+              <point x="62.0" y="52.0" />
+            </edge>
+            <edge source="logic.gameelements.target.AbstractTarget" target="interactions.DefaultInteractions">
+              <point x="98.75" y="-172.5" />
+              <point x="888.75" y="586.0" />
+              <point x="1076.2" y="586.0" />
+              <point x="-77.79999999999995" y="148.0" />
+            </edge>
+            <edge source="logic.table.GameTable" target="logic.table.Table">
+              <point x="105.5" y="-292.5" />
+              <point x="0.0" y="124.0" />
+            </edge>
+            <edge source="logic.gameelements.bumper.AbstractBumper" target="interactions.DefaultInteractions">
+              <point x="91.75" y="-185.0" />
+              <point x="350.8166666666666" y="576.0" />
+              <point x="998.3999999999999" y="576.0" />
+              <point x="-155.60000000000002" y="148.0" />
+            </edge>
+            <edge source="logic.gameelements.target.SpotTarget" target="logic.gameelements.target.AbstractTarget">
+              <point x="0.0" y="-40.0" />
+              <point x="924.0" y="1216.0" />
+              <point x="888.75" y="1216.0" />
+              <point x="98.75" y="172.5" />
+            </edge>
+            <edge source="logic.bonus.JackPotBonus" target="logic.bonus.AbstractBonus">
+              <point x="0.0" y="-76.5" />
+              <point x="1504.0666666666666" y="1216.0" />
+              <point x="1822.0" y="1216.0" />
+              <point x="-119.0" y="125.0" />
+            </edge>
+            <edge source="logic.bonus.AbstractBonus" target="logic.bonus.Bonus">
+              <point x="89.25" y="-125.0" />
+              <point x="0.0" y="64.0" />
+            </edge>
+            <edge source="logic.gameelements.target.AbstractTarget" target="logic.gameelements.target.Target">
+              <point x="-98.75" y="-172.5" />
+              <point x="0.0" y="64.0" />
+            </edge>
+          </edges>
+          <settings layout="Hierarchic Group" zoom="1.0" x="1020.4999999999999" y="668.0" />
+          <SelectedNodes />
+          <Categories>
+            <Category>Fields</Category>
+            <Category>Constructors</Category>
+            <Category>Methods</Category>
+            <Category>Properties</Category>
+            <Category>Inner Classes</Category>
+          </Categories>
+          <SCOPE>All</SCOPE>
+          <VISIBILITY>private</VISIBILITY>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/diagrams/packageDependencies.uml">
+      <provider selected="true" editor-type-id="UmlEditorProvider">
+        <state>
+          <ID>JAVA</ID>
+          <OriginalElement />
+          <nodes>
+            <node x="" y="">logic.gameelements.Hittable</node>
+            <node x="" y="">controller</node>
+            <node x="" y="">logic.gameelements.bumper</node>
+            <node x="" y="">interactions</node>
+            <node x="" y="">logic.table</node>
+            <node x="" y="">logic.gameelements.target</node>
+            <node x="" y="">logic.bonus</node>
+          </nodes>
+          <notes />
+          <edges />
+          <settings layout="Hierarchic Group" zoom="1.0" x="281.0" y="550.0" />
+          <SelectedNodes />
+          <Categories>
+            <Category>Fields</Category>
+            <Category>Constructors</Category>
+            <Category>Methods</Category>
+            <Category>Properties</Category>
+            <Category>Inner Classes</Category>
+          </Categories>
+          <SCOPE>All</SCOPE>
+          <VISIBILITY>private</VISIBILITY>
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/diagrams/table.uml">
       <provider selected="true" editor-type-id="UmlEditorProvider">
         <state>
           <ID>JAVA</ID>
           <OriginalElement>logic.table</OriginalElement>
           <nodes>
-            <node x="341.5" y="0.0">interactions.AcceptObservation</node>
-            <node x="167.25" y="596.0">logic.table.GameTable</node>
-            <node x="419.5" y="274.0">logic.table.Table</node>
-            <node x="0.0" y="250.0">interactions.DefaultInteractions</node>
-            <node x="22.5" y="24.5">interactions.ReceiveChanges</node>
+            <node x="319.0" y="0.0">interactions.AcceptObservation</node>
+            <node x="118.75" y="596.0">logic.table.GameTable</node>
+            <node x="3.5" y="274.0">logic.table.Table</node>
+            <node x="319.0" y="250.0">interactions.DefaultInteractions</node>
+            <node x="0.0" y="24.5">interactions.ReceiveChanges</node>
           </nodes>
           <notes />
           <edges>
             <edge source="logic.table.Table" target="interactions.AcceptObservation">
               <point x="71.25" y="-124.0" />
-              <point x="97.25" y="100.0" />
+              <point x="217.25" y="230.0" />
+              <point x="416.25" y="230.0" />
+              <point x="-97.25" y="100.0" />
             </edge>
             <edge source="interactions.DefaultInteractions" target="interactions.AcceptObservation">
               <point x="97.25" y="-148.0" />
-              <point x="291.75" y="230.0" />
-              <point x="438.75" y="230.0" />
-              <point x="-97.25" y="100.0" />
+              <point x="97.25" y="100.0" />
             </edge>
             <edge source="logic.table.GameTable" target="interactions.DefaultInteractions">
-              <point x="-105.5" y="-292.5" />
-              <point x="272.75" y="571.0" />
-              <point x="194.5" y="571.0" />
+              <point x="105.5" y="-292.5" />
+              <point x="435.25" y="571.0" />
+              <point x="513.5" y="571.0" />
               <point x="0.0" y="148.0" />
             </edge>
             <edge source="logic.table.Table" target="interactions.ReceiveChanges">
               <point x="-71.25" y="-124.0" />
-              <point x="490.75" y="220.0" />
-              <point x="246.75" y="220.0" />
-              <point x="74.75" y="75.5" />
+              <point x="-74.75" y="75.5" />
             </edge>
             <edge source="logic.table.GameTable" target="logic.table.Table">
-              <point x="105.5" y="-292.5" />
-              <point x="483.75" y="571.0" />
-              <point x="562.0" y="571.0" />
+              <point x="-105.5" y="-292.5" />
+              <point x="224.25" y="571.0" />
+              <point x="146.0" y="571.0" />
               <point x="0.0" y="124.0" />
             </edge>
             <edge source="interactions.DefaultInteractions" target="interactions.ReceiveChanges">
               <point x="-97.25" y="-148.0" />
-              <point x="-74.75" y="75.5" />
+              <point x="416.25" y="220.0" />
+              <point x="224.25" y="220.0" />
+              <point x="74.75" y="75.5" />
             </edge>
           </edges>
-          <settings layout="Hierarchic Group" zoom="1.0" x="365.5" y="283.5" />
-          <SelectedNodes />
+          <settings layout="Hierarchic Group" zoom="1.0" x="365.5" y="907.5" />
+          <SelectedNodes>
+            <node>interactions.ReceiveChanges</node>
+          </SelectedNodes>
           <Categories>
             <Category>Fields</Category>
             <Category>Constructors</Category>
