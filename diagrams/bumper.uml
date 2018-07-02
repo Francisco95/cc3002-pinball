@@ -1,0 +1,80 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Diagram>
+  <ID>JAVA</ID>
+  <OriginalElement>logic.gameelements.bumper</OriginalElement>
+  <nodes>
+    <node x="728.0" y="48.0">logic.gameelements.Hittable</node>
+    <node x="593.875" y="334.0">logic.gameelements.bumper.Bumper</node>
+    <node x="525.0" y="1016.0">logic.gameelements.bumper.KickerBumper</node>
+    <node x="319.0" y="0.0">interactions.AcceptObservation</node>
+    <node x="331.5" y="596.0">logic.gameelements.bumper.AbstractBumper</node>
+    <node x="259.0" y="1016.0">logic.gameelements.bumper.PopBumper</node>
+    <node x="88.375" y="250.0">interactions.DefaultInteractions</node>
+    <node x="0.0" y="24.5">interactions.ReceiveChanges</node>
+  </nodes>
+  <notes />
+  <edges>
+    <edge source="logic.gameelements.bumper.KickerBumper" target="logic.gameelements.bumper.AbstractBumper">
+      <point x="0.0" y="-101.0" />
+      <point x="648.0" y="991.0" />
+      <point x="606.75" y="991.0" />
+      <point x="91.75" y="185.0" />
+    </edge>
+    <edge source="interactions.DefaultInteractions" target="interactions.AcceptObservation">
+      <point x="97.25" y="-148.0" />
+      <point x="380.125" y="225.0" />
+      <point x="416.25" y="225.0" />
+      <point x="-97.25" y="100.0" />
+    </edge>
+    <edge source="logic.gameelements.bumper.Bumper" target="logic.gameelements.Hittable">
+      <point x="68.75" y="-64.0" />
+      <point x="800.125" y="225.0" />
+      <point x="852.0" y="225.0" />
+      <point x="0.0" y="52.0" />
+    </edge>
+    <edge source="logic.gameelements.bumper.AbstractBumper" target="interactions.DefaultInteractions">
+      <point x="-91.75" y="-185.0" />
+      <point x="423.25" y="571.0" />
+      <point x="282.875" y="571.0" />
+      <point x="0.0" y="148.0" />
+    </edge>
+    <edge source="logic.gameelements.bumper.PopBumper" target="logic.gameelements.bumper.AbstractBumper">
+      <point x="0.0" y="-101.0" />
+      <point x="382.0" y="991.0" />
+      <point x="423.25" y="991.0" />
+      <point x="-91.75" y="185.0" />
+    </edge>
+    <edge source="logic.gameelements.bumper.Bumper" target="interactions.AcceptObservation">
+      <point x="-68.75" y="-64.0" />
+      <point x="662.625" y="225.0" />
+      <point x="610.75" y="225.0" />
+      <point x="97.25" y="100.0" />
+    </edge>
+    <edge source="logic.gameelements.bumper.AbstractBumper" target="logic.gameelements.bumper.Bumper">
+      <point x="91.75" y="-185.0" />
+      <point x="606.75" y="571.0" />
+      <point x="731.375" y="571.0" />
+      <point x="0.0" y="64.0" />
+    </edge>
+    <edge source="interactions.DefaultInteractions" target="interactions.ReceiveChanges">
+      <point x="-97.25" y="-148.0" />
+      <point x="185.625" y="225.0" />
+      <point x="149.5" y="225.0" />
+      <point x="0.0" y="75.5" />
+    </edge>
+  </edges>
+  <settings layout="Hierarchic Group" zoom="1.0" x="487.99999999999994" y="609.0" />
+  <SelectedNodes>
+    <node>logic.gameelements.bumper.AbstractBumper</node>
+  </SelectedNodes>
+  <Categories>
+    <Category>Fields</Category>
+    <Category>Constructors</Category>
+    <Category>Methods</Category>
+    <Category>Properties</Category>
+    <Category>Inner Classes</Category>
+  </Categories>
+  <SCOPE>All</SCOPE>
+  <VISIBILITY>private</VISIBILITY>
+</Diagram>
+

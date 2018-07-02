@@ -1,0 +1,161 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Diagram>
+  <ID>JAVA</ID>
+  <OriginalElement>logic</OriginalElement>
+  <nodes>
+    <node x="328.48358974358973" y="262.0">logic.table</node>
+    <node x="85.48358974358973" y="262.0">logic.gameelements</node>
+    <node x="30.0" y="433.0">controller</node>
+    <node x="251.33273199023202" y="0.0">logic.bonus</node>
+    <node x="220.8381623931624" y="554.0">facade</node>
+    <node x="213.4591147741148" y="161.0">interactions</node>
+  </nodes>
+  <notes />
+  <edges>
+    <edge source="interactions" target="logic.table">
+      <point x="75.0" y="15.5" />
+      <point x="375.9591147741148" y="212.0" />
+      <point x="391.98358974358973" y="212.0" />
+      <point x="0.0" y="-15.5" />
+    </edge>
+    <edge source="facade" target="controller">
+      <point x="-34.5" y="-15.5" />
+      <point x="255.3381623931624" y="524.0" />
+      <point x="142.0" y="524.0" />
+      <point x="32.0" y="15.5" />
+    </edge>
+    <edge source="interactions" target="logic.bonus">
+      <point x="-65.625" y="-15.5" />
+      <point x="235.3341147741148" y="121.0" />
+      <point x="314.01130341880344" y="121.0" />
+      <point x="-4.821428571428555" y="15.5" />
+    </edge>
+    <edge source="logic.bonus" target="logic.table">
+      <point x="43.39285714285711" y="15.5" />
+      <point x="362.2255891330891" y="121.0" />
+      <point x="419.6376862026862" y="121.0" />
+      <point x="419.6376862026862" y="242.0" />
+      <point x="428.269304029304" y="242.0" />
+      <point x="36.28571428571428" y="-15.5" />
+    </edge>
+    <edge source="controller" target="controller">
+      <point x="-32.0" y="15.5" />
+      <point x="78.0" y="494.0" />
+      <point x="0.0" y="494.0" />
+      <point x="0.0" y="440.75" />
+      <point x="-80.0" y="-7.75" />
+    </edge>
+    <edge source="logic.table" target="logic.bonus">
+      <point x="54.428571428571445" y="-15.5" />
+      <point x="446.4121611721612" y="232.0" />
+      <point x="430.6376862026862" y="232.0" />
+      <point x="430.6376862026862" y="111.0" />
+      <point x="371.8684462759463" y="111.0" />
+      <point x="53.03571428571428" y="15.5" />
+    </edge>
+    <edge source="logic.bonus" target="logic.bonus">
+      <point x="-53.03571428571428" y="15.5" />
+      <point x="265.79701770451777" y="61.0" />
+      <point x="221.33273199023202" y="61.0" />
+      <point x="221.33273199023202" y="7.75" />
+      <point x="-67.5" y="-7.75" />
+    </edge>
+    <edge source="facade" target="logic.bonus">
+      <point x="57.500000000000014" y="-15.5" />
+      <point x="347.3381623931624" y="534.0" />
+      <point x="466.5907326007326" y="534.0" />
+      <point x="466.5907326007326" y="101.0" />
+      <point x="381.51130341880344" y="101.0" />
+      <point x="62.678571428571445" y="15.5" />
+    </edge>
+    <edge source="logic.table" target="interactions">
+      <point x="-36.28571428571428" y="-15.5" />
+      <point x="355.69787545787545" y="232.0" />
+      <point x="325.9591147741148" y="232.0" />
+      <point x="25.0" y="15.5" />
+    </edge>
+    <edge source="logic.table" target="logic.table">
+      <point x="-56.44444444444444" y="15.5" />
+      <point x="335.5391452991453" y="313.0" />
+      <point x="308.48358974358973" y="313.0" />
+      <point x="308.48358974358973" y="285.25" />
+      <point x="-63.5" y="7.75" />
+    </edge>
+    <edge source="logic.bonus" target="interactions">
+      <point x="4.821428571428555" y="15.5" />
+      <point x="323.65416056166055" y="131.0" />
+      <point x="279.0841147741148" y="131.0" />
+      <point x="-21.875" y="-15.5" />
+    </edge>
+    <edge source="facade" target="logic.table">
+      <point x="34.5" y="-15.5" />
+      <point x="324.3381623931624" y="524.0" />
+      <point x="430.96705128205133" y="524.0" />
+      <point x="430.96705128205133" y="413.0" />
+      <point x="448.4280341880342" y="413.0" />
+      <point x="56.44444444444446" y="15.5" />
+    </edge>
+    <edge source="controller" target="logic.bonus">
+      <point x="-61.538461538461576" y="-15.5" />
+      <point x="48.461538461538424" y="403.0" />
+      <point x="19.983589743589732" y="403.0" />
+      <point x="19.983589743589732" y="91.0" />
+      <point x="285.082731990232" y="91.0" />
+      <point x="-33.75" y="15.5" />
+    </edge>
+    <edge source="interactions" target="controller">
+      <point x="-50.0" y="15.5" />
+      <point x="250.9591147741148" y="232.0" />
+      <point x="63.98358974358973" y="232.0" />
+      <point x="63.98358974358973" y="363.0" />
+      <point x="97.69230769230768" y="363.0" />
+      <point x="-12.30769230769232" y="-15.5" />
+    </edge>
+    <edge source="controller" target="interactions">
+      <point x="-2.8421709430404007E-14" y="-15.5" />
+      <point x="109.99999999999997" y="353.0" />
+      <point x="74.98358974358973" y="353.0" />
+      <point x="74.98358974358973" y="242.0" />
+      <point x="275.9591147741148" y="242.0" />
+      <point x="-25.0" y="15.5" />
+    </edge>
+    <edge source="logic.bonus" target="controller">
+      <point x="-14.464285714285722" y="15.5" />
+      <point x="304.3684462759463" y="111.0" />
+      <point x="41.98358974358973" y="111.0" />
+      <point x="41.98358974358973" y="383.0" />
+      <point x="73.07692307692307" y="383.0" />
+      <point x="-36.923076923076934" y="-15.5" />
+    </edge>
+    <edge source="controller" target="logic.gameelements">
+      <point x="12.307692307692292" y="-15.5" />
+      <point x="122.30769230769229" y="343.0" />
+      <point x="181.98358974358973" y="343.0" />
+      <point x="0.0" y="15.5" />
+    </edge>
+    <edge source="logic.table" target="controller">
+      <point x="28.22222222222223" y="15.5" />
+      <point x="420.20581196581196" y="393.0" />
+      <point x="183.84615384615384" y="393.0" />
+      <point x="73.84615384615384" y="-15.5" />
+    </edge>
+    <edge source="controller" target="logic.table">
+      <point x="36.923076923076906" y="-15.5" />
+      <point x="146.9230769230769" y="363.0" />
+      <point x="377.87247863247865" y="363.0" />
+      <point x="-14.111111111111114" y="15.5" />
+    </edge>
+  </edges>
+  <settings layout="Hierarchic Group" zoom="1.0" x="233.5" y="292.5" />
+  <SelectedNodes />
+  <Categories>
+    <Category>Fields</Category>
+    <Category>Constructors</Category>
+    <Category>Methods</Category>
+    <Category>Properties</Category>
+    <Category>Inner Classes</Category>
+  </Categories>
+  <SCOPE>All</SCOPE>
+  <VISIBILITY>private</VISIBILITY>
+</Diagram>
+

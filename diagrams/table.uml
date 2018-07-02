@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Diagram>
+  <ID>JAVA</ID>
+  <OriginalElement>logic.table</OriginalElement>
+  <nodes>
+    <node x="0.0" y="0.0">interactions.AcceptObservation</node>
+    <node x="167.25" y="596.0">logic.table.GameTable</node>
+    <node x="419.5" y="274.0">logic.table.Table</node>
+    <node x="0.0" y="250.0">interactions.DefaultInteractions</node>
+    <node x="409.0" y="24.5">interactions.ReceiveChanges</node>
+  </nodes>
+  <notes />
+  <edges>
+    <edge source="interactions.DefaultInteractions" target="interactions.AcceptObservation">
+      <point x="-97.25" y="-148.0" />
+      <point x="-97.25" y="100.0" />
+    </edge>
+    <edge source="logic.table.GameTable" target="interactions.DefaultInteractions">
+      <point x="-105.5" y="-292.5" />
+      <point x="272.75" y="571.0" />
+      <point x="194.5" y="571.0" />
+      <point x="0.0" y="148.0" />
+    </edge>
+    <edge source="logic.table.Table" target="interactions.ReceiveChanges">
+      <point x="71.25" y="-124.0" />
+      <point x="74.75" y="75.5" />
+    </edge>
+    <edge source="logic.table.Table" target="interactions.AcceptObservation">
+      <point x="-71.25" y="-124.0" />
+      <point x="490.75" y="220.0" />
+      <point x="291.75" y="220.0" />
+      <point x="97.25" y="100.0" />
+    </edge>
+    <edge source="logic.table.GameTable" target="logic.table.Table">
+      <point x="105.5" y="-292.5" />
+      <point x="483.75" y="571.0" />
+      <point x="562.0" y="571.0" />
+      <point x="0.0" y="124.0" />
+    </edge>
+    <edge source="interactions.DefaultInteractions" target="interactions.ReceiveChanges">
+      <point x="97.25" y="-148.0" />
+      <point x="291.75" y="230.0" />
+      <point x="483.75" y="230.0" />
+      <point x="-74.75" y="75.5" />
+    </edge>
+  </edges>
+  <settings layout="Hierarchic Group" zoom="1.0" x="467.5" y="273.5" />
+  <SelectedNodes />
+  <Categories>
+    <Category>Fields</Category>
+    <Category>Constructors</Category>
+    <Category>Methods</Category>
+    <Category>Properties</Category>
+    <Category>Inner Classes</Category>
+  </Categories>
+  <SCOPE>All</SCOPE>
+  <VISIBILITY>private</VISIBILITY>
+</Diagram>
+

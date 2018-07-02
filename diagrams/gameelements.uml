@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Diagram>
+  <ID>JAVA</ID>
+  <OriginalElement>logic.gameelements</OriginalElement>
+  <nodes>
+    <node x="210.15104166666669" y="0.0">logic.gameelements.Hittable</node>
+    <node x="0.0" y="164.0">logic.gameelements.target</node>
+    <node x="221.38020833333337" y="164.0">logic.gameelements.bumper</node>
+    <node x="15.151041666666657" y="36.5">interactions</node>
+  </nodes>
+  <notes />
+  <edges>
+    <edge source="logic.gameelements.bumper" target="logic.gameelements.Hittable">
+      <point x="48.66666666666666" y="-15.5" />
+      <point x="343.046875" y="144.0" />
+      <point x="396.1510416666667" y="144.0" />
+      <point x="62.0" y="52.0" />
+    </edge>
+    <edge source="logic.gameelements.target" target="logic.gameelements.Hittable">
+      <point x="45.0" y="-15.5" />
+      <point x="112.5" y="144.0" />
+      <point x="272.1510416666667" y="144.0" />
+      <point x="-62.0" y="52.0" />
+    </edge>
+    <edge source="logic.gameelements.bumper" target="interactions">
+      <point x="-48.66666666666666" y="-15.5" />
+      <point x="245.71354166666669" y="134.0" />
+      <point x="124.52604166666666" y="134.0" />
+      <point x="21.875" y="15.5" />
+    </edge>
+    <edge source="logic.gameelements.target" target="interactions">
+      <point x="0.0" y="-15.5" />
+      <point x="67.5" y="144.0" />
+      <point x="80.77604166666666" y="144.0" />
+      <point x="-21.875" y="15.5" />
+    </edge>
+  </edges>
+  <settings layout="Hierarchic Group" zoom="1.0" x="229.5" y="97.5" />
+  <SelectedNodes>
+    <node>logic.gameelements.Hittable</node>
+  </SelectedNodes>
+  <Categories>
+    <Category>Fields</Category>
+    <Category>Constructors</Category>
+    <Category>Methods</Category>
+    <Category>Properties</Category>
+    <Category>Inner Classes</Category>
+  </Categories>
+  <SCOPE>All</SCOPE>
+  <VISIBILITY>private</VISIBILITY>
+</Diagram>
+
