@@ -1,36 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="5c0df648-bc0e-4a98-aea7-63ac5c545235" name="Default" comment="">
-      <change afterPath="$PROJECT_DIR$/src/main/java/interactions/ReceiveChanges.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/controller/EventAcceptor.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/controller/EventVisitor.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/controller/Game.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/controller/Game.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/facade/HomeworkTwoFacade.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/facade/HomeworkTwoFacade.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/logic/bonus/AbstractBonus.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/logic/bonus/AbstractBonus.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/logic/bonus/Bonus.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/logic/bonus/Bonus.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/logic/bonus/DropTargetBonus.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/logic/bonus/DropTargetBonus.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/logic/bonus/ExtraBallBonus.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/logic/bonus/ExtraBallBonus.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/logic/bonus/JackPotBonus.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/logic/bonus/JackPotBonus.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/logic/gameelements/bumper/AbstractBumper.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/logic/gameelements/bumper/AbstractBumper.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/logic/gameelements/bumper/Bumper.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/logic/gameelements/bumper/Bumper.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/logic/gameelements/bumper/KickerBumper.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/logic/gameelements/bumper/KickerBumper.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/logic/gameelements/bumper/PopBumper.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/logic/gameelements/bumper/PopBumper.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/logic/gameelements/target/AbstractTarget.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/logic/gameelements/target/AbstractTarget.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/logic/gameelements/target/Target.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/logic/gameelements/target/Target.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/logic/table/GameTable.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/logic/table/GameTable.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/logic/table/Table.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/logic/table/Table.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/controller/GameTest.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/logic/bonus/DropTargetBonusTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/logic/bonus/DropTargetBonusTest.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/logic/bonus/ExtraBallBonusTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/logic/bonus/ExtraBallBonusTest.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/logic/bonus/JackPotBonusTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/logic/bonus/JackPotBonusTest.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/logic/gameelements/bumper/KickerBumperTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/logic/gameelements/bumper/KickerBumperTest.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/logic/gameelements/bumper/PopBumperTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/logic/gameelements/bumper/PopBumperTest.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/logic/gameelements/target/DropTargetTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/logic/gameelements/target/DropTargetTest.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/logic/gameelements/target/SpotTargetTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/logic/gameelements/target/SpotTargetTest.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/logic/table/GameTableTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/logic/table/GameTableTest.java" afterDir="false" />
-    </list>
+    <list default="true" id="5c0df648-bc0e-4a98-aea7-63ac5c545235" name="Default" comment="" />
     <ignored path="$PROJECT_DIR$/out/" />
     <ignored path="$PROJECT_DIR$/target/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -78,110 +49,174 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="Game.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/controller/Game.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="324">
-              <caret line="135" column="9" lean-forward="true" selection-start-line="133" selection-start-column="8" selection-end-line="135" selection-end-column="9" />
-              <folding>
-                <element signature="imports" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="GameTable.java" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/src/main/java/logic/table/GameTable.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="299">
-              <caret line="95" selection-start-line="95" selection-end-line="95" />
-              <folding>
-                <element signature="imports" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="DropTarget.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/logic/gameelements/target/DropTarget.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="149">
-              <caret line="10" column="40" selection-start-line="10" selection-start-column="40" selection-end-line="10" selection-end-column="40" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="Table.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/logic/table/Table.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="255">
-              <caret line="17" column="66" lean-forward="true" selection-start-line="17" selection-start-column="66" selection-end-line="17" selection-end-column="66" />
-              <folding>
-                <element signature="imports" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="AbstractTarget.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/logic/gameelements/target/AbstractTarget.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="135">
-              <caret line="104" column="64" selection-start-line="104" selection-start-column="64" selection-end-line="104" selection-end-column="64" />
-              <folding>
-                <element signature="imports" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="SpotTarget.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/logic/gameelements/target/SpotTarget.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="210">
-              <caret line="14" column="13" lean-forward="true" selection-start-line="14" selection-start-column="13" selection-end-line="14" selection-end-column="13" />
-              <folding>
-                <element signature="imports" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="KickerBumper.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/logic/gameelements/bumper/KickerBumper.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="249">
-              <caret line="57" column="5" selection-start-line="57" selection-start-column="5" selection-end-line="57" selection-end-column="5" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="PopBumper.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/logic/gameelements/bumper/PopBumper.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="114">
-              <caret line="29" column="23" lean-forward="true" selection-start-line="29" selection-start-column="23" selection-end-line="29" selection-end-column="23" />
-              <folding>
-                <element signature="imports" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
       <file leaf-file-name="AbstractBumper.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/java/logic/gameelements/bumper/AbstractBumper.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="264">
-              <caret line="133" column="5" selection-start-line="133" selection-start-column="5" selection-end-line="133" selection-end-column="5" />
+            <state relative-caret-position="290">
+              <caret line="93" lean-forward="true" selection-start-line="93" selection-end-line="93" />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="Bumper.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/logic/gameelements/bumper/Bumper.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="150">
-              <caret line="15" column="42" selection-start-line="15" selection-start-column="42" selection-end-line="15" selection-end-column="42" />
+      <file leaf-file-name="gameelements.uml" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/diagrams/gameelements.uml">
+          <provider selected="true" editor-type-id="UmlEditorProvider">
+            <state>
+              <ID>JAVA</ID>
+              <OriginalElement>logic.gameelements</OriginalElement>
+              <nodes>
+                <node x="195.73125000000002" y="0.0">logic.gameelements.Hittable</node>
+                <node x="95.91111111111113" y="305.0">logic.gameelements.target</node>
+                <node x="90.41111111111113" y="164.0">logic.gameelements.bumper</node>
+                <node x="0.0" y="36.5">interactions</node>
+              </nodes>
+              <notes />
+              <edges>
+                <edge source="logic.gameelements.bumper" target="logic.gameelements.Hittable">
+                  <point x="58.400000000000006" y="-15.5" />
+                  <point x="221.81111111111113" y="144.0" />
+                  <point x="257.73125000000005" y="144.0" />
+                  <point x="-62.0" y="52.0" />
+                </edge>
+                <edge source="logic.gameelements.target" target="logic.gameelements.Hittable">
+                  <point x="60.0" y="-15.5" />
+                  <point x="223.41111111111113" y="285.0" />
+                  <point x="375.5951388888889" y="285.0" />
+                  <point x="375.5951388888889" y="144.0" />
+                  <point x="381.73125000000005" y="144.0" />
+                  <point x="62.0" y="52.0" />
+                </edge>
+                <edge source="interactions" target="logic.gameelements.target">
+                  <point x="-76.5625" y="15.5" />
+                  <point x="10.9375" y="144.0" />
+                  <point x="6.911111111111126" y="144.0" />
+                  <point x="6.911111111111126" y="285.0" />
+                  <point x="103.41111111111113" y="285.0" />
+                  <point x="-60.0" y="-15.5" />
+                </edge>
+                <edge source="logic.gameelements.bumper" target="logic.gameelements.target">
+                  <point x="62.571428571428555" y="15.5" />
+                  <point x="225.98253968253968" y="275.0" />
+                  <point x="208.41111111111113" y="275.0" />
+                  <point x="45.0" y="-15.5" />
+                </edge>
+                <edge source="interactions" target="logic.gameelements.bumper">
+                  <point x="76.5625" y="15.5" />
+                  <point x="164.0625" y="134.0" />
+                  <point x="192.61111111111111" y="134.0" />
+                  <point x="29.19999999999999" y="-15.5" />
+                </edge>
+                <edge source="logic.gameelements.bumper" target="logic.gameelements.bumper">
+                  <point x="-20.857142857142854" y="15.5" />
+                  <point x="142.55396825396826" y="235.0" />
+                  <point x="50.411111111111126" y="235.0" />
+                  <point x="50.411111111111126" y="169.16666666666666" />
+                  <point x="-73.0" y="-10.333333333333343" />
+                </edge>
+                <edge source="logic.gameelements.target" target="logic.gameelements.bumper">
+                  <point x="15.0" y="-15.5" />
+                  <point x="178.41111111111113" y="285.0" />
+                  <point x="184.26825396825396" y="285.0" />
+                  <point x="20.857142857142833" y="15.5" />
+                </edge>
+                <edge source="logic.gameelements.target" target="logic.gameelements.target">
+                  <point x="45.0" y="15.5" />
+                  <point x="208.41111111111113" y="376.0" />
+                  <point x="55.911111111111126" y="376.0" />
+                  <point x="55.911111111111126" y="310.1666666666667" />
+                  <point x="-67.5" y="-10.333333333333336" />
+                </edge>
+                <edge source="logic.gameelements.bumper" target="interactions">
+                  <point x="-29.19999999999999" y="-15.5" />
+                  <point x="134.21111111111114" y="144.0" />
+                  <point x="120.3125" y="144.0" />
+                  <point x="32.8125" y="15.5" />
+                </edge>
+                <edge source="logic.gameelements.target" target="interactions">
+                  <point x="-45.0" y="-15.5" />
+                  <point x="118.41111111111113" y="275.0" />
+                  <point x="17.911111111111126" y="275.0" />
+                  <point x="17.911111111111126" y="124.0" />
+                  <point x="32.8125" y="124.0" />
+                  <point x="-54.6875" y="15.5" />
+                </edge>
+              </edges>
+              <settings layout="Hierarchic Group" zoom="1.0" x="28.0" y="120.0" />
+              <SelectedNodes>
+                <node>logic.gameelements.Hittable</node>
+              </SelectedNodes>
+              <Categories>
+                <Category>Fields</Category>
+                <Category>Constructors</Category>
+                <Category>Methods</Category>
+                <Category>Properties</Category>
+                <Category>Inner Classes</Category>
+              </Categories>
+              <SCOPE>All</SCOPE>
+              <VISIBILITY>private</VISIBILITY>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="table.uml" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/diagrams/table.uml">
+          <provider selected="true" editor-type-id="UmlEditorProvider">
+            <state>
+              <ID>JAVA</ID>
+              <OriginalElement>logic.table</OriginalElement>
+              <nodes>
+                <node x="341.5" y="0.0">interactions.AcceptObservation</node>
+                <node x="167.25" y="596.0">logic.table.GameTable</node>
+                <node x="419.5" y="274.0">logic.table.Table</node>
+                <node x="0.0" y="250.0">interactions.DefaultInteractions</node>
+                <node x="22.5" y="24.5">interactions.ReceiveChanges</node>
+              </nodes>
+              <notes />
+              <edges>
+                <edge source="logic.table.Table" target="interactions.AcceptObservation">
+                  <point x="71.25" y="-124.0" />
+                  <point x="97.25" y="100.0" />
+                </edge>
+                <edge source="interactions.DefaultInteractions" target="interactions.AcceptObservation">
+                  <point x="97.25" y="-148.0" />
+                  <point x="291.75" y="230.0" />
+                  <point x="438.75" y="230.0" />
+                  <point x="-97.25" y="100.0" />
+                </edge>
+                <edge source="logic.table.GameTable" target="interactions.DefaultInteractions">
+                  <point x="-105.5" y="-292.5" />
+                  <point x="272.75" y="571.0" />
+                  <point x="194.5" y="571.0" />
+                  <point x="0.0" y="148.0" />
+                </edge>
+                <edge source="logic.table.Table" target="interactions.ReceiveChanges">
+                  <point x="-71.25" y="-124.0" />
+                  <point x="490.75" y="220.0" />
+                  <point x="246.75" y="220.0" />
+                  <point x="74.75" y="75.5" />
+                </edge>
+                <edge source="logic.table.GameTable" target="logic.table.Table">
+                  <point x="105.5" y="-292.5" />
+                  <point x="483.75" y="571.0" />
+                  <point x="562.0" y="571.0" />
+                  <point x="0.0" y="124.0" />
+                </edge>
+                <edge source="interactions.DefaultInteractions" target="interactions.ReceiveChanges">
+                  <point x="-97.25" y="-148.0" />
+                  <point x="-74.75" y="75.5" />
+                </edge>
+              </edges>
+              <settings layout="Hierarchic Group" zoom="1.0" x="365.5" y="283.5" />
+              <SelectedNodes />
+              <Categories>
+                <Category>Fields</Category>
+                <Category>Constructors</Category>
+                <Category>Methods</Category>
+                <Category>Properties</Category>
+                <Category>Inner Classes</Category>
+              </Categories>
+              <SCOPE>All</SCOPE>
+              <VISIBILITY>private</VISIBILITY>
             </state>
           </provider>
         </entry>
@@ -256,7 +291,6 @@
         <option value="$PROJECT_DIR$/src/main/java/logic/bonus/JackPotBonus.java" />
         <option value="$PROJECT_DIR$/src/main/java/logic/bonus/Bonus.java" />
         <option value="$PROJECT_DIR$/src/main/java/facade/HomeworkTwoFacade.java" />
-        <option value="$PROJECT_DIR$/src/main/java/logic/table/GameTable.java" />
         <option value="$PROJECT_DIR$/src/main/java/controller/Game.java" />
         <option value="$PROJECT_DIR$/src/test/java/controller/GameTest.java" />
         <option value="$PROJECT_DIR$/src/test/java/logic/gameelements/bumper/KickerBumperTest.java" />
@@ -266,6 +300,7 @@
         <option value="$PROJECT_DIR$/src/main/java/logic/gameelements/bumper/KickerBumper.java" />
         <option value="$PROJECT_DIR$/src/main/java/logic/gameelements/bumper/PopBumper.java" />
         <option value="$PROJECT_DIR$/src/main/java/logic/gameelements/target/AbstractTarget.java" />
+        <option value="$PROJECT_DIR$/src/main/java/logic/table/GameTable.java" />
       </list>
     </option>
   </component>
@@ -287,10 +322,10 @@
     </treeState>
   </component>
   <component name="ProjectFrameBounds" extendedState="6">
-    <option name="x" value="41" />
-    <option name="y" value="20" />
-    <option name="width" value="1325" />
-    <option name="height" value="764" />
+    <option name="x" value="39" />
+    <option name="y" value="-4" />
+    <option name="width" value="1327" />
+    <option name="height" value="772" />
   </component>
   <component name="ProjectView">
     <navigator proportions="" version="1">
@@ -305,6 +340,11 @@
             <path>
               <item name="cc3002-pinball" type="b2602c69:ProjectViewProjectNode" />
               <item name="cc3002-pinball" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="cc3002-pinball" type="b2602c69:ProjectViewProjectNode" />
+              <item name="cc3002-pinball" type="462c0819:PsiDirectoryNode" />
+              <item name="diagrams" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="cc3002-pinball" type="b2602c69:ProjectViewProjectNode" />
@@ -494,7 +534,7 @@
     <property name="com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrarySuperClass.JUnit4" value="" />
     <property name="com.intellij.testIntegration.createTest.CreateTestDialog.includeInheritedMembers" value="true" />
     <property name="create.test.in.the.same.root" value="true" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/.." />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/diagrams" />
     <property name="nodejs_interpreter_path.stuck_in_default_project" value="undefined stuck path" />
     <property name="nodejs_npm_path_reset_for_default_project" value="true" />
     <property name="project.structure.last.edited" value="Artifacts" />
@@ -745,14 +785,11 @@
       <workItem from="1527454254212" duration="31297000" />
       <workItem from="1530151698061" duration="5994000" />
       <workItem from="1530311661366" duration="597000" />
-      <workItem from="1530485908035" duration="13461000" />
+      <workItem from="1530485908035" duration="17094000" />
     </task>
     <servers />
   </component>
   <component name="TestHistory">
-    <history-entry file="All_in_cc3002-pinball - 2018.06.27 at 23h 42m 22s.xml">
-      <configuration name="All in cc3002-pinball" configurationId="JUnit" />
-    </history-entry>
     <history-entry file="All_in_cc3002-pinball - 2018.07.01 at 21h 41m 09s.xml">
       <configuration name="All in cc3002-pinball" configurationId="JUnit" />
     </history-entry>
@@ -780,12 +817,15 @@
     <history-entry file="All_in_cc3002-pinball - 2018.07.01 at 22h 37m 17s.xml">
       <configuration name="All in cc3002-pinball" configurationId="JUnit" />
     </history-entry>
+    <history-entry file="All_in_cc3002-pinball - 2018.07.01 at 22h 43m 12s.xml">
+      <configuration name="All in cc3002-pinball" configurationId="JUnit" />
+    </history-entry>
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="150758000" />
+    <option name="totallyTimeSpent" value="154391000" />
   </component>
   <component name="ToolWindowManager">
-    <frame x="38" y="-11" width="1329" height="780" extended-state="6" />
+    <frame x="39" y="-4" width="1327" height="772" extended-state="6" />
     <editor active="true" />
     <layout>
       <window_info anchor="right" id="Palette" order="3" />
@@ -798,12 +838,12 @@
       <window_info anchor="right" id="Maven Projects" order="7" weight="0.32943013" />
       <window_info anchor="bottom" id="Database Changes" order="8" show_stripe_button="false" />
       <window_info anchor="bottom" id="Version Control" order="7" />
-      <window_info anchor="bottom" id="Run" order="2" visible="true" weight="0.34321374" />
-      <window_info anchor="right" x="1499" y="68" width="468" height="455" id="Coverage" order="9" side_tool="true" type="WINDOWED" visible="true" weight="0.3637783" />
+      <window_info anchor="bottom" id="Run" order="2" weight="0.3198128" />
+      <window_info anchor="right" x="1499" y="68" width="468" height="455" id="Coverage" order="9" side_tool="true" type="WINDOWED" weight="0.3637783" />
       <window_info anchor="bottom" id="Terminal" order="9" weight="0.32917318" />
       <window_info id="Capture Tool" order="6" />
       <window_info id="Designer" order="3" />
-      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.284153" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.31069478" />
       <window_info anchor="right" id="Database" order="6" weight="0.32943013" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info anchor="right" id="Ant Build" order="1" weight="0.24980484" />
@@ -837,77 +877,6 @@
     <option name="FILTER_TARGETS" value="false" />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/src/test/java/logic/gameelements/target/TargetTest.java" />
-    <entry file="file://$PROJECT_DIR$/src/test/java/logic/gameelements/target/SpotTargetTest2.java" />
-    <entry file="file://$PROJECT_DIR$/src/test/java/logic/gameelements/target/SpotTargetTest.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="424">
-          <caret line="43" column="7" lean-forward="true" selection-start-line="43" selection-start-column="7" selection-end-line="43" selection-end-column="7" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/test/java/logic/gameelements/bumper/BumperTest.java" />
-    <entry file="file://$PROJECT_DIR$/src/test/java/logic/gameelements/bumper/PopBumperTest.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="638">
-          <caret line="181" column="34" lean-forward="true" selection-start-line="181" selection-start-column="34" selection-end-line="181" selection-end-column="34" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="jar://$APPLICATION_HOME_DIR$/lib/junit-4.12.jar!/org/junit/runners/BlockJUnit4ClassRunner.class">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="87">
-          <caret line="49" selection-start-line="49" selection-end-line="49" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="jar://$APPLICATION_HOME_DIR$/lib/junit-4.12.jar!/org/junit/runners/ParentRunner.class">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="57">
-          <caret line="172" selection-start-line="172" selection-end-line="172" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="jar://$APPLICATION_HOME_DIR$/lib/junit-4.12.jar!/org/junit/internal/runners/model/ReflectiveCallable.class">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="210">
-          <caret line="17" selection-start-line="17" selection-end-line="17" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="jar://$APPLICATION_HOME_DIR$/lib/junit-4.12.jar!/org/junit/Assert.class">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="87">
-          <caret line="333" selection-start-line="333" selection-end-line="333" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/test/java/logic/bonus/BonusTest.java" />
-    <entry file="file://$PROJECT_DIR$/src/test/java/logic/table/TableTest.java" />
-    <entry file="file://$PROJECT_DIR$/src/test/java/logic/gameelements/target/DropTargetTest.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="105">
-          <caret line="18" column="53" selection-start-line="18" selection-start-column="53" selection-end-line="18" selection-end-column="53" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="jar:///usr/lib/jvm/java-8-oracle/src.zip!/java/util/Observable.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="210">
-          <caret line="94" column="17" selection-start-line="94" selection-start-column="17" selection-end-line="94" selection-end-column="17" />
-          <folding>
-            <element signature="e#3747#3748#0" expanded="true" />
-            <element signature="e#3784#3785#0" expanded="true" />
-            <element signature="e#5937#5938#0" expanded="true" />
-            <element signature="e#5967#5968#0" expanded="true" />
-            <element signature="e#6483#6484#0" expanded="true" />
-            <element signature="e#6514#6515#0" expanded="true" />
-            <element signature="e#7210#7211#0" expanded="true" />
-            <element signature="e#7243#7244#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="jar:///usr/lib/jvm/java-8-oracle/src.zip!/java/util/Vector.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="26">
@@ -919,88 +888,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="249">
           <caret line="30" column="29" selection-start-line="30" selection-start-column="29" selection-end-line="30" selection-end-column="29" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="uml://JAVA/logic.gameelements">
-      <provider selected="true" editor-type-id="UmlEditorProvider">
-        <state>
-          <ID>JAVA</ID>
-          <OriginalElement>logic.gameelements</OriginalElement>
-          <nodes>
-            <node x="" y="">logic.gameelements.Hittable</node>
-            <node x="" y="">logic.gameelements.target</node>
-            <node x="" y="">logic.gameelements.bumper</node>
-          </nodes>
-          <notes />
-          <edges />
-          <settings layout="Hierarchic Group" zoom="1.0" x="150.5" y="92.5" />
-          <SelectedNodes />
-          <Categories>
-            <Category>Fields</Category>
-            <Category>Constructors</Category>
-            <Category>Methods</Category>
-            <Category />
-            <Category>Properties</Category>
-          </Categories>
-          <SCOPE>All</SCOPE>
-          <VISIBILITY>private</VISIBILITY>
-        </state>
-      </provider>
-    </entry>
-    <entry file="uml://JAVA/logic.gameelements.target">
-      <provider selected="true" editor-type-id="UmlEditorProvider">
-        <state>
-          <ID>JAVA</ID>
-          <OriginalElement>logic.gameelements.target</OriginalElement>
-          <nodes>
-            <node x="" y="">logic.gameelements.target.SpotTarget</node>
-            <node x="" y="">logic.gameelements.target.DropTarget</node>
-            <node x="" y="">logic.gameelements.target.AbstractTarget</node>
-            <node x="" y="">logic.gameelements.target.Target</node>
-            <node x="" y="">logic.gameelements.target.DropTargetTest</node>
-            <node x="" y="">logic.gameelements.target.SpotTargetTest</node>
-          </nodes>
-          <notes />
-          <edges />
-          <settings layout="Hierarchic Group" zoom="1.0" x="265.0" y="273.5" />
-          <SelectedNodes />
-          <Categories>
-            <Category>Fields</Category>
-            <Category>Constructors</Category>
-            <Category>Methods</Category>
-            <Category>Properties</Category>
-            <Category />
-          </Categories>
-          <SCOPE>All</SCOPE>
-          <VISIBILITY>private</VISIBILITY>
-        </state>
-      </provider>
-    </entry>
-    <entry file="uml://JAVA/controller">
-      <provider selected="true" editor-type-id="UmlEditorProvider">
-        <state>
-          <ID>JAVA</ID>
-          <OriginalElement>controller</OriginalElement>
-          <nodes>
-            <node x="" y="">controller.Game</node>
-            <node x="" y="">controller.GameTest</node>
-            <node x="" y="">controller.EventAcceptor</node>
-            <node x="" y="">facade</node>
-            <node x="" y="">controller.EventVisitor</node>
-            <node x="" y="">logic</node>
-          </nodes>
-          <notes />
-          <edges />
-          <settings layout="Hierarchic Group" zoom="1.0" x="164.5" y="273.5" />
-          <SelectedNodes />
-          <Categories>
-            <Category>Constructors</Category>
-            <Category>Properties</Category>
-            <Category>Fields</Category>
-          </Categories>
-          <SCOPE>All</SCOPE>
-          <VISIBILITY>private</VISIBILITY>
         </state>
       </provider>
     </entry>
@@ -1056,35 +943,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="uml://JAVA/logic.gameelements.bumper">
-      <provider selected="true" editor-type-id="UmlEditorProvider">
-        <state>
-          <ID>JAVA</ID>
-          <OriginalElement>logic.gameelements.bumper</OriginalElement>
-          <nodes>
-            <node x="" y="">controller.Game</node>
-            <node x="" y="">logic.gameelements.Hittable</node>
-            <node x="" y="">controller.GameTest</node>
-            <node x="" y="">facade</node>
-            <node x="" y="">logic.gameelements.bumper</node>
-            <node x="" y="">controller.EventVisitor</node>
-            <node x="" y="">logic.table</node>
-            <node x="" y="">logic.bonus</node>
-            <node x="" y="">logic.gameelements.target</node>
-            <node x="" y="">controller.EventAcceptor</node>
-          </nodes>
-          <notes />
-          <edges />
-          <settings layout="Hierarchic Group" zoom="1.0" x="404.0" y="273.5" />
-          <SelectedNodes />
-          <Categories>
-            <Category>Properties</Category>
-          </Categories>
-          <SCOPE>All</SCOPE>
-          <VISIBILITY>private</VISIBILITY>
-        </state>
-      </provider>
-    </entry>
     <entry file="jar:///usr/lib/jvm/java-8-oracle/src.zip!/java/util/Observer.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="165">
@@ -1099,39 +957,6 @@
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="uml://JAVA/facade">
-      <provider selected="true" editor-type-id="UmlEditorProvider">
-        <state>
-          <ID>JAVA</ID>
-          <OriginalElement>facade</OriginalElement>
-          <nodes>
-            <node x="" y="">logic.table</node>
-            <node x="" y="">controller.Game</node>
-            <node x="" y="">logic.gameelements.Hittable</node>
-            <node x="" y="">controller.GameTest</node>
-            <node x="" y="">interactions.AcceptObservation</node>
-            <node x="" y="">facade.HomeworkTwoFacade</node>
-            <node x="" y="">logic.gameelements.target</node>
-            <node x="" y="">logic.bonus</node>
-            <node x="" y="">logic.gameelements.bumper</node>
-            <node x="" y="">interactions.ReceiveChanges</node>
-          </nodes>
-          <notes />
-          <edges />
-          <settings layout="Hierarchic Group" zoom="0.8" x="534.25" y="455.875" />
-          <SelectedNodes />
-          <Categories>
-            <Category>Methods</Category>
-            <Category>Constructors</Category>
-            <Category>Fields</Category>
-            <Category>Properties</Category>
-            <Category />
-          </Categories>
-          <SCOPE>All</SCOPE>
-          <VISIBILITY>private</VISIBILITY>
         </state>
       </provider>
     </entry>
@@ -1210,16 +1035,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/facade/HomeworkTwoFacade.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="259">
-          <caret line="42" column="47" lean-forward="true" selection-start-line="42" selection-start-column="47" selection-end-line="42" selection-end-column="47" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/test/java/logic/table/GameTableTest.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="234">
@@ -1261,16 +1076,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/logic/bonus/AbstractBonus.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="120">
-          <caret line="8" column="31" selection-start-line="8" selection-start-column="31" selection-end-line="8" selection-end-column="31" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/logic/bonus/DropTargetBonus.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="154">
@@ -1298,44 +1103,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/controller/Game.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="324">
-          <caret line="135" column="9" lean-forward="true" selection-start-line="133" selection-start-column="8" selection-end-line="135" selection-end-column="9" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/logic/gameelements/bumper/AbstractBumper.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="264">
-          <caret line="133" column="5" selection-start-line="133" selection-start-column="5" selection-end-line="133" selection-end-column="5" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/logic/gameelements/bumper/KickerBumper.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="249">
-          <caret line="57" column="5" selection-start-line="57" selection-start-column="5" selection-end-line="57" selection-end-column="5" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/logic/gameelements/bumper/PopBumper.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="114">
           <caret line="29" column="23" lean-forward="true" selection-start-line="29" selection-start-column="23" selection-end-line="29" selection-end-column="23" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/logic/gameelements/target/AbstractTarget.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="135">
-          <caret line="104" column="64" selection-start-line="104" selection-start-column="64" selection-end-line="104" selection-end-column="64" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
@@ -1352,13 +1123,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/logic/gameelements/target/DropTarget.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="149">
-          <caret line="10" column="40" selection-start-line="10" selection-start-column="40" selection-end-line="10" selection-end-column="40" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/logic/table/Table.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="255">
@@ -1369,13 +1133,816 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/logic/table/GameTable.java">
+    <entry file="file://$PROJECT_DIR$/src/main/java/logic/gameelements/target/DropTarget.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="299">
-          <caret line="95" selection-start-line="95" selection-end-line="95" />
+        <state relative-caret-position="149">
+          <caret line="10" column="40" selection-start-line="10" selection-start-column="40" selection-end-line="10" selection-end-column="40" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/logic/gameelements/bumper/KickerBumper.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="249">
+          <caret line="57" column="5" selection-start-line="57" selection-start-column="5" selection-end-line="57" selection-end-column="5" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/controller/Game.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="189">
+          <caret line="126" column="36" selection-start-line="126" selection-start-column="36" selection-end-line="126" selection-end-column="36" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/logic/table/GameTable.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="280">
+          <caret line="299" column="9" selection-start-line="299" selection-start-column="9" selection-end-line="299" selection-end-column="9" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/logic/bonus/AbstractBonus.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="204">
+          <caret line="105" column="38" lean-forward="true" selection-start-line="105" selection-start-column="38" selection-end-line="105" selection-end-column="38" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/logic/gameelements/target/AbstractTarget.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="165">
+          <caret line="106" column="5" lean-forward="true" selection-start-line="106" selection-start-column="5" selection-end-line="106" selection-end-column="5" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="uml://JAVA/facade">
+      <provider selected="true" editor-type-id="UmlEditorProvider">
+        <state>
+          <ID>JAVA</ID>
+          <OriginalElement>facade</OriginalElement>
+          <nodes>
+            <node x="" y="">logic.table</node>
+            <node x="" y="">logic.gameelements</node>
+            <node x="" y="">controller</node>
+            <node x="" y="">facade.HomeworkTwoFacade</node>
+            <node x="" y="">logic.bonus</node>
+            <node x="" y="">interactions</node>
+          </nodes>
+          <notes />
+          <edges />
+          <settings layout="Hierarchic Group" zoom="1.0" x="243.5" y="849.5" />
+          <SelectedNodes />
+          <Categories>
+            <Category>Inner Classes</Category>
+            <Category>Properties</Category>
+            <Category>Methods</Category>
+            <Category>Constructors</Category>
+            <Category>Fields</Category>
+          </Categories>
+          <SCOPE>All</SCOPE>
+          <VISIBILITY>private</VISIBILITY>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/diagrams/facade.png">
+      <provider selected="true" editor-type-id="images" />
+    </entry>
+    <entry file="uml://JAVA/controller">
+      <provider selected="true" editor-type-id="UmlEditorProvider">
+        <state>
+          <ID>JAVA</ID>
+          <OriginalElement>controller</OriginalElement>
+          <nodes>
+            <node x="40.5" y="141.0">logic.table</node>
+            <node x="342.9545454545455" y="272.0">logic.gameelements</node>
+            <node x="124.28787878787881" y="383.0">controller.Game</node>
+            <node x="181.81252415739027" y="0.0">logic.bonus</node>
+            <node x="58.28787878787884" y="812.0">facade</node>
+            <node x="124.95454545454547" y="272.0">interactions</node>
+          </nodes>
+          <notes />
+          <edges>
+            <edge source="interactions" target="logic.table">
+              <point x="-76.5625" y="-15.5" />
+              <point x="135.89204545454547" y="252.0" />
+              <point x="127.0909090909091" y="252.0" />
+              <point x="23.090909090909093" y="15.5" />
+            </edge>
+            <edge source="controller.Game" target="interactions">
+              <point x="-26.636363636363626" y="-184.5" />
+              <point x="244.15151515151518" y="323.0" />
+              <point x="212.45454545454547" y="323.0" />
+              <point x="0.0" y="15.5" />
+            </edge>
+            <edge source="interactions" target="logic.bonus">
+              <point x="76.5625" y="-15.5" />
+              <point x="289.0170454545455" y="252.0" />
+              <point x="275.4553813002474" y="252.0" />
+              <point x="275.4553813002474" y="121.0" />
+              <point x="273.4196670145331" y="121.0" />
+              <point x="24.10714285714286" y="15.5" />
+            </edge>
+            <edge source="logic.bonus" target="logic.table">
+              <point x="-14.464285714285694" y="15.5" />
+              <point x="234.84823844310455" y="111.0" />
+              <point x="146.33333333333334" y="111.0" />
+              <point x="42.33333333333334" y="-15.5" />
+            </edge>
+            <edge source="logic.bonus" target="controller.Game">
+              <point x="33.75" y="15.5" />
+              <point x="283.06252415739027" y="121.0" />
+              <point x="310.4545454545455" y="121.0" />
+              <point x="310.4545454545455" y="363.0" />
+              <point x="297.42424242424244" y="363.0" />
+              <point x="26.636363636363626" y="-184.5" />
+            </edge>
+            <edge source="controller.Game" target="logic.bonus">
+              <point x="79.9090909090909" y="-184.5" />
+              <point x="350.69696969696975" y="363.0" />
+              <point x="332.4545454545455" y="363.0" />
+              <point x="332.4545454545455" y="101.0" />
+              <point x="302.34823844310455" y="101.0" />
+              <point x="53.03571428571428" y="15.5" />
+            </edge>
+            <edge source="logic.table" target="logic.bonus">
+              <point x="-42.33333333333334" y="-15.5" />
+              <point x="61.66666666666666" y="91.0" />
+              <point x="215.56252415739027" y="91.0" />
+              <point x="-33.75" y="15.5" />
+            </edge>
+            <edge source="facade" target="controller.Game">
+              <point x="11.499999999999972" y="-15.5" />
+              <point x="138.7878787878788" y="772.0" />
+              <point x="173.12121212121212" y="772.0" />
+              <point x="-97.66666666666667" y="184.5" />
+            </edge>
+            <edge source="logic.bonus" target="logic.bonus">
+              <point x="-62.67857142857142" y="15.5" />
+              <point x="186.63395272881883" y="51.0" />
+              <point x="161.81252415739027" y="51.0" />
+              <point x="161.81252415739027" y="23.25" />
+              <point x="-67.5" y="7.75" />
+            </edge>
+            <edge source="facade" target="logic.bonus">
+              <point x="-57.50000000000003" y="-15.5" />
+              <point x="69.78787878787881" y="792.0" />
+              <point x="0.0" y="792.0" />
+              <point x="0.0" y="81.0" />
+              <point x="205.9196670145331" y="81.0" />
+              <point x="-43.39285714285714" y="15.5" />
+            </edge>
+            <edge source="logic.table" target="controller.Game">
+              <point x="-11.545454545454533" y="15.5" />
+              <point x="92.45454545454547" y="242.0" />
+              <point x="78.71981775664813" y="242.0" />
+              <point x="78.71981775664813" y="363.0" />
+              <point x="137.60606060606068" y="363.0" />
+              <point x="-133.18181818181813" y="-184.5" />
+            </edge>
+            <edge source="logic.table" target="interactions">
+              <point x="57.72727272727275" y="15.5" />
+              <point x="161.72727272727275" y="222.0" />
+              <point x="201.51704545454547" y="222.0" />
+              <point x="-10.9375" y="-15.5" />
+            </edge>
+            <edge source="logic.table" target="logic.table">
+              <point x="-46.18181818181819" y="15.5" />
+              <point x="57.81818181818181" y="202.0" />
+              <point x="10.5" y="202.0" />
+              <point x="10.5" y="148.75" />
+              <point x="-63.5" y="-7.75" />
+            </edge>
+            <edge source="logic.bonus" target="interactions">
+              <point x="-4.821428571428555" y="15.5" />
+              <point x="244.49109558596172" y="121.0" />
+              <point x="237.26429151205946" y="121.0" />
+              <point x="237.26429151205946" y="252.0" />
+              <point x="223.39204545454547" y="252.0" />
+              <point x="10.9375" y="-15.5" />
+            </edge>
+            <edge source="facade" target="logic.table">
+              <point x="-11.500000000000028" y="-15.5" />
+              <point x="115.78787878787881" y="772.0" />
+              <point x="67.71981775664813" y="772.0" />
+              <point x="67.71981775664813" y="232.0" />
+              <point x="80.9090909090909" y="232.0" />
+              <point x="-23.090909090909093" y="15.5" />
+            </edge>
+            <edge source="interactions" target="controller.Game">
+              <point x="58.33333333333334" y="15.5" />
+              <point x="0.0" y="-184.5" />
+            </edge>
+            <edge source="controller.Game" target="logic.gameelements">
+              <point x="106.54545454545456" y="-184.5" />
+              <point x="377.33333333333337" y="353.0" />
+              <point x="439.4545454545455" y="353.0" />
+              <point x="0.0" y="15.5" />
+            </edge>
+          </edges>
+          <settings layout="Hierarchic Group" zoom="1.0" x="-68.50000000000011" y="220.0" />
+          <SelectedNodes>
+            <node>logic.gameelements</node>
+          </SelectedNodes>
+          <Categories>
+            <Category>Fields</Category>
+            <Category>Constructors</Category>
+            <Category>Methods</Category>
+            <Category>Properties</Category>
+            <Category>Inner Classes</Category>
+          </Categories>
+          <SCOPE>All</SCOPE>
+          <VISIBILITY>private</VISIBILITY>
+        </state>
+      </provider>
+    </entry>
+    <entry file="uml://JAVA/interactions">
+      <provider selected="true" editor-type-id="UmlEditorProvider">
+        <state>
+          <ID>JAVA</ID>
+          <OriginalElement>interactions</OriginalElement>
+          <nodes>
+            <node x="" y="">logic.table</node>
+            <node x="" y="">logic.gameelements</node>
+            <node x="" y="">controller</node>
+            <node x="" y="">interactions.AcceptObservation</node>
+            <node x="" y="">logic.bonus</node>
+            <node x="" y="">facade</node>
+            <node x="" y="">interactions.DefaultInteractions</node>
+            <node x="" y="">interactions.ReceiveChanges</node>
+          </nodes>
+          <notes />
+          <edges />
+          <settings layout="Hierarchic Group" zoom="1.0" x="355.5" y="273.5" />
+          <SelectedNodes />
+          <Categories>
+            <Category>Fields</Category>
+            <Category>Constructors</Category>
+            <Category>Properties</Category>
+            <Category>Methods</Category>
+            <Category>Inner Classes</Category>
+          </Categories>
+          <SCOPE>All</SCOPE>
+          <VISIBILITY>private</VISIBILITY>
+        </state>
+      </provider>
+    </entry>
+    <entry file="uml://JAVA/logic">
+      <provider selected="true" editor-type-id="UmlEditorProvider">
+        <state>
+          <ID>JAVA</ID>
+          <OriginalElement>logic</OriginalElement>
+          <nodes>
+            <node x="" y="">logic.table</node>
+            <node x="" y="">logic.gameelements</node>
+            <node x="" y="">controller</node>
+            <node x="" y="">logic.bonus</node>
+            <node x="" y="">facade</node>
+            <node x="" y="">interactions</node>
+          </nodes>
+          <notes />
+          <edges />
+          <settings layout="Hierarchic Group" zoom="1.0" x="233.5" y="292.5" />
+          <SelectedNodes />
+          <Categories>
+            <Category>Fields</Category>
+            <Category>Constructors</Category>
+            <Category>Methods</Category>
+            <Category>Properties</Category>
+            <Category>Inner Classes</Category>
+          </Categories>
+          <SCOPE>All</SCOPE>
+          <VISIBILITY>private</VISIBILITY>
+        </state>
+      </provider>
+    </entry>
+    <entry file="uml://JAVA/logic.bonus">
+      <provider selected="true" editor-type-id="UmlEditorProvider">
+        <state>
+          <ID>JAVA</ID>
+          <OriginalElement>logic.bonus</OriginalElement>
+          <nodes>
+            <node x="" y="">logic.gameelements</node>
+            <node x="" y="">controller</node>
+            <node x="" y="">facade</node>
+            <node x="" y="">logic.bonus.JackPotBonus</node>
+            <node x="" y="">interactions</node>
+            <node x="" y="">logic.table</node>
+            <node x="" y="">logic.bonus.AbstractBonus</node>
+            <node x="" y="">logic.bonus.ExtraBallBonus</node>
+            <node x="" y="">logic.bonus.Bonus</node>
+            <node x="" y="">logic.bonus.DropTargetBonus</node>
+          </nodes>
+          <notes />
+          <edges />
+          <settings layout="Hierarchic Group" zoom="1.0" x="561.0" y="283.5" />
+          <SelectedNodes />
+          <Categories>
+            <Category>Fields</Category>
+            <Category>Constructors</Category>
+            <Category>Methods</Category>
+            <Category>Properties</Category>
+            <Category>Inner Classes</Category>
+          </Categories>
+          <SCOPE>All</SCOPE>
+          <VISIBILITY>private</VISIBILITY>
+        </state>
+      </provider>
+    </entry>
+    <entry file="uml://JAVA/logic.gameelements">
+      <provider selected="true" editor-type-id="UmlEditorProvider">
+        <state>
+          <ID>JAVA</ID>
+          <OriginalElement>logic.gameelements</OriginalElement>
+          <nodes>
+            <node x="" y="">logic.table</node>
+            <node x="" y="">logic.gameelements.Hittable</node>
+            <node x="" y="">controller</node>
+            <node x="" y="">logic.bonus</node>
+            <node x="" y="">logic.gameelements.target</node>
+            <node x="" y="">facade</node>
+            <node x="" y="">logic.gameelements.bumper</node>
+            <node x="" y="">interactions</node>
+          </nodes>
+          <notes />
+          <edges />
+          <settings layout="Hierarchic Group" zoom="1.0" x="328.5" y="283.5" />
+          <SelectedNodes />
+          <Categories>
+            <Category>Fields</Category>
+            <Category>Methods</Category>
+            <Category>Constructors</Category>
+            <Category>Properties</Category>
+            <Category>Inner Classes</Category>
+          </Categories>
+          <SCOPE>All</SCOPE>
+          <VISIBILITY>private</VISIBILITY>
+        </state>
+      </provider>
+    </entry>
+    <entry file="uml://JAVA/logic.gameelements.bumper">
+      <provider selected="true" editor-type-id="UmlEditorProvider">
+        <state>
+          <ID>JAVA</ID>
+          <OriginalElement>logic.gameelements.bumper</OriginalElement>
+          <nodes>
+            <node x="" y="">logic.gameelements.bumper.Bumper</node>
+            <node x="" y="">interactions.AcceptObservation</node>
+            <node x="" y="">logic.gameelements.bumper.KickerBumper</node>
+            <node x="" y="">logic.gameelements.bumper.AbstractBumper</node>
+            <node x="" y="">logic.gameelements.bumper.PopBumper</node>
+            <node x="" y="">interactions.DefaultInteractions</node>
+            <node x="" y="">interactions.ReceiveChanges</node>
+          </nodes>
+          <notes />
+          <edges />
+          <settings layout="Hierarchic Group" zoom="1.0" x="374.49999999999994" y="283.5" />
+          <SelectedNodes />
+          <Categories>
+            <Category>Constructors</Category>
+            <Category>Fields</Category>
+            <Category>Methods</Category>
+            <Category>Properties</Category>
+            <Category>Inner Classes</Category>
+          </Categories>
+          <SCOPE>All</SCOPE>
+          <VISIBILITY>private</VISIBILITY>
+        </state>
+      </provider>
+    </entry>
+    <entry file="uml://JAVA/logic.gameelements.target">
+      <provider selected="true" editor-type-id="UmlEditorProvider">
+        <state>
+          <ID>JAVA</ID>
+          <OriginalElement>logic.gameelements.target</OriginalElement>
+          <nodes>
+            <node x="" y="">logic.gameelements.Hittable</node>
+            <node x="" y="">interactions.AcceptObservation</node>
+            <node x="" y="">logic.gameelements.target.SpotTarget</node>
+            <node x="" y="">logic.gameelements.target.DropTarget</node>
+            <node x="" y="">logic.gameelements.target.AbstractTarget</node>
+            <node x="" y="">logic.gameelements.target.Target</node>
+            <node x="" y="">interactions.DefaultInteractions</node>
+            <node x="" y="">interactions.ReceiveChanges</node>
+          </nodes>
+          <notes />
+          <edges />
+          <settings layout="Hierarchic Group" zoom="1.0" x="488.0" y="283.5" />
+          <SelectedNodes />
+          <Categories>
+            <Category>Inner Classes</Category>
+            <Category>Properties</Category>
+            <Category>Methods</Category>
+            <Category>Constructors</Category>
+            <Category>Fields</Category>
+          </Categories>
+          <SCOPE>All</SCOPE>
+          <VISIBILITY>private</VISIBILITY>
+        </state>
+      </provider>
+    </entry>
+    <entry file="uml://JAVA/logic.table">
+      <provider selected="true" editor-type-id="UmlEditorProvider">
+        <state>
+          <ID>JAVA</ID>
+          <OriginalElement>logic.table</OriginalElement>
+          <nodes>
+            <node x="" y="">interactions.AcceptObservation</node>
+            <node x="" y="">logic.table.GameTable</node>
+            <node x="" y="">logic.table.Table</node>
+            <node x="" y="">interactions.DefaultInteractions</node>
+            <node x="" y="">interactions.ReceiveChanges</node>
+          </nodes>
+          <notes />
+          <edges />
+          <settings layout="Hierarchic Group" zoom="1.0" x="467.5" y="273.5" />
+          <SelectedNodes />
+          <Categories>
+            <Category>Fields</Category>
+            <Category>Constructors</Category>
+            <Category>Methods</Category>
+            <Category>Properties</Category>
+            <Category>Inner Classes</Category>
+          </Categories>
+          <SCOPE>All</SCOPE>
+          <VISIBILITY>private</VISIBILITY>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/diagrams/bumper.uml">
+      <provider selected="true" editor-type-id="UmlEditorProvider">
+        <state>
+          <ID>JAVA</ID>
+          <OriginalElement>logic.gameelements.bumper</OriginalElement>
+          <nodes>
+            <node x="" y="">logic.gameelements.Hittable</node>
+            <node x="" y="">logic.gameelements.bumper.Bumper</node>
+            <node x="" y="">logic.gameelements.bumper.KickerBumper</node>
+            <node x="" y="">interactions.AcceptObservation</node>
+            <node x="" y="">logic.gameelements.bumper.AbstractBumper</node>
+            <node x="" y="">logic.gameelements.bumper.PopBumper</node>
+            <node x="" y="">interactions.DefaultInteractions</node>
+            <node x="" y="">interactions.ReceiveChanges</node>
+          </nodes>
+          <notes />
+          <edges />
+          <settings layout="Hierarchic Group" zoom="1.0" x="487.99999999999994" y="608.5" />
+          <SelectedNodes />
+          <Categories>
+            <Category>Fields</Category>
+            <Category>Constructors</Category>
+            <Category>Methods</Category>
+            <Category>Properties</Category>
+            <Category>Inner Classes</Category>
+          </Categories>
+          <SCOPE>All</SCOPE>
+          <VISIBILITY>private</VISIBILITY>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/diagrams/bonus.uml">
+      <provider selected="true" editor-type-id="UmlEditorProvider">
+        <state>
+          <ID>JAVA</ID>
+          <OriginalElement>logic.bonus</OriginalElement>
+          <nodes>
+            <node x="" y="">logic.bonus.AbstractBonus</node>
+            <node x="" y="">interactions.AcceptObservation</node>
+            <node x="" y="">logic.bonus.ExtraBallBonus</node>
+            <node x="" y="">logic.bonus.Bonus</node>
+            <node x="" y="">logic.bonus.DropTargetBonus</node>
+            <node x="" y="">interactions.DefaultInteractions</node>
+            <node x="" y="">interactions.ReceiveChanges</node>
+            <node x="" y="">logic.bonus.JackPotBonus</node>
+          </nodes>
+          <notes />
+          <edges />
+          <settings layout="Hierarchic Group" zoom="1.0" x="483.5" y="536.5" />
+          <SelectedNodes />
+          <Categories>
+            <Category>Fields</Category>
+            <Category>Constructors</Category>
+            <Category>Methods</Category>
+            <Category>Properties</Category>
+            <Category>Inner Classes</Category>
+          </Categories>
+          <SCOPE>All</SCOPE>
+          <VISIBILITY>private</VISIBILITY>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/logic/gameelements/bumper/AbstractBumper.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="290">
+          <caret line="93" lean-forward="true" selection-start-line="93" selection-end-line="93" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/facade/HomeworkTwoFacade.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="630">
+          <caret line="42" column="47" lean-forward="true" selection-start-line="42" selection-start-column="47" selection-end-line="42" selection-end-column="47" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/diagrams/facade.uml">
+      <provider selected="true" editor-type-id="UmlEditorProvider">
+        <state>
+          <ID>JAVA</ID>
+          <OriginalElement>facade</OriginalElement>
+          <nodes>
+            <node x="" y="">facade.HomeworkTwoFacade</node>
+          </nodes>
+          <notes />
+          <edges />
+          <settings layout="Hierarchic Group" zoom="1.0" x="235.0" y="233.0" />
+          <SelectedNodes />
+          <Categories>
+            <Category>Fields</Category>
+            <Category>Constructors</Category>
+            <Category>Methods</Category>
+            <Category>Properties</Category>
+            <Category>Inner Classes</Category>
+          </Categories>
+          <SCOPE>All</SCOPE>
+          <VISIBILITY>private</VISIBILITY>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/diagrams/controller.uml">
+      <provider selected="true" editor-type-id="UmlEditorProvider">
+        <state>
+          <ID>JAVA</ID>
+          <OriginalElement>controller</OriginalElement>
+          <nodes>
+            <node x="230.0" y="596.0">controller.Game</node>
+            <node x="0.0" y="0.0">interactions.AcceptObservation</node>
+            <node x="182.0" y="250.0">interactions.DefaultInteractions</node>
+            <node x="409.0" y="24.5">interactions.ReceiveChanges</node>
+          </nodes>
+          <notes />
+          <edges>
+            <edge source="controller.Game" target="interactions.DefaultInteractions">
+              <point x="0.0" y="-184.5" />
+              <point x="0.0" y="148.0" />
+            </edge>
+            <edge source="interactions.DefaultInteractions" target="interactions.AcceptObservation">
+              <point x="-97.25" y="-148.0" />
+              <point x="279.25" y="225.0" />
+              <point x="194.5" y="225.0" />
+              <point x="0.0" y="100.0" />
+            </edge>
+            <edge source="interactions.DefaultInteractions" target="interactions.ReceiveChanges">
+              <point x="97.25" y="-148.0" />
+              <point x="473.75" y="225.0" />
+              <point x="558.5" y="225.0" />
+              <point x="0.0" y="75.5" />
+            </edge>
+          </edges>
+          <settings layout="Hierarchic Group" zoom="0.5959390862944163" x="15.87819420783643" y="382.7257240204429" />
+          <SelectedNodes>
+            <node>controller.Game</node>
+          </SelectedNodes>
+          <Categories>
+            <Category>Fields</Category>
+            <Category>Constructors</Category>
+            <Category>Methods</Category>
+            <Category>Properties</Category>
+            <Category>Inner Classes</Category>
+          </Categories>
+          <SCOPE>All</SCOPE>
+          <VISIBILITY>private</VISIBILITY>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/diagrams/logic.uml">
+      <provider selected="true" editor-type-id="UmlEditorProvider">
+        <state>
+          <ID>JAVA</ID>
+          <OriginalElement>logic</OriginalElement>
+          <nodes>
+            <node x="" y="">logic.table</node>
+            <node x="" y="">logic.gameelements</node>
+            <node x="" y="">controller</node>
+            <node x="" y="">logic.bonus</node>
+            <node x="" y="">facade</node>
+            <node x="" y="">interactions</node>
+          </nodes>
+          <notes />
+          <edges />
+          <settings layout="Hierarchic Group" zoom="1.0" x="233.5" y="292.5" />
+          <SelectedNodes />
+          <Categories>
+            <Category>Fields</Category>
+            <Category>Constructors</Category>
+            <Category>Methods</Category>
+            <Category>Properties</Category>
+            <Category>Inner Classes</Category>
+          </Categories>
+          <SCOPE>All</SCOPE>
+          <VISIBILITY>private</VISIBILITY>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/diagrams/interactions.uml">
+      <provider selected="true" editor-type-id="UmlEditorProvider">
+        <state>
+          <ID>JAVA</ID>
+          <OriginalElement>interactions</OriginalElement>
+          <nodes>
+            <node x="" y="">logic.table</node>
+            <node x="" y="">controller</node>
+            <node x="" y="">interactions.AcceptObservation</node>
+            <node x="" y="">logic.bonus</node>
+            <node x="" y="">interactions.DefaultInteractions</node>
+            <node x="" y="">interactions.ReceiveChanges</node>
+          </nodes>
+          <notes />
+          <edges />
+          <settings layout="Hierarchic Group" zoom="1.0" x="355.0" y="274.0" />
+          <SelectedNodes />
+          <Categories>
+            <Category>Fields</Category>
+            <Category>Constructors</Category>
+            <Category>Methods</Category>
+            <Category>Properties</Category>
+            <Category>Inner Classes</Category>
+          </Categories>
+          <SCOPE>All</SCOPE>
+          <VISIBILITY>private</VISIBILITY>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/diagrams/gameelements.uml">
+      <provider selected="true" editor-type-id="UmlEditorProvider">
+        <state>
+          <ID>JAVA</ID>
+          <OriginalElement>logic.gameelements</OriginalElement>
+          <nodes>
+            <node x="195.73125000000002" y="0.0">logic.gameelements.Hittable</node>
+            <node x="95.91111111111113" y="305.0">logic.gameelements.target</node>
+            <node x="90.41111111111113" y="164.0">logic.gameelements.bumper</node>
+            <node x="0.0" y="36.5">interactions</node>
+          </nodes>
+          <notes />
+          <edges>
+            <edge source="logic.gameelements.bumper" target="logic.gameelements.Hittable">
+              <point x="58.400000000000006" y="-15.5" />
+              <point x="221.81111111111113" y="144.0" />
+              <point x="257.73125000000005" y="144.0" />
+              <point x="-62.0" y="52.0" />
+            </edge>
+            <edge source="logic.gameelements.target" target="logic.gameelements.Hittable">
+              <point x="60.0" y="-15.5" />
+              <point x="223.41111111111113" y="285.0" />
+              <point x="375.5951388888889" y="285.0" />
+              <point x="375.5951388888889" y="144.0" />
+              <point x="381.73125000000005" y="144.0" />
+              <point x="62.0" y="52.0" />
+            </edge>
+            <edge source="interactions" target="logic.gameelements.target">
+              <point x="-76.5625" y="15.5" />
+              <point x="10.9375" y="144.0" />
+              <point x="6.911111111111126" y="144.0" />
+              <point x="6.911111111111126" y="285.0" />
+              <point x="103.41111111111113" y="285.0" />
+              <point x="-60.0" y="-15.5" />
+            </edge>
+            <edge source="logic.gameelements.bumper" target="logic.gameelements.target">
+              <point x="62.571428571428555" y="15.5" />
+              <point x="225.98253968253968" y="275.0" />
+              <point x="208.41111111111113" y="275.0" />
+              <point x="45.0" y="-15.5" />
+            </edge>
+            <edge source="interactions" target="logic.gameelements.bumper">
+              <point x="76.5625" y="15.5" />
+              <point x="164.0625" y="134.0" />
+              <point x="192.61111111111111" y="134.0" />
+              <point x="29.19999999999999" y="-15.5" />
+            </edge>
+            <edge source="logic.gameelements.bumper" target="logic.gameelements.bumper">
+              <point x="-20.857142857142854" y="15.5" />
+              <point x="142.55396825396826" y="235.0" />
+              <point x="50.411111111111126" y="235.0" />
+              <point x="50.411111111111126" y="169.16666666666666" />
+              <point x="-73.0" y="-10.333333333333343" />
+            </edge>
+            <edge source="logic.gameelements.target" target="logic.gameelements.bumper">
+              <point x="15.0" y="-15.5" />
+              <point x="178.41111111111113" y="285.0" />
+              <point x="184.26825396825396" y="285.0" />
+              <point x="20.857142857142833" y="15.5" />
+            </edge>
+            <edge source="logic.gameelements.target" target="logic.gameelements.target">
+              <point x="45.0" y="15.5" />
+              <point x="208.41111111111113" y="376.0" />
+              <point x="55.911111111111126" y="376.0" />
+              <point x="55.911111111111126" y="310.1666666666667" />
+              <point x="-67.5" y="-10.333333333333336" />
+            </edge>
+            <edge source="logic.gameelements.bumper" target="interactions">
+              <point x="-29.19999999999999" y="-15.5" />
+              <point x="134.21111111111114" y="144.0" />
+              <point x="120.3125" y="144.0" />
+              <point x="32.8125" y="15.5" />
+            </edge>
+            <edge source="logic.gameelements.target" target="interactions">
+              <point x="-45.0" y="-15.5" />
+              <point x="118.41111111111113" y="275.0" />
+              <point x="17.911111111111126" y="275.0" />
+              <point x="17.911111111111126" y="124.0" />
+              <point x="32.8125" y="124.0" />
+              <point x="-54.6875" y="15.5" />
+            </edge>
+          </edges>
+          <settings layout="Hierarchic Group" zoom="1.0" x="28.0" y="120.0" />
+          <SelectedNodes>
+            <node>logic.gameelements.Hittable</node>
+          </SelectedNodes>
+          <Categories>
+            <Category>Fields</Category>
+            <Category>Constructors</Category>
+            <Category>Methods</Category>
+            <Category>Properties</Category>
+            <Category>Inner Classes</Category>
+          </Categories>
+          <SCOPE>All</SCOPE>
+          <VISIBILITY>private</VISIBILITY>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/diagrams/table.uml">
+      <provider selected="true" editor-type-id="UmlEditorProvider">
+        <state>
+          <ID>JAVA</ID>
+          <OriginalElement>logic.table</OriginalElement>
+          <nodes>
+            <node x="341.5" y="0.0">interactions.AcceptObservation</node>
+            <node x="167.25" y="596.0">logic.table.GameTable</node>
+            <node x="419.5" y="274.0">logic.table.Table</node>
+            <node x="0.0" y="250.0">interactions.DefaultInteractions</node>
+            <node x="22.5" y="24.5">interactions.ReceiveChanges</node>
+          </nodes>
+          <notes />
+          <edges>
+            <edge source="logic.table.Table" target="interactions.AcceptObservation">
+              <point x="71.25" y="-124.0" />
+              <point x="97.25" y="100.0" />
+            </edge>
+            <edge source="interactions.DefaultInteractions" target="interactions.AcceptObservation">
+              <point x="97.25" y="-148.0" />
+              <point x="291.75" y="230.0" />
+              <point x="438.75" y="230.0" />
+              <point x="-97.25" y="100.0" />
+            </edge>
+            <edge source="logic.table.GameTable" target="interactions.DefaultInteractions">
+              <point x="-105.5" y="-292.5" />
+              <point x="272.75" y="571.0" />
+              <point x="194.5" y="571.0" />
+              <point x="0.0" y="148.0" />
+            </edge>
+            <edge source="logic.table.Table" target="interactions.ReceiveChanges">
+              <point x="-71.25" y="-124.0" />
+              <point x="490.75" y="220.0" />
+              <point x="246.75" y="220.0" />
+              <point x="74.75" y="75.5" />
+            </edge>
+            <edge source="logic.table.GameTable" target="logic.table.Table">
+              <point x="105.5" y="-292.5" />
+              <point x="483.75" y="571.0" />
+              <point x="562.0" y="571.0" />
+              <point x="0.0" y="124.0" />
+            </edge>
+            <edge source="interactions.DefaultInteractions" target="interactions.ReceiveChanges">
+              <point x="-97.25" y="-148.0" />
+              <point x="-74.75" y="75.5" />
+            </edge>
+          </edges>
+          <settings layout="Hierarchic Group" zoom="1.0" x="365.5" y="283.5" />
+          <SelectedNodes />
+          <Categories>
+            <Category>Fields</Category>
+            <Category>Constructors</Category>
+            <Category>Methods</Category>
+            <Category>Properties</Category>
+            <Category>Inner Classes</Category>
+          </Categories>
+          <SCOPE>All</SCOPE>
+          <VISIBILITY>private</VISIBILITY>
         </state>
       </provider>
     </entry>
