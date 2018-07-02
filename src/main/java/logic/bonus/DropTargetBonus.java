@@ -1,7 +1,6 @@
 package logic.bonus;
 
 import logic.gameelements.bumper.Bumper;
-import logic.gameelements.target.DropTarget;
 import logic.gameelements.target.Target;
 import logic.table.GameTable;
 import logic.table.Table;
@@ -50,17 +49,7 @@ public class DropTargetBonus extends AbstractBonus{
     }
 
     @Override
-    public void visitBumper(Bumper bumper) {
-        // do nothing
-    }
-
-    @Override
-    public void visitTarget(Target target) {
-        // do nothing
-    }
-
-    @Override
-    public void visitTable(Table table) {
+    public void changedStateOfTable(Table table) {
         if (table.isPlayableTable() &&
                 table.getCurrentlyDroppedDropTargets() == table.getNumberOfDropTargets()){
             trigger();

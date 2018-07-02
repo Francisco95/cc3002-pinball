@@ -1,23 +1,21 @@
 package logic.table;
 
-import controller.EventAcceptor;
-import controller.EventVisitor;
+import interactions.AcceptObservation;
+import interactions.ReceiveChanges;
 import controller.Game;
 import logic.gameelements.bumper.Bumper;
-import logic.gameelements.target.DropTarget;
 import logic.gameelements.target.Target;
 
 import java.util.List;
-import java.util.Observer;
 
 /**
  * Interface that represents the basics of a table to be played on.
- * This interface its extended from {@link EventAcceptor}
- * and {@link EventVisitor} to generalize interactions between different objects.
+ * This interface its extended from {@link AcceptObservation}
+ * and {@link ReceiveChanges} to generalize interactions between different objects.
  *
  * @author Juan-Pablo Silva, modified by Francisco Muñoz.
  */
-public interface Table extends EventAcceptor, EventVisitor {
+public interface Table extends AcceptObservation, ReceiveChanges {
     /**
      * Gets the table name.
      *

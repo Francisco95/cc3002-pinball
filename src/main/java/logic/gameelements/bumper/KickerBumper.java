@@ -2,9 +2,12 @@ package logic.gameelements.bumper;
 
 
 import controller.Game;
+import interactions.AcceptObservation;
 import logic.bonus.Bonus;
 import logic.gameelements.target.Target;
 import logic.table.Table;
+
+import java.util.Observable;
 
 /**
  * Class that define behavior of a kicker bumper

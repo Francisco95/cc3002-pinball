@@ -1,22 +1,20 @@
 package logic.bonus;
 
-import controller.EventAcceptor;
-import controller.EventVisitor;
-import controller.Game;
+import interactions.AcceptObservation;
+import interactions.ReceiveChanges;
 
 /**
- * Interface that represents a bonus object. Also include the accept method used for
+ * Interface that represents a bonus object. Also include the accept methods used for
  * the Visitor Pattern
  *
- * @author Juan-Pablo Silva
+ * @author (template)Juan-Pablo Silva, (code)Francisco Muñoz
+ *
  * @see ExtraBallBonus
  * @see JackPotBonus
  * @see DropTargetBonus
  */
-public interface Bonus extends EventAcceptor, EventVisitor {
+public interface Bonus extends ReceiveChanges {
     /**
-     * Gets the number of times the bonus has been triggered.
-     *
      * @return number of times the bonus has been triggered
      */
     int timesTriggered();
@@ -29,10 +27,14 @@ public interface Bonus extends EventAcceptor, EventVisitor {
 
     /**
      * gets the value of the bonus.
+     *
      * @return value of bonus (integer)
      */
     int getBonusValue();
 
+    /**
+     * @return return true if the bonus is a bonus of balls
+     */
     boolean isBonusOfBalls();
 
 }

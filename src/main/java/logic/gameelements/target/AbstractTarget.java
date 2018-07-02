@@ -1,18 +1,18 @@
 package logic.gameelements.target;
 
 import controller.Game;
+import interactions.AcceptObservation;
+import interactions.DefaultInteractions;
 import logic.bonus.Bonus;
-import logic.gameelements.bumper.Bumper;
 import logic.table.Table;
 
 import java.util.Observable;
-import java.util.Observer;
 import java.util.Random;
 
 /**
  * @author Fancisco Muñoz Ponce. on date: 23-05-18
  */
-public abstract class AbstractTarget  extends Observable implements Target {
+public abstract class AbstractTarget  extends DefaultInteractions implements Target {
     /**
      * the current state of the spotTarget, could be active (True) or inactive (False)
      */
@@ -44,17 +44,6 @@ public abstract class AbstractTarget  extends Observable implements Target {
         this.seed = -1;
         this.randomProb = randomProb;
         this.aDropTarget = aDropTarget;
-    }
-
-    @Override
-    public void setObservers(Observer...observers){
-        for (Observer o : observers)
-            addObserver(o);
-    }
-
-    @Override
-    public void deleteAllObservers() {
-        deleteObservers();
     }
 
     /**
@@ -111,6 +100,13 @@ public abstract class AbstractTarget  extends Observable implements Target {
     }
 
     @Override
+    public void update(Observable o, Object arg) {
+        if (o instanceof AcceptObservation) {
+            ((AcceptObservation) o).acceptObservationFromTarget(this);
+        }
+    }
+
+    @Override
     public int getScore() {
         return score;
     }
@@ -121,27 +117,17 @@ public abstract class AbstractTarget  extends Observable implements Target {
     }
 
     @Override
-    public void acceptFromGame(Game game) {
-        game.visitTarget(this);
+    public void acceptObservationFromGame(Game game) {
+        game.hitTarget(this);
     }
 
     @Override
-    public void acceptFromBumper(Bumper bumper) {
-        // do nothing
+    public void acceptObservationFromTable(Table table) {
+        table.hitTarget(this);
     }
 
     @Override
-    public void acceptFromTarget(Target target) {
-        // do nothing
-    }
-
-    @Override
-    public void acceptFromTable(Table table) {
-        table.visitTarget(this);
-    }
-
-    @Override
-    public void acceptFromBonus(Bonus bonus) {
-        bonus.visitTarget(this);
+    public void acceptObservatiobFromBonus(Bonus bonus) {
+        bonus.hitTarget(this);
     }
 }

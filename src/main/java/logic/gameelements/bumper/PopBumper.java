@@ -1,5 +1,9 @@
 package logic.gameelements.bumper;
 
+import interactions.AcceptObservation;
+
+import java.util.Observable;
+
 /**
  * Class that define behavior of a kicker bumper
  * Use of Observer Pattern to notify observers that win X points (Game)
@@ -45,6 +49,5 @@ public class PopBumper extends AbstractBumper{
     public void downgrade() {
         setRemainingHitsToUpgrade(hitsNeededToUpgrade);
         setScore(baseScore);
-
     }
 }

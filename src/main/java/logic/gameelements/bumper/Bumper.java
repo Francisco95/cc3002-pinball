@@ -1,7 +1,8 @@
 package logic.gameelements.bumper;
 
-import controller.EventAcceptor;
-import controller.EventVisitor;
+import interactions.AcceptObservation;
+import interactions.DefaultInteractions;
+import interactions.ReceiveChanges;
 import logic.gameelements.Hittable;
 
 import java.util.Observer;
@@ -12,7 +13,7 @@ import java.util.Observer;
  * @author Juan-Pablo Silva
  * @see Hittable
  */
-public interface Bumper extends Hittable, EventAcceptor {
+public interface Bumper extends Hittable, AcceptObservation {
 
     /**
      * Gets the remaining hits the bumper has to receive to upgrade.
@@ -38,9 +39,4 @@ public interface Bumper extends Hittable, EventAcceptor {
      */
     void downgrade();
 
-    /**
-     * as part of Observer Pattern, this set the new observers that observe this observable.
-     * @param observers instances of observers
-     */
-    void setObservers(Observer...observers);
 }

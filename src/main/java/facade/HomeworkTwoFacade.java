@@ -41,6 +41,13 @@ public class HomeworkTwoFacade {
     public HomeworkTwoFacade(Game game) {
         this.game = game;
         this.table = GameTable.getEmptyTable();
+
+        // create the instances of bonuses, just to be sure
+        // that this Singleton pattern classes where initialized,
+        // and set the game as the observer of bonuses
+        JackPotBonus.getInstance().setObservers(game);
+        ExtraBallBonus.getInstance().setObservers(game);
+        DropTargetBonus.getInstance().setObservers(game);
     }
 
     /**

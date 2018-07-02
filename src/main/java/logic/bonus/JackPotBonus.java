@@ -1,15 +1,10 @@
 package logic.bonus;
 
-import controller.EventAcceptor;
 import controller.Game;
-import logic.gameelements.Hittable;
 import logic.gameelements.bumper.Bumper;
 import logic.gameelements.target.SpotTarget;
 import logic.gameelements.target.Target;
 import logic.table.Table;
-
-import java.util.Observable;
-import java.util.Observer;
 
 /**
  * Class that define jackpot bonus.
@@ -57,19 +52,9 @@ public class JackPotBonus extends AbstractBonus {
     }
 
     @Override
-    public void visitBumper(Bumper bumper) {
-        // do nothing
-    }
-
-    @Override
-    public void visitTarget(Target target) {
+    public void hitTarget(Target target) {
         if (!target.isADropTarget()){
             visitASpotTarget((SpotTarget) target);
         }
-    }
-
-    @Override
-    public void visitTable(Table table) {
-        // do nothing
     }
 }

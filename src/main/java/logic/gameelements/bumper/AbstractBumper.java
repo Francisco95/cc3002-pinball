@@ -1,7 +1,8 @@
 package logic.gameelements.bumper;
 
-import controller.EventAcceptor;
 import controller.Game;
+import interactions.AcceptObservation;
+import interactions.DefaultInteractions;
 import logic.bonus.Bonus;
 import logic.gameelements.target.Target;
 import logic.table.Table;
@@ -19,7 +20,7 @@ import java.util.Random;
  *
  * @author Fancisco Muñoz Ponce. on date: 23-05-18
  */
-public abstract class AbstractBumper extends Observable implements Bumper {
+public abstract class AbstractBumper extends DefaultInteractions implements Bumper {
 
     /**
      * keep count of the remaining hits the bumper has to receive to upgrade,
@@ -51,17 +52,6 @@ public abstract class AbstractBumper extends Observable implements Bumper {
         this.score = score;
         this.remainingHits = remainingHits;
         randomProb = new Random();
-    }
-
-    @Override
-    public void setObservers(Observer...observers){
-        for (Observer o : observers)
-            addObserver(o);
-    }
-
-    @Override
-    public void deleteAllObservers() {
-        deleteObservers();
     }
 
     /**
@@ -137,27 +127,19 @@ public abstract class AbstractBumper extends Observable implements Bumper {
     }
 
     @Override
-    public void acceptFromGame(Game game) {
-        game.visitBumper(this);
+    public void update(Observable o, Object arg) {
+        if (o instanceof AcceptObservation) {
+            ((AcceptObservation) o).acceptObservationFromBumper(this);
+        }
     }
 
     @Override
-    public void acceptFromBonus(Bonus bonus) {
-        bonus.visitBumper(this);
+    public void acceptObservationFromGame(Game game) {
+        game.hitBumper(this);
     }
 
     @Override
-    public void acceptFromBumper(Bumper bumper) {
-        // do nothing
-    }
-
-    @Override
-    public void acceptFromTarget(Target target) {
-        // do nothing
-    }
-
-    @Override
-    public void acceptFromTable(Table table) {
-        // do nothing
+    public void acceptObservatiobFromBonus(Bonus bonus) {
+        bonus.hitBumper(this);
     }
 }

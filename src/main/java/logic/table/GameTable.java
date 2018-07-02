@@ -1,7 +1,9 @@
 package logic.table;
 
-import controller.EventAcceptor;
+import interactions.AcceptObservation;
 import controller.Game;
+import interactions.DefaultInteractions;
+import interactions.ReceiveChanges;
 import logic.bonus.Bonus;
 import logic.bonus.DropTargetBonus;
 import logic.bonus.ExtraBallBonus;
@@ -19,14 +21,14 @@ import java.util.*;
  * class that define the behavior of a instance of Table.
  * Use of Observer pattern with Visitor Pattern.
  *
- * @see controller.EventVisitor
- * @see EventAcceptor
+ * @see ReceiveChanges
+ * @see AcceptObservation
  * @see Game
  * @see facade.HomeworkTwoFacade
  *
  * @author Fancisco Muñoz Ponce.
  */
-public class GameTable extends Observable implements Table {
+public class GameTable extends DefaultInteractions implements Table {
 
     private String tableName;
     private List<Target> targets;
@@ -91,6 +93,7 @@ public class GameTable extends Observable implements Table {
      */
     public static Table getFullTable(String tableName, int numberOfBumpers, double prob,
                                      int numberOfDropTargets, int numberOfTargets){
+
         List<Target> targets = createTargets(numberOfDropTargets, numberOfTargets);
         List<Bumper> bumpers = createBumpers(numberOfBumpers, prob);
         return new GameTable(tableName, bumpers, targets, numberOfDropTargets);
@@ -130,7 +133,7 @@ public class GameTable extends Observable implements Table {
      *
      * @param dropTarget                the {@link DropTarget} visited.
      *
-     * @see controller.EventVisitor
+     * @see ReceiveChanges
      */
     private void visitADropTarget(DropTarget dropTarget){
         if (!dropTarget.isActive()){
@@ -244,32 +247,12 @@ public class GameTable extends Observable implements Table {
     }
 
     @Override
-    public void acceptFromGame(Game game) {
-        // do nothing
-    }
-
-    @Override
-    public void acceptFromBumper(Bumper bumper) {
-        // do nothing
-    }
-
-    @Override
-    public void acceptFromTarget(Target target) {
-        // do nothing
-    }
-
-    @Override
-    public void acceptFromBonus(Bonus bonus) {
+    public void acceptObservatiobFromBonus(Bonus bonus) {
         int previousCounterOfTriggers = bonus.timesTriggered();
-        bonus.visitTable(this);
+        bonus.changedStateOfTable(this);
         if (previousCounterOfTriggers + 1 == bonus.timesTriggered()){
             upgradeAllBumpers();
         }
-    }
-
-    @Override
-    public void acceptFromTable(Table table) {
-        // do nothing
     }
 
     @Override
@@ -304,29 +287,16 @@ public class GameTable extends Observable implements Table {
     }
 
     @Override
-    public void visitBonus(Bonus bonus) {
-        // do nothing
-    }
-
-    @Override
-    public void visitBumper(Bumper bumper) {
-        // do nothing
-    }
-
-    @Override
-    public void visitTarget(Target target) {
+    public void hitTarget(Target target) {
         if (target.isADropTarget()){
             visitADropTarget((DropTarget) target);
         }
     }
 
     @Override
-    public void visitTable(Table table) {
-        // do nothing
-    }
-
-    @Override
     public void update(Observable o, Object arg) {
-        ((EventAcceptor) o).acceptFromTable(this);
+        if (o instanceof AcceptObservation) {
+            ((AcceptObservation) o).acceptObservationFromTable(this);
+        }
     }
 }
