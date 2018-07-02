@@ -1,6 +1,6 @@
 # Pinball
 
-HomeWork for course CC3002 at U. of Chile (2018)
+Homework for course CC3002 at U. of Chile (2018)
 
 ## Getting Started
 
@@ -45,7 +45,7 @@ NOTE: We don't guarantee a correct behavior on other IDE's or terminal
 
 ## Running the tests
 
-With the maven framework you just need to right-click on the folder _src/test/java_ and choose _run_ or _run with coverage_.
+With the _maven_ framework you just need to right-click on the folder _src/test/java_ and choose _run_ or _run with coverage_.
 
 The test here check behavior of all methods implemented, they are designed to find any error in the code, detecting for example, incorrect behavior in interactions between game elements, bonuses and game score/balls or incorect use of some methods.
 
