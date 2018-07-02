@@ -1,0 +1,78 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Diagram>
+  <ID>JAVA</ID>
+  <OriginalElement>logic.gameelements.target</OriginalElement>
+  <nodes>
+    <node x="0.0" y="48.0">logic.gameelements.Hittable</node>
+    <node x="268.0" y="0.0">interactions.AcceptObservation</node>
+    <node x="461.875" y="991.0">logic.gameelements.target.SpotTarget</node>
+    <node x="193.875" y="991.0">logic.gameelements.target.DropTarget</node>
+    <node x="254.375" y="596.0">logic.gameelements.target.AbstractTarget</node>
+    <node x="143.625" y="334.0">logic.gameelements.target.Target</node>
+    <node x="498.625" y="250.0">interactions.DefaultInteractions</node>
+    <node x="677.0" y="24.5">interactions.ReceiveChanges</node>
+  </nodes>
+  <notes />
+  <edges>
+    <edge source="logic.gameelements.target.Target" target="logic.gameelements.Hittable">
+      <point x="-50.5" y="-64.0" />
+      <point x="194.125" y="225.0" />
+      <point x="124.0" y="225.0" />
+      <point x="0.0" y="52.0" />
+    </edge>
+    <edge source="logic.gameelements.target.AbstractTarget" target="interactions.DefaultInteractions">
+      <point x="98.75" y="-172.5" />
+      <point x="550.625" y="571.0" />
+      <point x="693.125" y="571.0" />
+      <point x="0.0" y="148.0" />
+    </edge>
+    <edge source="interactions.DefaultInteractions" target="interactions.AcceptObservation">
+      <point x="-97.25" y="-148.0" />
+      <point x="595.875" y="225.0" />
+      <point x="559.75" y="225.0" />
+      <point x="97.25" y="100.0" />
+    </edge>
+    <edge source="logic.gameelements.target.DropTarget" target="logic.gameelements.target.AbstractTarget">
+      <point x="0.0" y="-40.0" />
+      <point x="317.875" y="966.0" />
+      <point x="353.125" y="966.0" />
+      <point x="-98.75" y="172.5" />
+    </edge>
+    <edge source="logic.gameelements.target.Target" target="interactions.AcceptObservation">
+      <point x="50.5" y="-64.0" />
+      <point x="295.125" y="225.0" />
+      <point x="365.25" y="225.0" />
+      <point x="-97.25" y="100.0" />
+    </edge>
+    <edge source="logic.gameelements.target.SpotTarget" target="logic.gameelements.target.AbstractTarget">
+      <point x="0.0" y="-40.0" />
+      <point x="585.875" y="966.0" />
+      <point x="550.625" y="966.0" />
+      <point x="98.75" y="172.5" />
+    </edge>
+    <edge source="logic.gameelements.target.AbstractTarget" target="logic.gameelements.target.Target">
+      <point x="-98.75" y="-172.5" />
+      <point x="353.125" y="571.0" />
+      <point x="244.625" y="571.0" />
+      <point x="0.0" y="64.0" />
+    </edge>
+    <edge source="interactions.DefaultInteractions" target="interactions.ReceiveChanges">
+      <point x="97.25" y="-148.0" />
+      <point x="790.375" y="225.0" />
+      <point x="826.5" y="225.0" />
+      <point x="0.0" y="75.5" />
+    </edge>
+  </edges>
+  <settings layout="Hierarchic Group" zoom="1.0" x="488.0" y="283.5" />
+  <SelectedNodes />
+  <Categories>
+    <Category>Fields</Category>
+    <Category>Constructors</Category>
+    <Category>Properties</Category>
+    <Category>Methods</Category>
+    <Category>Inner Classes</Category>
+  </Categories>
+  <SCOPE>All</SCOPE>
+  <VISIBILITY>private</VISIBILITY>
+</Diagram>
+
