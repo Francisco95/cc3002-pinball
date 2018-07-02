@@ -1,7 +1,6 @@
 package logic.table;
 
 import controller.Game;
-import javafx.scene.control.Tab;
 import logic.bonus.Bonus;
 import logic.bonus.DropTargetBonus;
 import logic.bonus.ExtraBallBonus;
@@ -275,9 +274,9 @@ public class GameTableTest {
         assertEquals(0, noTargetTable.getCurrentlyDroppedDropTargets());
         assertEquals(0, fullTable.getCurrentlyDroppedDropTargets());
 
-        emptyTable.acceptFromGame(game);
-        noTargetTable.acceptFromGame(game);
-        fullTable.acceptFromGame(game);
+        emptyTable.acceptObservationFromGame(game);
+        noTargetTable.acceptObservationFromGame(game);
+        fullTable.acceptObservationFromGame(game);
 
         assertEquals(score, game.getScore());
         assertEquals(balls, game.getBalls());
@@ -304,9 +303,9 @@ public class GameTableTest {
         assertEquals(0, noTargetTable.getCurrentlyDroppedDropTargets());
         assertEquals(0, fullTable.getCurrentlyDroppedDropTargets());
 
-        emptyTable.acceptFromBumper(bumper);
-        noTargetTable.acceptFromBumper(bumper);
-        fullTable.acceptFromBumper(bumper);
+        emptyTable.acceptObservationFromBumper(bumper);
+        noTargetTable.acceptObservationFromBumper(bumper);
+        fullTable.acceptObservationFromBumper(bumper);
 
         assertFalse(bumper.isUpgraded());
         assertEquals(5, bumper.remainingHitsToUpgrade());
@@ -332,9 +331,9 @@ public class GameTableTest {
         assertEquals(0, noTargetTable.getCurrentlyDroppedDropTargets());
         assertEquals(0, fullTable.getCurrentlyDroppedDropTargets());
 
-        emptyTable.acceptFromTarget(target);
-        noTargetTable.acceptFromTarget(target);
-        fullTable.acceptFromTarget(target);
+        emptyTable.acceptObservationFromTarget(target);
+        noTargetTable.acceptObservationFromTarget(target);
+        fullTable.acceptObservationFromTarget(target);
 
         assertTrue(target.isActive());
 
@@ -370,9 +369,9 @@ public class GameTableTest {
         assertEquals(0, emptyTable.getCurrentlyDroppedDropTargets());
         assertEquals(numOfDropTargets, fullTable.getCurrentlyDroppedDropTargets());
 
-        emptyTable.acceptFromBonus(dropTargetBonus);
-        noTargetTable.acceptFromBonus(dropTargetBonus);
-        fullTable.acceptFromBonus(dropTargetBonus);
+        emptyTable.acceptObservatiobFromBonus(dropTargetBonus);
+        noTargetTable.acceptObservatiobFromBonus(dropTargetBonus);
+        fullTable.acceptObservatiobFromBonus(dropTargetBonus);
 
         for (Bumper b: fullTable.getBumpers()){
             assertTrue(b.isUpgraded());
@@ -401,9 +400,9 @@ public class GameTableTest {
         assertEquals(0, noTargetTable.getCurrentlyDroppedDropTargets());
         assertEquals(0, fullTable.getCurrentlyDroppedDropTargets());
 
-        emptyTable.acceptFromTable(table);
-        noTargetTable.acceptFromTable(table);
-        fullTable.acceptFromTable(table);
+        emptyTable.acceptObservationFromTable(table);
+        noTargetTable.acceptObservationFromTable(table);
+        fullTable.acceptObservationFromTable(table);
 
         assertTrue(table.isPlayableTable());
         assertEquals("table", table.getTableName());
@@ -445,17 +444,17 @@ public class GameTableTest {
         assertEquals(0, noTargetTable.getCurrentlyDroppedDropTargets());
         assertEquals(0, fullTable.getCurrentlyDroppedDropTargets());
 
-        emptyTable.visitBonus(bonus1);
-        emptyTable.visitBonus(bonus2);
-        emptyTable.visitBonus(bonus3);
+        emptyTable.triggeredBonus(bonus1);
+        emptyTable.triggeredBonus(bonus2);
+        emptyTable.triggeredBonus(bonus3);
 
-        noTargetTable.visitBonus(bonus1);
-        noTargetTable.visitBonus(bonus2);
-        noTargetTable.visitBonus(bonus3);
+        noTargetTable.triggeredBonus(bonus1);
+        noTargetTable.triggeredBonus(bonus2);
+        noTargetTable.triggeredBonus(bonus3);
 
-        fullTable.visitBonus(bonus1);
-        fullTable.visitBonus(bonus2);
-        fullTable.visitBonus(bonus3);
+        fullTable.triggeredBonus(bonus1);
+        fullTable.triggeredBonus(bonus2);
+        fullTable.triggeredBonus(bonus3);
 
         assertEquals(count1, bonus1.timesTriggered());
         assertEquals(count2, bonus2.timesTriggered());
@@ -486,14 +485,14 @@ public class GameTableTest {
         assertEquals(0, noTargetTable.getCurrentlyDroppedDropTargets());
         assertEquals(0, fullTable.getCurrentlyDroppedDropTargets());
 
-        emptyTable.visitBumper(bumper1);
-        emptyTable.visitBumper(bumper2);
+        emptyTable.hitBumper(bumper1);
+        emptyTable.hitBumper(bumper2);
 
-        noTargetTable.visitBumper(bumper1);
-        noTargetTable.visitBumper(bumper2);
+        noTargetTable.hitBumper(bumper1);
+        noTargetTable.hitBumper(bumper2);
 
-        fullTable.visitBumper(bumper1);
-        fullTable.visitBumper(bumper2);
+        fullTable.hitBumper(bumper1);
+        fullTable.hitBumper(bumper2);
 
         assertFalse(bumper1.isUpgraded());
         assertEquals(5, bumper1.remainingHitsToUpgrade());
@@ -525,14 +524,14 @@ public class GameTableTest {
         assertEquals(0, noTargetTable.getCurrentlyDroppedDropTargets());
         assertEquals(0, fullTable.getCurrentlyDroppedDropTargets());
 
-        emptyTable.visitTarget(target1);
-        emptyTable.visitTarget(target2);
+        emptyTable.hitTarget(target1);
+        emptyTable.hitTarget(target2);
 
-        noTargetTable.visitTarget(target1);
-        noTargetTable.visitTarget(target2);
+        noTargetTable.hitTarget(target1);
+        noTargetTable.hitTarget(target2);
 
-        fullTable.visitTarget(target1);
-        fullTable.visitTarget(target2);
+        fullTable.hitTarget(target1);
+        fullTable.hitTarget(target2);
 
         assertTrue(target1.isActive());
         assertTrue(target2.isActive());
@@ -552,14 +551,14 @@ public class GameTableTest {
         assertEquals(0, noTargetTable.getCurrentlyDroppedDropTargets());
         assertEquals(0, fullTable.getCurrentlyDroppedDropTargets());
 
-        emptyTable.visitTarget(target1);
-        emptyTable.visitTarget(target2);
+        emptyTable.hitTarget(target1);
+        emptyTable.hitTarget(target2);
 
-        noTargetTable.visitTarget(target1);
-        noTargetTable.visitTarget(target2);
+        noTargetTable.hitTarget(target1);
+        noTargetTable.hitTarget(target2);
 
-        fullTable.visitTarget(target1);
-        fullTable.visitTarget(target2);
+        fullTable.hitTarget(target1);
+        fullTable.hitTarget(target2);
 
         assertFalse(target1.isActive());
         assertFalse(target2.isActive());
@@ -583,9 +582,9 @@ public class GameTableTest {
         assertEquals(0, noTargetTable.getCurrentlyDroppedDropTargets());
         assertEquals(0, fullTable.getCurrentlyDroppedDropTargets());
 
-        emptyTable.visitTable(table);
-        noTargetTable.visitTable(table);
-        fullTable.visitTable(table);
+        emptyTable.changedStateOfTable(table);
+        noTargetTable.changedStateOfTable(table);
+        fullTable.changedStateOfTable(table);
 
         assertEquals(0, table.getCurrentlyDroppedDropTargets());
         assertEquals(0, emptyTable.getCurrentlyDroppedDropTargets());

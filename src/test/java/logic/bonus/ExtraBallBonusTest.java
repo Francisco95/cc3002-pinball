@@ -4,15 +4,11 @@ import controller.Game;
 import logic.gameelements.bumper.Bumper;
 import logic.gameelements.bumper.KickerBumper;
 import logic.gameelements.target.DropTarget;
-import logic.gameelements.target.SpotTarget;
 import logic.gameelements.target.Target;
 import logic.table.GameTable;
 import logic.table.Table;
-import org.junit.Before;
 import org.junit.BeforeClass;
 import org.junit.Test;
-
-import java.nio.Buffer;
 
 import static org.junit.Assert.*;
 
@@ -88,7 +84,7 @@ public class ExtraBallBonusTest {
             ((KickerBumper)bumper).setSeed(seed);
         }
         int count = extraBallBonus.timesTriggered();
-        extraBallBonus.visitBumper(bumper);
+        extraBallBonus.hitBumper(bumper);
         assertEquals(count, extraBallBonus.timesTriggered());
 
         // look for a seed that trigger the bonus
@@ -98,7 +94,7 @@ public class ExtraBallBonusTest {
             seed++;
             ((KickerBumper)bumper).setSeed(seed);
         }
-        extraBallBonus.visitBumper(bumper);
+        extraBallBonus.hitBumper(bumper);
         assertEquals(count+1, extraBallBonus.timesTriggered());
 
     }
@@ -117,7 +113,7 @@ public class ExtraBallBonusTest {
             ((DropTarget)target).setSeed(seed);
         }
         int count = extraBallBonus.timesTriggered();
-        extraBallBonus.visitTarget(target);
+        extraBallBonus.hitTarget(target);
         assertEquals(count, extraBallBonus.timesTriggered());
 
         // look for a seed that trigger the bonus
@@ -127,7 +123,7 @@ public class ExtraBallBonusTest {
             seed++;
             ((DropTarget)target).setSeed(seed);
         }
-        extraBallBonus.visitTarget(target);
+        extraBallBonus.hitTarget(target);
         assertEquals(count+1, extraBallBonus.timesTriggered());
     }
 
@@ -142,7 +138,7 @@ public class ExtraBallBonusTest {
         assertTrue(table.isPlayableTable());
         assertEquals(0, table.getCurrentlyDroppedDropTargets());
         int count = extraBallBonus.timesTriggered();
-        extraBallBonus.visitTable(table);
+        extraBallBonus.changedStateOfTable(table);
         assertTrue(table.isPlayableTable());
         assertEquals(0, table.getCurrentlyDroppedDropTargets());
         assertEquals(count, extraBallBonus.timesTriggered());
@@ -216,7 +212,7 @@ public class ExtraBallBonusTest {
     @Test
     public void acceptFromGame() {
         balls = game.getBalls();
-        extraBallBonus.acceptFromGame(game);
+        extraBallBonus.acceptObservationFromGame(game);
         assertEquals(balls + extraBallBonus.getBonusValue(), game.getBalls());
     }
 
@@ -229,7 +225,7 @@ public class ExtraBallBonusTest {
         Bonus bonus = DropTargetBonus.getInstance();
         int countDrop = bonus.timesTriggered();
         int countExt = extraBallBonus.timesTriggered();
-        extraBallBonus.acceptFromBonus(bonus);
+        extraBallBonus.acceptObservatiobFromBonus(bonus);
         assertEquals(countDrop, bonus.timesTriggered());
         assertEquals(countExt, extraBallBonus.timesTriggered());
     }
@@ -254,7 +250,7 @@ public class ExtraBallBonusTest {
         assertTrue(table.isPlayableTable());
         assertEquals(0, table.getCurrentlyDroppedDropTargets());
         int count = extraBallBonus.timesTriggered();
-        extraBallBonus.acceptFromTable(table);
+        extraBallBonus.acceptObservationFromTable(table);
         assertTrue(table.isPlayableTable());
         assertEquals(0, table.getCurrentlyDroppedDropTargets());
         assertEquals(count, extraBallBonus.timesTriggered());
@@ -269,7 +265,7 @@ public class ExtraBallBonusTest {
         assertFalse(bonus.isBonusOfBalls());
         int countExt = bonus.timesTriggered();
         int countDrop = extraBallBonus.timesTriggered();
-        extraBallBonus.visitBonus(bonus);
+        extraBallBonus.triggeredBonus(bonus);
         assertFalse(bonus.isBonusOfBalls());
         assertEquals(countDrop, extraBallBonus.timesTriggered());
         assertEquals(countExt, bonus.timesTriggered());

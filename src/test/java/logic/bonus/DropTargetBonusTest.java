@@ -7,11 +7,8 @@ import logic.gameelements.target.DropTarget;
 import logic.gameelements.target.Target;
 import logic.table.GameTable;
 import logic.table.Table;
-import org.junit.Before;
 import org.junit.BeforeClass;
 import org.junit.Test;
-
-import java.util.ArrayList;
 
 import static org.junit.Assert.*;
 
@@ -73,7 +70,7 @@ public class DropTargetBonusTest {
         assertEquals(500, bumper.getScore());
         assertFalse(dropTargetBonus.isBonusOfBalls());
         int count = dropTargetBonus.timesTriggered();
-        dropTargetBonus.visitBumper(bumper);
+        dropTargetBonus.hitBumper(bumper);
         assertFalse(bumper.isUpgraded());
         assertEquals(5, bumper.remainingHitsToUpgrade());
         assertEquals(500, bumper.getScore());
@@ -92,7 +89,7 @@ public class DropTargetBonusTest {
         assertTrue(target.isADropTarget());
         assertFalse(dropTargetBonus.isBonusOfBalls());
         int count = dropTargetBonus.timesTriggered();
-        dropTargetBonus.visitTarget(target);
+        dropTargetBonus.hitTarget(target);
         assertEquals(100, target.getScore());
         assertTrue(target.isActive());
         assertTrue(target.isADropTarget());
@@ -117,7 +114,7 @@ public class DropTargetBonusTest {
         table.getTargets().get(0).hit();
         score = game.getScore();
         int count = dropTargetBonus.timesTriggered();
-        dropTargetBonus.visitTable(table);
+        dropTargetBonus.changedStateOfTable(table);
         assertEquals(score, game.getScore());
         assertEquals(count, dropTargetBonus.timesTriggered());
 
@@ -126,7 +123,7 @@ public class DropTargetBonusTest {
             t.hit();
         }
         score = game.getScore();
-        dropTargetBonus.visitTable(table);
+        dropTargetBonus.changedStateOfTable(table);
         assertEquals(score + dropTargetBonus.getBonusValue(), game.getScore());
         assertEquals(count+1, dropTargetBonus.timesTriggered());
     }
@@ -142,7 +139,7 @@ public class DropTargetBonusTest {
         assertEquals(500, bumper.getScore());
         assertFalse(dropTargetBonus.isBonusOfBalls());
         int count = dropTargetBonus.timesTriggered();
-        dropTargetBonus.acceptFromBumper(bumper);
+        dropTargetBonus.acceptObservationFromBumper(bumper);
         assertFalse(bumper.isUpgraded());
         assertEquals(5, bumper.remainingHitsToUpgrade());
         assertEquals(500, bumper.getScore());
@@ -230,7 +227,7 @@ public class DropTargetBonusTest {
     @Test
     public void acceptFromGame() {
         score = game.getScore();
-        dropTargetBonus.acceptFromGame(game);
+        dropTargetBonus.acceptObservationFromGame(game);
         assertEquals(score + dropTargetBonus.getBonusValue(), game.getScore());
     }
 
@@ -243,7 +240,7 @@ public class DropTargetBonusTest {
         Bonus bonus = JackPotBonus.getInstance();
         int countJacPot = bonus.timesTriggered();
         int countDrop = dropTargetBonus.timesTriggered();
-        dropTargetBonus.acceptFromBonus(bonus);
+        dropTargetBonus.acceptObservatiobFromBonus(bonus);
         assertEquals(countJacPot, bonus.timesTriggered());
         assertEquals(countDrop, dropTargetBonus.timesTriggered());
     }
@@ -257,7 +254,7 @@ public class DropTargetBonusTest {
         Target target = new DropTarget();
         assertTrue(target.isActive());
         int count = dropTargetBonus.timesTriggered();
-        dropTargetBonus.acceptFromTarget(target);
+        dropTargetBonus.acceptObservationFromTarget(target);
         assertTrue(target.isActive());
         assertEquals(count, dropTargetBonus.timesTriggered());
     }
@@ -273,7 +270,7 @@ public class DropTargetBonusTest {
         assertTrue(table.isPlayableTable());
         assertEquals(0, table.getCurrentlyDroppedDropTargets());
         int count = dropTargetBonus.timesTriggered();
-        dropTargetBonus.acceptFromTable(table);
+        dropTargetBonus.acceptObservationFromTable(table);
         assertTrue(table.isPlayableTable());
         assertEquals(0, table.getCurrentlyDroppedDropTargets());
         assertEquals(count, dropTargetBonus.timesTriggered());
@@ -288,7 +285,7 @@ public class DropTargetBonusTest {
         assertTrue(bonus.isBonusOfBalls());
         int countExt = bonus.timesTriggered();
         int countDrop = dropTargetBonus.timesTriggered();
-        dropTargetBonus.visitBonus(bonus);
+        dropTargetBonus.triggeredBonus(bonus);
         assertTrue(bonus.isBonusOfBalls());
         assertEquals(countDrop, dropTargetBonus.timesTriggered());
         assertEquals(countExt, bonus.timesTriggered());

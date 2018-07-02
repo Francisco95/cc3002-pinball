@@ -217,7 +217,7 @@ public class PopBumperTest {
     @Test
     public void acceptFromGame() {
         assertEquals(score, game.getScore());
-        popBumper.acceptFromGame(game);
+        popBumper.acceptObservationFromGame(game);
         assertEquals(score + popBumper.getScore(), game.getScore());
     }
 

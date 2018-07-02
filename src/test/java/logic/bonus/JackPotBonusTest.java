@@ -2,14 +2,11 @@ package logic.bonus;
 
 import controller.Game;
 import logic.gameelements.bumper.Bumper;
-import logic.gameelements.bumper.KickerBumper;
 import logic.gameelements.bumper.PopBumper;
-import logic.gameelements.target.DropTarget;
 import logic.gameelements.target.SpotTarget;
 import logic.gameelements.target.Target;
 import logic.table.GameTable;
 import logic.table.Table;
-import org.junit.Before;
 import org.junit.BeforeClass;
 import org.junit.Test;
 
@@ -72,7 +69,7 @@ public class JackPotBonusTest {
         assertEquals(100, bumper.getScore());
         assertFalse(jackPotBonus.isBonusOfBalls());
         int count = jackPotBonus.timesTriggered();
-        jackPotBonus.acceptFromBumper(bumper);
+        jackPotBonus.acceptObservationFromBumper(bumper);
         assertFalse(bumper.isUpgraded());
         assertEquals(3, bumper.remainingHitsToUpgrade());
         assertEquals(100, bumper.getScore());
@@ -91,7 +88,7 @@ public class JackPotBonusTest {
         assertEquals(100, bumper.getScore());
         assertFalse(jackPotBonus.isBonusOfBalls());
         int count = jackPotBonus.timesTriggered();
-        jackPotBonus.visitBumper(bumper);
+        jackPotBonus.hitBumper(bumper);
         assertFalse(bumper.isUpgraded());
         assertEquals(3, bumper.remainingHitsToUpgrade());
         assertEquals(100, bumper.getScore());
@@ -108,7 +105,7 @@ public class JackPotBonusTest {
         assertTrue(target.isActive());
         assertTrue(target.bonusTriggered());
         int count = jackPotBonus.timesTriggered();
-        jackPotBonus.visitTarget(target);
+        jackPotBonus.hitTarget(target);
         assertTrue(target.isActive());
         assertTrue(target.bonusTriggered());
         assertEquals(count+1, jackPotBonus.timesTriggered());
@@ -125,7 +122,7 @@ public class JackPotBonusTest {
         assertTrue(table.isPlayableTable());
         assertEquals(0, table.getCurrentlyDroppedDropTargets());
         int count = jackPotBonus.timesTriggered();
-        jackPotBonus.visitTable(table);
+        jackPotBonus.changedStateOfTable(table);
         assertTrue(table.isPlayableTable());
         assertEquals(0, table.getCurrentlyDroppedDropTargets());
         assertEquals(count, jackPotBonus.timesTriggered());
@@ -206,7 +203,7 @@ public class JackPotBonusTest {
     @Test
     public void acceptFromGame() {
         score = game.getScore();
-        jackPotBonus.acceptFromGame(game);
+        jackPotBonus.acceptObservationFromGame(game);
         assertEquals(score + jackPotBonus.getBonusValue(), game.getScore());
     }
 
@@ -219,7 +216,7 @@ public class JackPotBonusTest {
         Bonus bonus = ExtraBallBonus.getInstance();
         int countExt = bonus.timesTriggered();
         int countJack = jackPotBonus.timesTriggered();
-        jackPotBonus.acceptFromBonus(bonus);
+        jackPotBonus.acceptObservatiobFromBonus(bonus);
         assertEquals(countExt, bonus.timesTriggered());
         assertEquals(countJack, jackPotBonus.timesTriggered());
     }
@@ -245,7 +242,7 @@ public class JackPotBonusTest {
         assertTrue(table.isPlayableTable());
         assertEquals(0, table.getCurrentlyDroppedDropTargets());
         int count = jackPotBonus.timesTriggered();
-        jackPotBonus.acceptFromTable(table);
+        jackPotBonus.acceptObservationFromTable(table);
         assertTrue(table.isPlayableTable());
         assertEquals(0, table.getCurrentlyDroppedDropTargets());
         assertEquals(count, jackPotBonus.timesTriggered());
@@ -260,7 +257,7 @@ public class JackPotBonusTest {
         assertFalse(bonus.isBonusOfBalls());
         int countExt = bonus.timesTriggered();
         int countDrop = jackPotBonus.timesTriggered();
-        jackPotBonus.visitBonus(bonus);
+        jackPotBonus.triggeredBonus(bonus);
         assertFalse(bonus.isBonusOfBalls());
         assertEquals(countDrop, jackPotBonus.timesTriggered());
         assertEquals(countExt, bonus.timesTriggered());

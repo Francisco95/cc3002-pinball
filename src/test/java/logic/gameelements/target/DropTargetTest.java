@@ -9,8 +9,6 @@ import logic.table.Table;
 import org.junit.Before;
 import org.junit.Test;
 
-import java.util.Random;
-
 import static org.junit.Assert.*;
 
 /**
@@ -194,7 +192,7 @@ public class DropTargetTest {
      */
     @Test
     public void acceptFromGame() {
-        dropTarget.acceptFromGame(game);
+        dropTarget.acceptObservationFromGame(game);
         assertEquals(score + dropTarget.getScore(), game.getScore());
     }
 
@@ -213,7 +211,7 @@ public class DropTargetTest {
         assertTrue(dropTarget.isActive());
         assertEquals(100, dropTarget.getScore());
 
-        dropTarget.acceptFromBumper(kickerBumper);
+        dropTarget.acceptObservationFromBumper(kickerBumper);
 
         // state after accept visit
         assertFalse(kickerBumper.isUpgraded());
@@ -236,7 +234,7 @@ public class DropTargetTest {
         assertTrue(dropTarget.isActive());
         assertEquals(100, dropTarget.getScore());
 
-        dropTarget.acceptFromTarget(target);
+        dropTarget.acceptObservationFromTarget(target);
 
         // state after
         assertTrue(target.isActive());
@@ -255,12 +253,12 @@ public class DropTargetTest {
         Table table = GameTable.getEmptyTable();
         // is active, doesn't change
         int counter = table.getCurrentlyDroppedDropTargets();
-        dropTarget.acceptFromTable(table);
+        dropTarget.acceptObservationFromTable(table);
         assertEquals(counter, table.getCurrentlyDroppedDropTargets());
 
         // is non-active, change by +1
         dropTarget.setActive(false);
-        dropTarget.acceptFromTable(table);
+        dropTarget.acceptObservationFromTable(table);
         assertEquals(counter + 1, table.getCurrentlyDroppedDropTargets());
     }
 
@@ -280,7 +278,7 @@ public class DropTargetTest {
         dropTarget.setSeed(seed);
         int counterTrigger = extraBall.timesTriggered();
         balls = game.getBalls();
-        dropTarget.acceptFromBonus(extraBall);
+        dropTarget.acceptObservatiobFromBonus(extraBall);
         assertEquals(counterTrigger, extraBall.timesTriggered());
         assertEquals(balls, game.getBalls());
 
@@ -292,7 +290,7 @@ public class DropTargetTest {
             dropTarget.setSeed(seed);
         }
         dropTarget.setSeed(seed);
-        dropTarget.acceptFromBonus(extraBall);
+        dropTarget.acceptObservatiobFromBonus(extraBall);
         assertEquals(counterTrigger+1, extraBall.timesTriggered());
         assertEquals(balls+1, game.getBalls());
 

@@ -275,7 +275,7 @@ public class KickerBumperTest {
     @Test
     public void acceptFromGame() {
         assertEquals(score, game.getScore());
-        kickerBumper.acceptFromGame(game);
+        kickerBumper.acceptObservationFromGame(game);
         assertEquals(score + kickerBumper.getScore(), game.getScore());
     }
 
@@ -294,7 +294,7 @@ public class KickerBumperTest {
             kickerBumper.setSeed(seed);
         }
         assertEquals(balls, game.getBalls());
-        kickerBumper.acceptFromBonus(extraBallBonus);
+        kickerBumper.acceptObservatiobFromBonus(extraBallBonus);
         assertEquals(counterTrigger, extraBallBonus.timesTriggered());
         assertEquals(balls, game.getBalls());
 
@@ -305,7 +305,7 @@ public class KickerBumperTest {
             seed++;
             kickerBumper.setSeed(seed);
         }
-        kickerBumper.acceptFromBonus(extraBallBonus);
+        kickerBumper.acceptObservatiobFromBonus(extraBallBonus);
         assertEquals(counterTrigger+1, extraBallBonus.timesTriggered());
         assertEquals(balls + extraBallBonus.getBonusValue(), game.getBalls());
     }
@@ -323,7 +323,7 @@ public class KickerBumperTest {
         assertFalse(kickerBumper.isUpgraded());
         assertEquals(500, kickerBumper.getScore());
 
-        kickerBumper.acceptFromBumper(bumper);
+        kickerBumper.acceptObservationFromBumper(bumper);
         assertFalse(bumper.isUpgraded());
         assertEquals(500, bumper.getScore());
         assertFalse(kickerBumper.isUpgraded());
@@ -344,7 +344,7 @@ public class KickerBumperTest {
         assertFalse(kickerBumper.isUpgraded());
         assertEquals(500, kickerBumper.getScore());
 
-        kickerBumper.acceptFromTarget(target);
+        kickerBumper.acceptObservationFromTarget(target);
         assertTrue(target.isActive());
         assertEquals(0, target.getScore());
         assertFalse(kickerBumper.isUpgraded());
@@ -364,7 +364,7 @@ public class KickerBumperTest {
         assertFalse(kickerBumper.isUpgraded());
         assertEquals(500, kickerBumper.getScore());
 
-        kickerBumper.acceptFromTable(table);
+        kickerBumper.acceptObservationFromTable(table);
         assertFalse(table.isPlayableTable());
         assertEquals(0, table.getCurrentlyDroppedDropTargets());
         assertEquals("", table.getTableName());

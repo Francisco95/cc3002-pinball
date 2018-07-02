@@ -148,7 +148,7 @@ public class SpotTargetTest {
      */
     @Test
     public void acceptFromGame() {
-        spotTarget.acceptFromGame(game);
+        spotTarget.acceptObservationFromGame(game);
         assertEquals(score, game.getScore());
     }
 
@@ -181,7 +181,7 @@ public class SpotTargetTest {
         assertEquals(0, spotTarget.getScore());
         assertTrue(spotTarget.isActive());
 
-        spotTarget.acceptFromTable(table);
+        spotTarget.acceptObservationFromTable(table);
 
         assertEquals(0, table.getCurrentlyDroppedDropTargets());
         assertFalse(table.isPlayableTable());
@@ -198,7 +198,7 @@ public class SpotTargetTest {
         score = game.getScore();
         int counterTrigger = jackPot.timesTriggered();
 
-        spotTarget.acceptFromBonus(jackPot);
+        spotTarget.acceptObservatiobFromBonus(jackPot);
         assertEquals(score + jackPot.getBonusValue(), game.getScore());
         assertEquals(counterTrigger+1, jackPot.timesTriggered());
     }
