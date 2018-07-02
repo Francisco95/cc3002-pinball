@@ -1,45 +1,37 @@
 package controller;
 
+import interactions.AcceptObservation;
+import interactions.DefaultInteractions;
+import interactions.ReceiveChanges;
 import logic.bonus.Bonus;
-import logic.bonus.DropTargetBonus;
-import logic.bonus.ExtraBallBonus;
-import logic.bonus.JackPotBonus;
 import logic.gameelements.Hittable;
 import logic.gameelements.bumper.Bumper;
 import logic.gameelements.target.Target;
-import logic.table.Table;
 
 import java.util.Observable;
-import java.util.Observer;
 
 /**
  * Game logic controller class.
  * in order to communicate with all the other class implement the Observer pattern considering this as
  * the observer and the other classes as Observables, also mix this with a Visit Pattern in order to be able
- * to do the modifications on Game state in a cleaner way, this idea comes from a thread on StackOverflow,
- * which link is: <a href="https://stackoverflow.com/a/6608600">https://stackoverflow.com</a> and is principally apply
- * to Game as the visitor and the Bonus classes as the visited because they can change score or balls.
- * @see EventVisitor
+ * to do the modifications on Game state in a cleaner way.
+ *
+ * @see ReceiveChanges
  * @see Bonus
  *
  * @author (template)Juan-Pablo Silva, (code)Francisco Muñoz P.
  */
-public class Game implements Observer, EventVisitor {
+public class Game extends DefaultInteractions {
 
     /**
      * the number of score in the game
      */
     private int score;
+
     /**
      * the number of balls in the game
      */
     private int balls;
-
-    private DropTargetBonus dropTargetBonus;
-
-    private ExtraBallBonus extraBallBonus;
-
-    private JackPotBonus jackPotBonus;
 
     public Game(){
         this(1, 0);
@@ -55,6 +47,7 @@ public class Game implements Observer, EventVisitor {
 
     /**
      * do an addition to the current score points by an amount of 'points'
+     *
      * @param points the number of points to add to score
      */
     public void addToScore(int points){
@@ -70,6 +63,7 @@ public class Game implements Observer, EventVisitor {
 
     /**
      * set the score value to 'score'
+     *
      * @param score the new score value
      */
     public void setScore(int score) {
@@ -78,6 +72,7 @@ public class Game implements Observer, EventVisitor {
 
     /**
      * do an addition to the current balls number by an amount of 'balls'
+     *
      * @param balls the number of balls to add to game
      */
     public void addToBalls(int balls){
@@ -93,58 +88,88 @@ public class Game implements Observer, EventVisitor {
 
     /**
      * set the number of balls in game to 'balls'
+     *
      * @param balls the new number of balls
      */
     public void setBalls(int balls) {
         this.balls = balls;
     }
 
+    /**
+     * drop one ball decreasing the current number of balls by 1
+     */
     public void dropBall(){
         this.balls--;
     }
 
+    /**
+     * check if the game is over, i.e., the number of balls is 0 (or less)
+     *
+     * @return True if the game is over ( number of balls == 0), or false if not
+     */
     public boolean isGameOver(){
         return balls <= 0;
     }
 
-    public void visitHittable(Hittable hittable){
+    /**
+     * When a ball hit a hittable it will add to the current game score
+     * the corresponding amount of points.
+     *
+     * @param hittable instance of a Game element
+     */
+    public void hitHittable(Hittable hittable){
         addToScore(hittable.getScore());
     }
 
     /**
-     * if the message 'arg' is null then apply visitor pattern, or else,
-     * augment the score by the amount of 'arg'
-     * Here arg could only be an integer or null and if it is null que observable
-     * can only be an instance of Bonus.
-     * @param o the observable, could be a Bonus, a Bumper, a Target or a Table
+     * Use visitor patter with observe pattern to simulate a "multi-dispacth" interaction,
+     * with this we only need to do one instanceof in order to check that the incoming observable
+     * event is an instance of an acceptor of observation.
+     *
+     * @param o the observable, could be anything created as an acceptor of observation
      * @param arg the message sended by the observable
      */
     @Override
     public void update(Observable o, Object arg) {
-        ((EventAcceptor) o).acceptFromGame(this);
+        if (o instanceof AcceptObservation) {
+            ((AcceptObservation) o).acceptObservationFromGame(this);
+        }
     }
 
+    /**
+     * if the bonus triggered is a bonus of balls, then increase the
+     * number of balls by the corresponding amount, or else, the
+     * bonus is of points and will increase the score.
+     *
+     * @param bonus Instance of Bonus an observable event)
+     */
     @Override
-    public void visitBonus(Bonus bonus) {
+    public void triggeredBonus(Bonus bonus) {
         if (bonus.isBonusOfBalls())
             addToBalls(bonus.getBonusValue());
         else
             addToScore(bonus.getBonusValue());
     }
 
+    /**
+     * when a ball hit a bumper it could generate an
+     * increase in the game score
+     *
+     * @param bumper Instance of Bumper (an observable event)
+     */
     @Override
-    public void visitBumper(Bumper bumper) {
-        visitHittable(bumper);
+    public void hitBumper(Bumper bumper) {
+        hitHittable(bumper);
     }
 
+    /**
+     * when a ball hit a target it could generate an
+     * increase in the game score
+     *
+     * @param target Instance of Target (an observable event)
+     */
     @Override
-    public void visitTarget(Target target) {
-        visitHittable(target);
+    public void hitTarget(Target target) {
+        hitHittable(target);
     }
-
-    @Override
-    public void visitTable(Table table) {
-
-    }
-
 }
