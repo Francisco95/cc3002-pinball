@@ -16,7 +16,7 @@ public interface Hittable {
      * If implemented as Observer Pattern, here should be the notifyObservers() because of
      * change on state
      */
-    void hit();
+    int hit();
 
     /**
      * Defines that a hittable object has to have a score when it is hit.

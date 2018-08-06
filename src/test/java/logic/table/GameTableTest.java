@@ -145,10 +145,10 @@ public class GameTableTest {
     @Test
     public void getBumpers() {
         // empty table
-        assertNull(emptyTable.getBumpers());
+        assertTrue(emptyTable.getBumpers().isEmpty());
 
         // no target table
-        assertNotNull(noTargetTable.getBumpers());
+        assertFalse(noTargetTable.getBumpers().isEmpty());
         assertEquals(numOfBumpers, noTargetTable.getBumpers().size());
         for (Bumper b : noTargetTable.getBumpers()){
             assertNotNull(b);
@@ -162,13 +162,13 @@ public class GameTableTest {
     @Test
     public void getTargets() {
         // empty table
-        assertNull(emptyTable.getBumpers());
+        assertTrue(emptyTable.getBumpers().isEmpty());
 
         // same with no target table
 
         // full table
-        assertNotNull(fullTable.getTargets());
-        assertEquals(numOfTargets, fullTable.getTargets().size());
+        assertFalse(fullTable.getTargets().isEmpty());
+        assertEquals(numOfTargets + numOfDropTargets, fullTable.getTargets().size());
         for (Target t : fullTable.getTargets()){
             assertNotNull(t);
         }
@@ -180,13 +180,13 @@ public class GameTableTest {
     @Test
     public void resetDropTargets() {
         // empty table
-        assertNull(emptyTable.getTargets());
+        assertTrue(emptyTable.getTargets().isEmpty());
         emptyTable.resetDropTargets();
-        assertNull(emptyTable.getTargets());
+        assertTrue(emptyTable.getTargets().isEmpty());
 
         // no targets table, same result.
         // full table
-        assertNotNull(fullTable.getTargets());
+        assertFalse(fullTable.getTargets().isEmpty());
         // we are going to hit() all the targets.
         for (Target t: fullTable.getTargets()){
             t.hit();
@@ -212,9 +212,9 @@ public class GameTableTest {
     @Test
     public void upgradeAllBumpers() {
         // empty table
-        assertNull(emptyTable.getBumpers());
+        assertTrue(emptyTable.getBumpers().isEmpty());
         emptyTable.upgradeAllBumpers();
-        assertNull(emptyTable.getBumpers());
+        assertTrue(emptyTable.getBumpers().isEmpty());
 
         // no targets table
         // check that all bumper are not upgraded
@@ -247,17 +247,17 @@ public class GameTableTest {
     public void isPlayableTable() {
         // empty table
         assertEquals("", emptyTable.getTableName());
-        assertNull(emptyTable.getBumpers());
+        assertTrue(emptyTable.getBumpers().isEmpty());
         assertFalse(emptyTable.isPlayableTable());
 
         // no target table
         assertEquals("noTargetTable", noTargetTable.getTableName());
-        assertNotNull(noTargetTable.getBumpers());
+        assertFalse(noTargetTable.getBumpers().isEmpty());
         assertTrue(noTargetTable.isPlayableTable());
 
         // full table
         assertEquals("fullTable", fullTable.getTableName());
-        assertNotNull(noTargetTable.getBumpers());
+        assertFalse(noTargetTable.getBumpers().isEmpty());
         assertTrue(noTargetTable.isPlayableTable());
     }
 
@@ -363,7 +363,7 @@ public class GameTableTest {
         for (Bumper b: noTargetTable.getBumpers()){
             assertFalse(b.isUpgraded());
         }
-        assertNull(emptyTable.getBumpers());
+        assertTrue(emptyTable.getBumpers().isEmpty());
 
         assertEquals(0, noTargetTable.getCurrentlyDroppedDropTargets());
         assertEquals(0, emptyTable.getCurrentlyDroppedDropTargets());
@@ -379,7 +379,7 @@ public class GameTableTest {
         for (Bumper b: noTargetTable.getBumpers()){
             assertTrue(b.isUpgraded());
         }
-        assertNull(emptyTable.getBumpers());
+        assertTrue(emptyTable.getBumpers().isEmpty());
     }
 
     /**

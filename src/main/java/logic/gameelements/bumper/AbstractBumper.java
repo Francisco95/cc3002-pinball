@@ -4,11 +4,8 @@ import controller.Game;
 import interactions.AcceptObservation;
 import interactions.DefaultInteractions;
 import logic.bonus.Bonus;
-import logic.gameelements.target.Target;
-import logic.table.Table;
 
 import java.util.Observable;
-import java.util.Observer;
 import java.util.Random;
 
 /**
@@ -102,11 +99,12 @@ public abstract class AbstractBumper extends DefaultInteractions implements Bump
     }
 
     @Override
-    public void hit() {
+    public int hit() {
         this.remainingHits--;
         shouldUpgrade();
         setChanged();
         notifyObservers(score);
+        return score;
     }
 
     @Override

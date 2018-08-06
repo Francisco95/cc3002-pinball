@@ -190,6 +190,9 @@ public class HomeworkTwoFacade {
      * @param newTable the new table
      */
     public void setGameTable(Table newTable) {
+        DropTargetBonus.getInstance().resetCounterTriggers();
+        JackPotBonus.getInstance().resetCounterTriggers();
+        ExtraBallBonus.getInstance().resetCounterTriggers();
         table = newTable;
         table.setGameElementsObservers(game);
     }

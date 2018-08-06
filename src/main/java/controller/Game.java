@@ -34,7 +34,7 @@ public class Game extends DefaultInteractions {
     private int balls;
 
     public Game(){
-        this(1, 0);
+        this(3, 0);
     }
     public Game(int initialBalls) {
         this(initialBalls, 0);
@@ -99,7 +99,9 @@ public class Game extends DefaultInteractions {
      * drop one ball decreasing the current number of balls by 1
      */
     public void dropBall(){
-        this.balls--;
+        if (balls > 0) {
+            balls--;
+        }
     }
 
     /**

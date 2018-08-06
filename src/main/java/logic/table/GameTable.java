@@ -54,7 +54,7 @@ public class GameTable extends DefaultInteractions implements Table {
      * @return                          the instance of {@link Table}
      */
     public static Table getEmptyTable(){
-        return new GameTable("", null, null, 0);
+        return new GameTable("", new ArrayList<>(), new ArrayList<>(), 0);
     }
 
     /**git ad
@@ -71,7 +71,7 @@ public class GameTable extends DefaultInteractions implements Table {
      */
     public static Table getTableWithoutTargets(String tableName, int numberOfBumpers, double prob){
         List<Bumper> bumpers = createBumpers(numberOfBumpers, prob);
-        return new GameTable(tableName, bumpers, null, 0);
+        return new GameTable(tableName, bumpers, new ArrayList<>(), 0);
     }
 
     /**
@@ -85,9 +85,8 @@ public class GameTable extends DefaultInteractions implements Table {
      *                                  is {@link PopBumper}
      * @param numberOfDropTargets       the number of {@link DropTarget}s to create
      *                                  in the {@link Table} casted as {@link Target}s
-     * @param numberOfTargets           the number of {@link Target}s to create in
-     *                                  the {@link Table}, this consider {@link DropTarget}s
-     *                                  and {@link SpotTarget}s
+     * @param numberOfTargets           the number of {@link SpotTarget}s to create in
+     *                                  the {@link Table}
      *
      * @return                          the instance of {@link Table}
      */
@@ -164,7 +163,7 @@ public class GameTable extends DefaultInteractions implements Table {
             targets.add(auxTarget);
             i++;
         }
-        while (i < numberOfTargets) {
+        while (i < numberOfTargets + numberOfDropTargets) {
             auxTarget = new SpotTarget();
             targets.add(auxTarget);
             i++;
@@ -291,6 +290,8 @@ public class GameTable extends DefaultInteractions implements Table {
         if (target.isADropTarget()){
             visitADropTarget((DropTarget) target);
         }
+        setChanged();
+        notifyObservers();
     }
 
     @Override

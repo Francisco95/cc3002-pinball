@@ -91,12 +91,14 @@ public abstract class AbstractTarget  extends DefaultInteractions implements Tar
     }
 
     @Override
-    public void hit() {
+    public int hit() {
         if (isActive()){
             setActive(false);
             setChanged();
             notifyObservers(score);
+            return score;
         }
+        return 0;
     }
 
     @Override
