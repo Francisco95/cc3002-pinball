@@ -111,20 +111,20 @@ public class DropTargetBonusTest {
 
         // first for the case when the table doesnt have all the dropTargets non-active,
         // set one dropTarget to false
-        table.getTargets().get(0).hit();
         score = game.getScore();
+        table.getTargets().get(0).hit();
         int count = dropTargetBonus.timesTriggered();
         dropTargetBonus.changedStateOfTable(table);
-        assertEquals(score, game.getScore());
+        assertEquals(score + 100, game.getScore());
         assertEquals(count, dropTargetBonus.timesTriggered());
 
-        // then for a table will al dropTargets non-active
+        // then for a table will all dropTargets non-active
         for (Target t: table.getTargets()){
             t.hit();
         }
-        score = game.getScore();
-        dropTargetBonus.changedStateOfTable(table);
-        assertEquals(score + dropTargetBonus.getBonusValue(), game.getScore());
+        score = score + dropTargetBonus.getBonusValue() + table.getNumberOfDropTargets() * 100;
+//        dropTargetBonus.changedStateOfTable(table);
+        assertEquals(score, game.getScore());
         assertEquals(count+1, dropTargetBonus.timesTriggered());
     }
 

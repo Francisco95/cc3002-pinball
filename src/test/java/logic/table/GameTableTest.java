@@ -15,6 +15,7 @@ import org.junit.Before;
 import org.junit.Test;
 
 import java.util.List;
+import java.util.stream.Collectors;
 
 import static org.junit.Assert.*;
 
@@ -128,14 +129,12 @@ public class GameTableTest {
         fullTable.getTargets().get(0).hit();
         assertEquals(1, fullTable.getCurrentlyDroppedDropTargets());
         fullTable.getTargets().get(0).reset();
-        // here should use method resetDropTarget from table to reset the counter of dropped
-        // bu we dont want to test that here so the counter will remain with the 1
-        assertEquals(1, fullTable.getCurrentlyDroppedDropTargets());
+        assertEquals(0, fullTable.getCurrentlyDroppedDropTargets());
         // then for all the targets
         for (Target target : fullTable.getTargets()){
             target.hit();
         }
-        assertEquals(1 + numOfDropTargets, fullTable.getCurrentlyDroppedDropTargets());
+        assertEquals(numOfDropTargets, fullTable.getCurrentlyDroppedDropTargets());
     }
 
     /**
@@ -358,7 +357,7 @@ public class GameTableTest {
             t.hit();
         }
         for (Bumper b: fullTable.getBumpers()){
-            assertFalse(b.isUpgraded());
+            assertTrue(b.isUpgraded());
         }
         for (Bumper b: noTargetTable.getBumpers()){
             assertFalse(b.isUpgraded());
@@ -368,18 +367,6 @@ public class GameTableTest {
         assertEquals(0, noTargetTable.getCurrentlyDroppedDropTargets());
         assertEquals(0, emptyTable.getCurrentlyDroppedDropTargets());
         assertEquals(numOfDropTargets, fullTable.getCurrentlyDroppedDropTargets());
-
-        emptyTable.acceptObservatiobFromBonus(dropTargetBonus);
-        noTargetTable.acceptObservatiobFromBonus(dropTargetBonus);
-        fullTable.acceptObservatiobFromBonus(dropTargetBonus);
-
-        for (Bumper b: fullTable.getBumpers()){
-            assertTrue(b.isUpgraded());
-        }
-        for (Bumper b: noTargetTable.getBumpers()){
-            assertTrue(b.isUpgraded());
-        }
-        assertTrue(emptyTable.getBumpers().isEmpty());
     }
 
     /**
@@ -423,6 +410,34 @@ public class GameTableTest {
         assertEquals(1, ((GameTable) emptyTable).countObservers());
         assertEquals(1, ((GameTable) noTargetTable).countObservers());
         assertEquals(1, ((GameTable) fullTable).countObservers());
+    }
+
+
+    /**
+     * test that drop targets can be reset one by one changing the values on table
+     */
+    @Test
+    public void resetDropOneByOne(){
+        List<Target> dropTargetList = fullTable.getTargets()
+                .stream()
+                .filter(target -> target instanceof DropTarget)
+                .collect(Collectors.toList());
+
+        int n = DropTargetBonus.getInstance().timesTriggered();
+        for (Target target : dropTargetList){
+            target.hit();
+        }
+
+        assertEquals(fullTable.getNumberOfDropTargets(), fullTable.getCurrentlyDroppedDropTargets());
+        assertEquals(n+1, DropTargetBonus.getInstance().timesTriggered());
+        n = fullTable.getCurrentlyDroppedDropTargets();
+        // then reset one by one
+        for (Target target : dropTargetList){
+            target.reset();
+            n--;
+            assertEquals(n, fullTable.getCurrentlyDroppedDropTargets());
+        }
+        assertEquals(0, fullTable.getCurrentlyDroppedDropTargets());
     }
 
     /**

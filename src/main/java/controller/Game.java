@@ -172,6 +172,8 @@ public class Game extends DefaultInteractions {
      */
     @Override
     public void hitTarget(Target target) {
-        hitHittable(target);
+        if (!target.isActive()) {
+            hitHittable(target);
+        }
     }
 }

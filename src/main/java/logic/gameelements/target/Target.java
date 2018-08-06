@@ -20,6 +20,12 @@ public interface Target extends Hittable, AcceptObservation {
     boolean isActive();
 
     /**
+     * set the Active parameter to 'value'
+     * @param value the new value of 'active', could be true or false
+     */
+    void setActive(boolean value);
+
+    /**
      * Resets the state of a target making it active again.
      */
     void reset();

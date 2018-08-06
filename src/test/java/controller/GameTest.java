@@ -102,7 +102,7 @@ public class GameTest {
     public void constructions() {
         // default construction
         game = new Game();
-        assertEquals(1, game.getBalls());
+        assertEquals(3, game.getBalls());
         assertEquals(0, game.getScore());
 
         // construction only declaring the initial number of balls
@@ -137,6 +137,7 @@ public class GameTest {
     public void hitTarget() {
         Target target = new DropTarget();
         assertEquals(score, game.getScore());
+        target.setActive(false);
         game.hitTarget(target);
         assertEquals(score + target.getScore(), game.getScore());
     }

@@ -188,10 +188,14 @@ public class DropTargetTest {
     /**
      * test that accept a visit from game means
      * that a game augmente his score by the corresponding
-     * amount,
+     * amount only if the status of the target is non-active
      */
     @Test
     public void acceptFromGame() {
+
+        dropTarget.acceptObservationFromGame(game);
+        assertEquals(score, game.getScore());
+        dropTarget.setActive(false);
         dropTarget.acceptObservationFromGame(game);
         assertEquals(score + dropTarget.getScore(), game.getScore());
     }

@@ -101,8 +101,14 @@ public class GameTable extends DefaultInteractions implements Table {
     /**
      * action of add 1 to the current counter of dropped {@link DropTarget}
      */
-    private void addDropedToCounter(){
+    private void addDroppedToCounter(){
         this.counterOfDroppedDropTarget++;
+    }
+
+    private void reduceDroppedCounter(){
+        if (this.counterOfDroppedDropTarget > 0) {
+            this.counterOfDroppedDropTarget--;
+        }
     }
 
 
@@ -136,7 +142,10 @@ public class GameTable extends DefaultInteractions implements Table {
      */
     private void visitADropTarget(DropTarget dropTarget){
         if (!dropTarget.isActive()){
-            addDropedToCounter();
+            addDroppedToCounter();
+        }
+        else{
+            reduceDroppedCounter();
         }
     }
 
@@ -278,10 +287,25 @@ public class GameTable extends DefaultInteractions implements Table {
             }
         }
         if (targets != null) {
-            for (Target target : targets) {
+
+            int c = 0;
+            Target target;
+            while (c < numberOfDropTargets){
+                target = targets.get(c);
                 target.deleteAllObservers();
                 target.setObservers(this, game, extraBallBonus, jackPotBonus, dropTargetBonus);
+                c++;
             }
+            while (c < targets.size()){
+                target = targets.get(c);
+                target.deleteAllObservers();
+                target.setObservers(jackPotBonus);
+                c++;
+            }
+//            for (Target target : targets) {
+//                target.deleteAllObservers();
+//                target.setObservers(this, game, extraBallBonus, jackPotBonus, dropTargetBonus);
+//            }
         }
     }
 

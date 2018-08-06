@@ -46,10 +46,7 @@ public abstract class AbstractTarget  extends DefaultInteractions implements Tar
         this.aDropTarget = aDropTarget;
     }
 
-    /**
-     * set the Active parameter to 'value'
-     * @param value the new value of 'active', could be true or false
-     */
+    @Override
     public void setActive(boolean value){
         this.active = value;
     }
@@ -86,8 +83,12 @@ public abstract class AbstractTarget  extends DefaultInteractions implements Tar
 
     @Override
     public void reset() {
-        setActive(true);
-        setSeed(-1);
+        if (!active) {
+            setActive(true);
+            setSeed(-1);
+            setChanged();
+            notifyObservers();
+        }
     }
 
     @Override
