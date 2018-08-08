@@ -239,6 +239,38 @@ public class GameTableTest {
     }
 
     /**
+     * test that DropTargetBonus is triggered when al dropTargets are
+     * hit and as response, upgrade all bumpers and reset all dropTargets
+     */
+    @Test
+    public void triggerDropTargetBonus(){
+        List<Target> dropTargetList = fullTable.getTargets()
+                .stream()
+                .filter(target -> target instanceof DropTarget)
+                .collect(Collectors.toList());
+
+        List<Bumper> bumpers = fullTable.getBumpers();
+        int score = game.getScore();
+        for (Bumper b : bumpers){
+            assertFalse(b.isUpgraded());
+        }
+        for (Target t : dropTargetList){
+            assertTrue(t.isActive());
+            t.hit();
+        }
+        for (Bumper b : bumpers){
+            assertTrue(b.isUpgraded());
+        }
+        for (Target t : dropTargetList){
+            assertTrue(t.isActive());
+        }
+
+        score += dropTargetList.get(0).getScore() * dropTargetList.size() + dropTargetBonus.getBonusValue();
+        assertEquals(score, game.getScore());
+
+    }
+
+    /**
      * test that isPlayableTable() return True only when a table is actually playable, this means,
      * that the table has a valid name (not only ""), and also has at least a valid list of bumpers (not null)
      */

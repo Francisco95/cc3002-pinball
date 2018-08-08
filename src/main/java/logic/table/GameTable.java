@@ -260,6 +260,7 @@ public class GameTable extends DefaultInteractions implements Table {
         bonus.changedStateOfTable(this);
         if (previousCounterOfTriggers + 1 == bonus.timesTriggered()){
             upgradeAllBumpers();
+            resetDropTargets();
         }
     }
 
