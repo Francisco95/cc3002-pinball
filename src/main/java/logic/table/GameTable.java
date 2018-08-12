@@ -8,6 +8,7 @@ import logic.bonus.Bonus;
 import logic.bonus.DropTargetBonus;
 import logic.bonus.ExtraBallBonus;
 import logic.bonus.JackPotBonus;
+import logic.gameelements.GameElementType;
 import logic.gameelements.bumper.Bumper;
 import logic.gameelements.bumper.KickerBumper;
 import logic.gameelements.bumper.PopBumper;
@@ -312,7 +313,7 @@ public class GameTable extends DefaultInteractions implements Table {
 
     @Override
     public void hitTarget(Target target) {
-        if (target.isADropTarget()){
+        if (target.getType().equals(GameElementType.DROP_TARGET)){
             visitADropTarget((DropTarget) target);
         }
         setChanged();

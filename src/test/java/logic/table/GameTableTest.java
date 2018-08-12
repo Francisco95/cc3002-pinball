@@ -134,7 +134,7 @@ public class GameTableTest {
         for (Target target : fullTable.getTargets()){
             target.hit();
         }
-        assertEquals(numOfDropTargets, fullTable.getCurrentlyDroppedDropTargets());
+        assertEquals(0, fullTable.getCurrentlyDroppedDropTargets());
     }
 
     /**
@@ -398,7 +398,7 @@ public class GameTableTest {
 
         assertEquals(0, noTargetTable.getCurrentlyDroppedDropTargets());
         assertEquals(0, emptyTable.getCurrentlyDroppedDropTargets());
-        assertEquals(numOfDropTargets, fullTable.getCurrentlyDroppedDropTargets());
+        assertEquals(0, fullTable.getCurrentlyDroppedDropTargets());
     }
 
     /**
@@ -456,18 +456,20 @@ public class GameTableTest {
                 .collect(Collectors.toList());
 
         int n = DropTargetBonus.getInstance().timesTriggered();
+        Target dropTarget = dropTargetList.remove(0);
         for (Target target : dropTargetList){
             target.hit();
         }
+        dropTargetList.add(dropTarget);
 
-        assertEquals(fullTable.getNumberOfDropTargets(), fullTable.getCurrentlyDroppedDropTargets());
-        assertEquals(n+1, DropTargetBonus.getInstance().timesTriggered());
-        n = fullTable.getCurrentlyDroppedDropTargets();
+        int nDrops = fullTable.getNumberOfDropTargets() - 1;
+        assertEquals(nDrops, fullTable.getCurrentlyDroppedDropTargets());
+        assertEquals(n, DropTargetBonus.getInstance().timesTriggered());
         // then reset one by one
         for (Target target : dropTargetList){
+            assertEquals(nDrops, fullTable.getCurrentlyDroppedDropTargets());
             target.reset();
-            n--;
-            assertEquals(n, fullTable.getCurrentlyDroppedDropTargets());
+            nDrops--;
         }
         assertEquals(0, fullTable.getCurrentlyDroppedDropTargets());
     }

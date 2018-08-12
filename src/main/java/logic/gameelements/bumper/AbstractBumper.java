@@ -4,6 +4,7 @@ import controller.Game;
 import interactions.AcceptObservation;
 import interactions.DefaultInteractions;
 import logic.bonus.Bonus;
+import logic.gameelements.GameElementType;
 
 import java.util.Observable;
 import java.util.Random;
@@ -45,9 +46,12 @@ public abstract class AbstractBumper extends DefaultInteractions implements Bump
      */
     private int seed = -1;
 
-    public AbstractBumper(int remainingHits, int score){
+    private GameElementType type;
+
+    public AbstractBumper(int remainingHits, int score, GameElementType type){
         this.score = score;
         this.remainingHits = remainingHits;
+        this.type = type;
         randomProb = new Random();
     }
 
@@ -139,5 +143,10 @@ public abstract class AbstractBumper extends DefaultInteractions implements Bump
     @Override
     public void acceptObservatiobFromBonus(Bonus bonus) {
         bonus.hitBumper(this);
+    }
+
+    @Override
+    public GameElementType getType() {
+        return type;
     }
 }

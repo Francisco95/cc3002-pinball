@@ -1,6 +1,7 @@
 package logic.bonus;
 
 import controller.Game;
+import logic.gameelements.GameElementType;
 import logic.gameelements.bumper.Bumper;
 import logic.gameelements.bumper.KickerBumper;
 import logic.gameelements.target.DropTarget;
@@ -86,13 +87,13 @@ public class DropTargetBonusTest {
         Target target = new DropTarget();
         assertEquals(100, target.getScore());
         assertTrue(target.isActive());
-        assertTrue(target.isADropTarget());
+        assertEquals(target.getType(), GameElementType.DROP_TARGET);
         assertFalse(dropTargetBonus.isBonusOfBalls());
         int count = dropTargetBonus.timesTriggered();
         dropTargetBonus.hitTarget(target);
         assertEquals(100, target.getScore());
         assertTrue(target.isActive());
-        assertTrue(target.isADropTarget());
+        assertEquals(target.getType(), GameElementType.DROP_TARGET);
         assertEquals(count, dropTargetBonus.timesTriggered());
         assertFalse(dropTargetBonus.isBonusOfBalls());
 

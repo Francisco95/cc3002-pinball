@@ -1,6 +1,7 @@
 package logic.gameelements.bumper;
 
 import interactions.AcceptObservation;
+import logic.gameelements.GameElementType;
 
 import java.util.Observable;
 
@@ -28,7 +29,7 @@ public class PopBumper extends AbstractBumper{
     private int hitsNeededToUpgrade;
 
     public PopBumper(){
-        super(3, 100);
+        super(3, 100, GameElementType.POP_BUMPER);
         this.hitsNeededToUpgrade = 3;
         this.baseScore = 100;
         this.upgradedScore = 300;

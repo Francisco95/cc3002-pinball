@@ -1,9 +1,9 @@
 package logic.bonus;
 
+import logic.gameelements.GameElementType;
 import logic.gameelements.bumper.Bumper;
 import logic.gameelements.target.DropTarget;
 import logic.gameelements.target.Target;
-import logic.table.Table;
 
 /**
  * Class that define extra ball bonus.
@@ -60,7 +60,7 @@ public class ExtraBallBonus extends AbstractBonus {
 
     @Override
     public void hitTarget(Target target) {
-        if (target.isADropTarget()){
+        if (target.getType().equals(GameElementType.DROP_TARGET)){
             visitADropTarget((DropTarget) target);
         }
     }

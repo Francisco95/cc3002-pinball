@@ -29,4 +29,7 @@ public interface Hittable {
      * return true if a bonus is triggered by this game element, false if not
      */
     boolean bonusTriggered();
+
+
+    GameElementType getType();
 }

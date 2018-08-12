@@ -2,6 +2,7 @@ package logic.gameelements.target;
 
 import controller.Game;
 import logic.bonus.ExtraBallBonus;
+import logic.gameelements.GameElementType;
 import logic.gameelements.bumper.Bumper;
 import logic.gameelements.bumper.KickerBumper;
 import logic.table.GameTable;
@@ -181,8 +182,8 @@ public class DropTargetTest {
      * test that return true if it is a dropTarget object
      */
     @Test
-    public void isADropTarget() {
-        assertTrue(dropTarget.isADropTarget());
+    public void checkGetType() {
+        assertTrue(dropTarget.getType().equals(GameElementType.DROP_TARGET));
     }
 
     /**

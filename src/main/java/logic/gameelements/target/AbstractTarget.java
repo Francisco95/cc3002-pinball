@@ -4,6 +4,7 @@ import controller.Game;
 import interactions.AcceptObservation;
 import interactions.DefaultInteractions;
 import logic.bonus.Bonus;
+import logic.gameelements.GameElementType;
 import logic.table.Table;
 
 import java.util.Observable;
@@ -34,16 +35,16 @@ public abstract class AbstractTarget  extends DefaultInteractions implements Tar
     private int seed;
 
     /**
-     * this says if the target is a dropTarget or not
+     * this says what type of game element is this object
      */
-    private boolean aDropTarget;
+    private GameElementType type;
 
-    public AbstractTarget(boolean active, int score, Random randomProb, boolean aDropTarget){
+    public AbstractTarget(boolean active, int score, Random randomProb, GameElementType type){
         this.active = active;
         this.score = score;
         this.seed = -1;
         this.randomProb = randomProb;
-        this.aDropTarget = aDropTarget;
+        this.type = type;
     }
 
     @Override
@@ -115,11 +116,6 @@ public abstract class AbstractTarget  extends DefaultInteractions implements Tar
     }
 
     @Override
-    public boolean isADropTarget() {
-        return aDropTarget;
-    }
-
-    @Override
     public void acceptObservationFromGame(Game game) {
         game.hitTarget(this);
     }
@@ -132,5 +128,10 @@ public abstract class AbstractTarget  extends DefaultInteractions implements Tar
     @Override
     public void acceptObservatiobFromBonus(Bonus bonus) {
         bonus.hitTarget(this);
+    }
+
+    @Override
+    public GameElementType getType() {
+        return type;
     }
 }

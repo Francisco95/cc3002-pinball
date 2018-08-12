@@ -2,6 +2,7 @@ package logic.gameelements.target;
 
 import controller.Game;
 import logic.bonus.Bonus;
+import logic.gameelements.GameElementType;
 import logic.gameelements.bumper.Bumper;
 
 /**
@@ -15,7 +16,7 @@ import logic.gameelements.bumper.Bumper;
 public class SpotTarget extends AbstractTarget{
 
     public SpotTarget() {
-        super(true, 0, null, false);
+        super(true, 0, null, GameElementType.SPOT_TARGET);
     }
 
     /**

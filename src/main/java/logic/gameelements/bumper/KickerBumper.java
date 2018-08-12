@@ -4,6 +4,7 @@ package logic.gameelements.bumper;
 import controller.Game;
 import interactions.AcceptObservation;
 import logic.bonus.Bonus;
+import logic.gameelements.GameElementType;
 import logic.gameelements.target.Target;
 import logic.table.Table;
 
@@ -34,7 +35,7 @@ public class KickerBumper extends AbstractBumper {
     protected int hitsNeededToUpgrade;
 
     public KickerBumper() {
-        super(5, 500);
+        super(5, 500, GameElementType.KICKER_BUMPER);
         this.hitsNeededToUpgrade = 5;
         this.baseScore = 500;
         this.upgradedScore = 1000;

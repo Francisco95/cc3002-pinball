@@ -35,6 +35,4 @@ public interface Target extends Hittable, AcceptObservation {
      * @param observers instances of observers
      */
     void setObservers(Observer... observers);
-
-    boolean isADropTarget();
 }

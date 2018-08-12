@@ -1,5 +1,7 @@
 package logic.gameelements.target;
 
+import logic.gameelements.GameElementType;
+
 import java.util.Random;
 
 /**
@@ -22,7 +24,7 @@ public class DropTarget extends AbstractTarget {
      * by default, set active to true and create instance of Random()
      */
     public DropTarget() {
-        super(true, 100, new Random(), true);
+        super(true, 100, new Random(), GameElementType.DROP_TARGET);
     }
 
     /**

@@ -2,6 +2,7 @@ package logic.gameelements.target;
 
 import controller.Game;
 import logic.bonus.JackPotBonus;
+import logic.gameelements.GameElementType;
 import logic.table.GameTable;
 import logic.table.Table;
 import org.junit.Before;
@@ -137,8 +138,8 @@ public class SpotTargetTest {
      * test that return false if is not a dropTarget
      */
     @Test
-    public void isADropTarget() {
-        assertFalse(spotTarget.isADropTarget());
+    public void checkGetType() {
+        assertEquals(spotTarget.getType(), GameElementType.SPOT_TARGET);
     }
 
     /**
