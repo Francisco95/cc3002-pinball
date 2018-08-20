@@ -47,11 +47,14 @@ public class Game extends DefaultInteractions {
 
     /**
      * do an addition to the current score points by an amount of 'points'
+     * also notify to observer that the number of balls has changed
      *
      * @param points the number of points to add to score
      */
     public void addToScore(int points){
         this.score += points;
+        setChanged();
+        notifyObservers("UpdateInfo");
     }
 
     /**
@@ -72,11 +75,14 @@ public class Game extends DefaultInteractions {
 
     /**
      * do an addition to the current balls number by an amount of 'balls'
+     * also notify to observer that the number of balls has changed
      *
      * @param balls the number of balls to add to game
      */
     public void addToBalls(int balls){
         this.balls += balls;
+        setChanged();
+        notifyObservers("UpdateInfo");
     }
 
     /**
@@ -97,10 +103,13 @@ public class Game extends DefaultInteractions {
 
     /**
      * drop one ball decreasing the current number of balls by 1
+     * also notify to observer that the number of balls has changed
      */
     public void dropBall(){
         if (balls > 0) {
             balls--;
+            setChanged();
+            notifyObservers("UpdateInfo");
         }
     }
 
