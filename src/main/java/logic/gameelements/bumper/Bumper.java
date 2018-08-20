@@ -1,11 +1,7 @@
 package logic.gameelements.bumper;
 
 import interactions.AcceptObservation;
-import interactions.DefaultInteractions;
-import interactions.ReceiveChanges;
 import logic.gameelements.Hittable;
-
-import java.util.Observer;
 
 /**
  * Interface that represents operations related to a bumper behavior.
@@ -38,5 +34,10 @@ public interface Bumper extends Hittable, AcceptObservation {
      * Downgrades a bumper making {@link #isUpgraded()} return false.
      */
     void downgrade();
+
+    /**
+     * set the bonusIsTriggered variable to true if the bonus is triggered
+     */
+    void bonusCouldBeTriggered();
 
 }

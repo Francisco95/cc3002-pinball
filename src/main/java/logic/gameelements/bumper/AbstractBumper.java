@@ -46,6 +46,11 @@ public abstract class AbstractBumper extends DefaultInteractions implements Bump
      */
     private int seed = -1;
 
+    /**
+     * true if a bonus is triggered or false if not.
+     */
+    private boolean bonusIsTriggered;
+
     private GameElementType type;
 
     public AbstractBumper(int remainingHits, int score, GameElementType type){
@@ -59,8 +64,12 @@ public abstract class AbstractBumper extends DefaultInteractions implements Bump
      * check after a hit if the kicker bumper should be upgraded.
      */
     public void shouldUpgrade(){
-        if (remainingHits <= 0){
+        if (remainingHits == 0){
             upgrade();
+            bonusCouldBeTriggered();
+        }
+        else if (remainingHits < 0){
+            remainingHits = 0;
         }
     }
 
@@ -105,6 +114,7 @@ public abstract class AbstractBumper extends DefaultInteractions implements Bump
     @Override
     public int hit() {
         this.remainingHits--;
+        bonusIsTriggered = false;
         shouldUpgrade();
         setChanged();
         notifyObservers(score);
@@ -118,14 +128,22 @@ public abstract class AbstractBumper extends DefaultInteractions implements Bump
 
     /**
      * for this case there is a probability of 1/10 of trigger an ExtraBallBonus when hit() is called.
-     * @return return True if the probability is satisfied.
+     * @return return True if the probability and the condition of upgrade are satisfied.
      */
     @Override
     public boolean bonusTriggered() {
+        return bonusIsTriggered;
+    }
+
+    /**
+     * for this case there is a probability of 1/10 of trigger an ExtraBallBonus when hit() is called.
+     */
+    @Override
+    public void bonusCouldBeTriggered(){
         if (seed > -1) {
             randomProb.setSeed(seed);
         }
-        return randomProb.nextInt(10) == 0;
+        bonusIsTriggered = randomProb.nextInt(10) == 0;
     }
 
     @Override
