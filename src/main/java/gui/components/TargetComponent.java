@@ -7,6 +7,12 @@ import logic.gameelements.target.Target;
 import java.util.Observable;
 import java.util.Observer;
 
+/**
+ * Class that define the  Target component on the Entity component which stores an instance
+ * of {@link Target}
+ *
+ * @author Francisco Munoz Ponce
+ */
 public class TargetComponent extends Component{
 
     private Target target;
@@ -29,6 +35,10 @@ public class TargetComponent extends Component{
 
     public boolean isActive(){
         return target.isActive();
+    }
+
+    public void reset(){
+        target.reset();
     }
 
 

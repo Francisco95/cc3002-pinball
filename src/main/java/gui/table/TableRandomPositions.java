@@ -10,17 +10,22 @@ import logic.gameelements.target.Target;
 
 import java.util.List;
 
-public class Table1 extends GameTable {
+/**
+ * definition of a game table with the game elements in random positions
+ *
+ * @author Francisco Munoz Ponce
+ */
+public class TableRandomPositions extends GameTable {
 
     private HomeworkTwoFacade facade;
 
-    public Table1(HomeworkTwoFacade facade){
+    public TableRandomPositions(HomeworkTwoFacade facade){
         super();
         this.facade = facade;
 
     }
     @Override
-    public void init() {
+    public void setTableElements() {
         List<Target> targets = facade.getTargets();
         List<Bumper> bumpers = facade.getBumpers();
         int numberOfHittables = targets.size() + bumpers.size();
@@ -40,5 +45,9 @@ public class Table1 extends GameTable {
             addTarget(entity);
             i++;
         }
+    }
+
+    public void setFacade(HomeworkTwoFacade facade){
+        this.facade = facade;
     }
 }

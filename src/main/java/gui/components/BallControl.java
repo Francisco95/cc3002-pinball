@@ -6,6 +6,11 @@ import com.almasb.fxgl.physics.PhysicsComponent;
 import gui.Config;
 import javafx.geometry.Point2D;
 
+/**
+ * Class where the controll of the ball is defined, in specific the gravity
+ *
+ * @author Francisco Munoz Ponce
+ */
 public class BallControl  extends Component {
 
 
@@ -19,10 +24,7 @@ public class BallControl  extends Component {
     @Override
     public void onUpdate(double tpf) {
         getData();
-        System.out.println(velocity);
         velocity = velocity.add(Config.GRAVITY);
-        System.out.println("new velocity");
-        System.out.println(velocity);
         setData();
     }
 
