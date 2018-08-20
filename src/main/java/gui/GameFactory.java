@@ -6,10 +6,16 @@ import com.almasb.fxgl.physics.BoundingShape;
 import com.almasb.fxgl.physics.HitBox;
 import com.almasb.fxgl.physics.PhysicsComponent;
 import com.almasb.fxgl.physics.box2d.dynamics.BodyType;
+import com.almasb.fxgl.physics.box2d.dynamics.FixtureDef;
 import gui.components.BallControl;
+import gui.components.LeftFlipperControl;
+import gui.components.RightFlipperControl;
+import gui.spawndata.CustomSpawnData;
 import javafx.scene.paint.Color;
 import javafx.scene.shape.Circle;
 import javafx.scene.shape.Rectangle;
+
+import java.util.Random;
 
 import static gui.Config.*;
 
@@ -40,8 +46,13 @@ public class GameFactory implements EntityFactory {
      */
     @Spawns("Ball")
     public Entity newBall(SpawnData data){
+        Random random = new Random();
         PhysicsComponent physics = new PhysicsComponent();
-        physics.setBodyType(BodyType.KINEMATIC);
+        physics.setBodyType(BodyType.DYNAMIC);
+        physics.setFixtureDef(new FixtureDef().restitution(0.35f).density(10f).friction(1f));
+        physics.setOnPhysicsInitialized(
+                () -> physics.setLinearVelocity(-100*(random.nextFloat()*2 + 1), -100*(random.nextFloat()*3 + 3))
+        );
 
         return circleBuilder(BALL_RADIUS, COLOR_BALL, "Box")
                 .from(data)
@@ -61,29 +72,10 @@ public class GameFactory implements EntityFactory {
         Entity walls = Entities.makeScreenBounds(100);
         walls.setType(GameTypes.WALL);
         walls.addComponent(new CollidableComponent(true));
+        walls.getComponent(PhysicsComponent.class).setFixtureDef(
+                new FixtureDef().restitution(0.4f).density(0f).friction(0.4f)
+        );
         return walls;
-    }
-
-    @Spawns("HorizontalWall")
-    public Entity newHorizontalWall(SpawnData data){
-        PhysicsComponent physics = new PhysicsComponent();
-        physics.setBodyType(BodyType.STATIC);
-        return boxBuilder(0, WIDTH, 20, Config.COLOR_BACKGROUND, "HorizontalWall")
-                .from(data)
-                .with(physics, new CollidableComponent(true))
-                .type(GameTypes.WALL)
-                .build();
-    }
-
-    @Spawns("VerticalWall")
-    public Entity newVerticalWall(SpawnData data){
-        PhysicsComponent physics = new PhysicsComponent();
-        physics.setBodyType(BodyType.STATIC);
-        return boxBuilder(0, 20, HEIGHT, Config.COLOR_BACKGROUND, "VerticalWall")
-                .from(data)
-                .with(physics, new CollidableComponent(true))
-                .type(GameTypes.WALL)
-                .build();
     }
 
     /**
@@ -107,15 +99,29 @@ public class GameFactory implements EntityFactory {
      *
      * @return the FLIPPER entity
      */
-    @Spawns("Flipper")
-    public Entity newFlipper(SpawnData data){
+    @Spawns("LeftFlipper")
+    public Entity newLeftFlipper(SpawnData data){
+        return newFlipper(data, Config.FLIPPER_RIGHT_BASIC_ANGLE)
+                .with(new LeftFlipperControl())
+                .build();
+    }
+
+    @Spawns("RightFlipper")
+    public Entity newRightFlipper(SpawnData data){
+        return newFlipper(data, Config.FLIPPER_LEFT_BASIC_ANGLE)
+                .with(new RightFlipperControl())
+                .build();
+    }
+
+    private Entities.EntityBuilder newFlipper(SpawnData data, double angle){
         PhysicsComponent physics = new PhysicsComponent();
         physics.setBodyType(BodyType.KINEMATIC);
+        physics.setFixtureDef(new FixtureDef().restitution(0.6f).density(0.2f).friction(0f));
 
-        return boxBuilder(0, FLIPPER_WIDTH, FLIPPER_HEIGHT, COLOR_FLIPPER, "Flipper")
+        return boxBuilder(angle, FLIPPER_WIDTH, FLIPPER_HEIGHT, COLOR_FLIPPER, "Flipper")
                 .from(data)
                 .with(physics, new CollidableComponent(true))
-                .build();
+                .type(GameTypes.FLIPPER);
     }
 
     /**
@@ -166,19 +172,14 @@ public class GameFactory implements EntityFactory {
                 .build();
     }
 
-    @Spawns("SmallWall")
-    public Entity newSmallWall(SpawnData data){
-        return boxBuilder(0, WIDTH/4, 5, COLOR_WALL, "SmallWall")
-                .with(new CollidableComponent(true))
-                .from(data)
-                .type(GameTypes.WALL)
-                .build();
-    }
+    @Spawns("CustomWall")
+    public Entity newCustomWall(CustomSpawnData data){
+        PhysicsComponent physics = new PhysicsComponent();
+        physics.setBodyType(BodyType.STATIC);
+        physics.setFixtureDef(new FixtureDef().restitution(data.getRestitution()).density(0.1f).friction(0f));
 
-    @Spawns("BigWall")
-    public Entity newBigWall(SpawnData data){
-        return boxBuilder(0, HEIGHT/4, WIDTH/4, COLOR_WALL, "BigWall")
-                .with(new CollidableComponent(true))
+        return boxBuilder(data.getAngle(), data.getLength(), data.getHeight(), data.getColor(), "CustomWall")
+                .with(physics, new CollidableComponent(true))
                 .from(data)
                 .type(GameTypes.WALL)
                 .build();
@@ -191,7 +192,7 @@ public class GameFactory implements EntityFactory {
      * @param width width of the rectangle
      * @param height length of the rectangle
      * @param color the color of the figure
-     * @param name
+     * @param name the name of the hit box
      * @return an EntityBuilder of a rectangle
      */
     private static Entities.EntityBuilder boxBuilder(double angle, double width,
@@ -215,22 +216,17 @@ public class GameFactory implements EntityFactory {
     private static Entities.EntityBuilder newBumper(Color bumperColor){
         PhysicsComponent physics = new PhysicsComponent();
         physics.setBodyType(BodyType.STATIC);
-//        physics.setFixtureDef(
-//                new FixtureDef().density(1f).restitution(1.3f));
+        physics.setFixtureDef(
+                new FixtureDef().density(0.3f).restitution(1.5f));
         return circleBuilder(BUMPER_RADIUS, bumperColor, "Bumper")
                 .with(physics, new CollidableComponent(true))
                 .type(GameTypes.BUMPER);
     }
 
     private static Entities.EntityBuilder newTarget(Color targetColor){
-        PhysicsComponent physics = new PhysicsComponent();
-        physics.setBodyType(BodyType.STATIC);
-//        physics.setFixtureDef(
-//                new FixtureDef().density(1f).restitution(1.3f));
         return squareBoxBuilder(0, TARGET_WIDTH, targetColor, "Target")
-                .with(physics, new CollidableComponent(true))
+                .with(new CollidableComponent(true))
                 .type(GameTypes.TARGET);
     }
-
 
 }
