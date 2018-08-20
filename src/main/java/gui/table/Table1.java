@@ -2,6 +2,7 @@ package gui.table;
 
 import com.almasb.fxgl.entity.Entity;
 import facade.HomeworkTwoFacade;
+import gui.Config;
 import gui.components.BumperComponent;
 import gui.components.TargetComponent;
 import logic.gameelements.bumper.Bumper;
@@ -9,23 +10,17 @@ import logic.gameelements.target.Target;
 
 import java.util.List;
 
-/**
- * definition of a game table with the game elements in random positions
- *
- * @author Francisco Munoz Ponce
- */
-public class TableRandomPositions extends GameTable {
+public class Table1 extends GameTable {
 
     private HomeworkTwoFacade facade;
 
-    public TableRandomPositions(HomeworkTwoFacade facade){
+    public Table1(HomeworkTwoFacade facade){
         super();
         this.facade = facade;
 
     }
     @Override
-    public void setTableElements() {
-
+    public void init() {
         List<Target> targets = facade.getTargets();
         List<Bumper> bumpers = facade.getBumpers();
         int numberOfHittables = targets.size() + bumpers.size();
@@ -45,9 +40,5 @@ public class TableRandomPositions extends GameTable {
             addTarget(entity);
             i++;
         }
-    }
-
-    public void setFacade(HomeworkTwoFacade facade){
-        this.facade = facade;
     }
 }
