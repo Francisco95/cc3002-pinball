@@ -5,6 +5,11 @@ import java.util.Arrays;
 import java.util.Collections;
 import java.util.List;
 
+/**
+ * Auxiliar class used for define coordinates on the table to set the positions of the game elements
+ *
+ * @author Francisco Munoz Ponce
+ */
 public class Coordinates {
     private double x;
     private double y;
@@ -15,8 +20,8 @@ public class Coordinates {
     }
 
     public Coordinates(int i, int j, double step){
-        this.x = step/2 + i * step;
-        this.y = step/2 + j * step;
+        this.x = (i+1) * step;
+        this.y = (j+1) * step;
     }
 
     public double getX() {
@@ -28,10 +33,6 @@ public class Coordinates {
     }
 
     public static Coordinates[] pickNRandomTuple(List<Coordinates> coords, int n) {
-//        List<Integer> list = new ArrayList<>();
-//        for (int i = 0; i < coords.size(); i++){
-//            list.add(i);
-//        }
 
         Collections.shuffle(coords);
         Coordinates[] answer = new Coordinates[n];
@@ -42,8 +43,8 @@ public class Coordinates {
 
     }
     public static List<Coordinates> arrayOfPositions(double totalSpaceWidth, double totalSpaceHeight, double step){
-        int nPositionsInX = (int)((totalSpaceWidth - step) / step);
-        int nPositionsInY = (int)((totalSpaceHeight - step) / step);
+        int nPositionsInX = (int)((totalSpaceWidth - 2*step) / step);
+        int nPositionsInY = (int)((totalSpaceHeight - 2*step) / step);
         List<Coordinates> positions = new ArrayList<>();
         for (int i=0; i < nPositionsInX; i++){
             for (int j=0; j < nPositionsInY; j++){
