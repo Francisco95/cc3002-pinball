@@ -97,17 +97,21 @@ public class JackPotBonusTest {
     }
 
     /**
-     * visit a target trigger this bonus
+     * visit a target trigger this bonus only if using hit()
      */
     @Test
     public void visitTarget() {
-        // its independent of target 'active'
+        // check for call hitTarget without hit
         assertTrue(target.isActive());
-        assertTrue(target.bonusTriggered());
+        assertFalse(target.bonusTriggered());
         int count = jackPotBonus.timesTriggered();
         jackPotBonus.hitTarget(target);
         assertTrue(target.isActive());
-        assertTrue(target.bonusTriggered());
+        assertFalse(target.bonusTriggered());
+        assertEquals(count, jackPotBonus.timesTriggered());
+
+        // then with hit
+        target.hit();
         assertEquals(count+1, jackPotBonus.timesTriggered());
     }
 

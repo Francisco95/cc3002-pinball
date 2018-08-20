@@ -206,6 +206,7 @@ public class KickerBumperTest {
         while(!kickerBumper.bonusTriggered()) {
             seed++;
             kickerBumper.setSeed(seed);
+            kickerBumper.bonusCouldBeTriggered();
         }
         // in the first hit the game score should augment by:
         score = game.getScore() + kickerBumper.getScore();
@@ -214,6 +215,12 @@ public class KickerBumperTest {
         kickerBumper.hit();
         assertEquals(4, kickerBumper.remainingHitsToUpgrade());
         assertFalse(kickerBumper.isUpgraded());
+
+        while (!kickerBumper.isUpgraded()) {
+            kickerBumper.hit();
+            score += kickerBumper.getScore();
+        }
+
         assertEquals(count + 1, extraBallBonus.timesTriggered());
         assertEquals(score, game.getScore());
         assertEquals(balls, game.getBalls());
@@ -264,7 +271,6 @@ public class KickerBumperTest {
         }
         rand.setSeed(seed);
         assertEquals(0, rand.nextInt(10));
-        assertTrue(kickerBumper.bonusTriggered());
 
     }
 
@@ -292,6 +298,7 @@ public class KickerBumperTest {
         while(kickerBumper.bonusTriggered()) {
             seed++;
             kickerBumper.setSeed(seed);
+            kickerBumper.bonusCouldBeTriggered();
         }
         assertEquals(balls, game.getBalls());
         kickerBumper.acceptObservatiobFromBonus(extraBallBonus);
@@ -304,6 +311,7 @@ public class KickerBumperTest {
         while(!kickerBumper.bonusTriggered()) {
             seed++;
             kickerBumper.setSeed(seed);
+            kickerBumper.bonusCouldBeTriggered();
         }
         kickerBumper.acceptObservatiobFromBonus(extraBallBonus);
         assertEquals(counterTrigger+1, extraBallBonus.timesTriggered());

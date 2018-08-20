@@ -82,6 +82,7 @@ public class ExtraBallBonusTest {
         while(bumper.bonusTriggered()) {
             seed++;
             ((KickerBumper)bumper).setSeed(seed);
+             bumper.bonusCouldBeTriggered();
         }
         int count = extraBallBonus.timesTriggered();
         extraBallBonus.hitBumper(bumper);
@@ -93,6 +94,7 @@ public class ExtraBallBonusTest {
         while(!bumper.bonusTriggered()) {
             seed++;
             ((KickerBumper)bumper).setSeed(seed);
+            bumper.bonusCouldBeTriggered();
         }
         extraBallBonus.hitBumper(bumper);
         assertEquals(count+1, extraBallBonus.timesTriggered());
@@ -111,6 +113,7 @@ public class ExtraBallBonusTest {
         while(target.bonusTriggered()) {
             seed++;
             ((DropTarget)target).setSeed(seed);
+            ((DropTarget) target).setBonusIsTriggered();
         }
         int count = extraBallBonus.timesTriggered();
         extraBallBonus.hitTarget(target);
@@ -122,6 +125,7 @@ public class ExtraBallBonusTest {
         while(!target.bonusTriggered()) {
             seed++;
             ((DropTarget)target).setSeed(seed);
+            ((DropTarget) target).setBonusIsTriggered();
         }
         extraBallBonus.hitTarget(target);
         assertEquals(count+1, extraBallBonus.timesTriggered());

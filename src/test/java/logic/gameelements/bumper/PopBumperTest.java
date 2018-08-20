@@ -165,6 +165,7 @@ public class PopBumperTest {
         while(!popBumper.bonusTriggered()) {
             seed++;
             popBumper.setSeed(seed);
+            popBumper.bonusCouldBeTriggered();
         }
         // in the first hit the game score should augment by:
         score = game.getScore() + popBumper.getScore();
@@ -173,9 +174,6 @@ public class PopBumperTest {
         popBumper.hit();
         assertEquals(2, popBumper.remainingHitsToUpgrade());
         assertFalse(popBumper.isUpgraded());
-        assertEquals(count + 1, extraBallBonus.timesTriggered());
-        assertEquals(score, game.getScore());
-        assertEquals(balls, game.getBalls());
 
         // the set the bumpers to 1 remainin hit and call hit again
         popBumper.setRemainingHitsToUpgrade(1);
@@ -185,7 +183,7 @@ public class PopBumperTest {
         assertEquals(0, popBumper.remainingHitsToUpgrade());
         assertEquals(300, popBumper.getScore());
         assertTrue(popBumper.isUpgraded());
-        assertEquals(count + 2, extraBallBonus.timesTriggered());
+        assertEquals(count + 1, extraBallBonus.timesTriggered());
         assertEquals(score, game.getScore());
         assertEquals(balls, game.getBalls());
 

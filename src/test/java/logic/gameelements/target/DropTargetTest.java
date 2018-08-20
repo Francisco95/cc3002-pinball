@@ -144,6 +144,7 @@ public class DropTargetTest {
         while(!dropTarget.bonusTriggered()) {
             seed++;
             dropTarget.setSeed(seed);
+            dropTarget.setBonusIsTriggered();
         }
         dropTarget.hit();
         assertFalse(dropTarget.isActive());
@@ -279,6 +280,7 @@ public class DropTargetTest {
         while(dropTarget.bonusTriggered()) {
             seed++;
             dropTarget.setSeed(seed);
+            dropTarget.setBonusIsTriggered();
         }
         dropTarget.setSeed(seed);
         int counterTrigger = extraBall.timesTriggered();
@@ -293,6 +295,7 @@ public class DropTargetTest {
         while(!dropTarget.bonusTriggered()) {
             seed++;
             dropTarget.setSeed(seed);
+            dropTarget.setBonusIsTriggered();
         }
         dropTarget.setSeed(seed);
         dropTarget.acceptObservatiobFromBonus(extraBall);

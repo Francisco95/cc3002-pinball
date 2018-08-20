@@ -35,8 +35,11 @@ public class SpotTargetTest {
      */
     @Test
     public void bonusTriggered() {
+        spotTarget.setBonusIsTriggered();
         assertTrue(spotTarget.bonusTriggered());
+        spotTarget.setBonusIsTriggered();
         assertTrue(spotTarget.bonusTriggered());
+        spotTarget.setBonusIsTriggered();
         assertTrue(spotTarget.bonusTriggered());
     }
 
@@ -192,7 +195,7 @@ public class SpotTargetTest {
 
     /**
      * test that accept visit from bonus (which should be a JackPotBonus)
-     * always trigger this bonus.
+     * triggers this bonus only if it was called by hit().
      */
     @Test
     public void acceptFromBonus() {
@@ -200,6 +203,11 @@ public class SpotTargetTest {
         int counterTrigger = jackPot.timesTriggered();
 
         spotTarget.acceptObservatiobFromBonus(jackPot);
+        assertEquals(score, game.getScore());
+        assertEquals(counterTrigger, jackPot.timesTriggered());
+
+        spotTarget.hit();
+
         assertEquals(score + jackPot.getBonusValue(), game.getScore());
         assertEquals(counterTrigger+1, jackPot.timesTriggered());
     }
