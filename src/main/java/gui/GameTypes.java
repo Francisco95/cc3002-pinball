@@ -9,5 +9,5 @@ package gui;
  *
  */
 public enum GameTypes {
-    FLIPER, BUMPER, TARGET, WALL, BALL, BLOCK, LINE
+    LEFT_FLIPPER, RIGHT_FLIPPER, FLIPPER, BUMPER, TARGET, WALL, BALL
 }
