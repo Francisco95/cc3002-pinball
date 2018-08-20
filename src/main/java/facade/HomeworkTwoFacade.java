@@ -11,13 +11,15 @@ import logic.table.GameTable;
 import logic.table.Table;
 
 import java.util.List;
+import java.util.Observable;
+import java.util.Observer;
 
 /**
  * Facade class to expose the logic of the game to a GUI in the upcoming homework.
  *
  * @author Juan-Pablo Silva
  */
-public class HomeworkTwoFacade {
+public class HomeworkTwoFacade  extends Observable implements Observer {
     /**
      * Instance of the game controller.
      *
@@ -40,6 +42,7 @@ public class HomeworkTwoFacade {
      */
     public HomeworkTwoFacade(Game game) {
         this.game = game;
+        this.game.addObserver(this);
         this.table = GameTable.getEmptyTable();
 
         // create the instances of bonuses, just to be sure
@@ -214,5 +217,23 @@ public class HomeworkTwoFacade {
      */
     public boolean gameOver() {
         return game.isGameOver();
+    }
+
+    /**
+     * used as a notificator of update to game UI {@link gui.GameController}
+     * @param o
+     * @param arg
+     */
+    @Override
+    public void update(Observable o, Object arg) {
+        if (o instanceof Game){
+            setChanged();
+            notifyObservers();
+        }
+    }
+
+    public void resetGame(){
+        game.setScore(0);
+        game.setBalls(3);
     }
 }
