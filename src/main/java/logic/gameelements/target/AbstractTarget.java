@@ -39,6 +39,11 @@ public abstract class AbstractTarget  extends DefaultInteractions implements Tar
      */
     private GameElementType type;
 
+    /**
+     * true if the bonus is triggered false if not.
+     */
+    protected boolean bonusIsTriggered;
+
     public AbstractTarget(boolean active, int score, Random randomProb, GameElementType type){
         this.active = active;
         this.score = score;
@@ -86,16 +91,33 @@ public abstract class AbstractTarget  extends DefaultInteractions implements Tar
     public void reset() {
         if (!active) {
             setActive(true);
+            bonusIsTriggered = false;
             setSeed(-1);
             setChanged();
             notifyObservers();
         }
     }
 
+    /**
+     * set the boolean variable of trigger a bonus.
+     */
+    public abstract void setBonusIsTriggered();
+
+    /**
+     * return the boolean variable that says if a bonus is triggered or not.
+     * @return true if the bonus is triggered.
+     */
+    @Override
+    public boolean bonusTriggered() {
+        return bonusIsTriggered;
+    }
+
     @Override
     public int hit() {
         if (isActive()){
             setActive(false);
+            bonusIsTriggered = false;
+            setBonusIsTriggered();
             setChanged();
             notifyObservers(score);
             return score;

@@ -21,10 +21,9 @@ public class SpotTarget extends AbstractTarget{
 
     /**
      * in this case is always true and trigger a JackPotBonus
-     * @return always True; always trigger a JackPotBonus
      */
     @Override
-    public boolean bonusTriggered() {
-        return true;
+    public void setBonusIsTriggered() {
+        bonusIsTriggered = true;
     }
 }

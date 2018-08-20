@@ -29,11 +29,10 @@ public class DropTarget extends AbstractTarget {
 
     /**
      * for this case there is a probability of 3/10 of trigger an ExtraBallBonus when hit() is called.
-     * @return return True if the probability is satisfied.
      */
     @Override
-    public boolean bonusTriggered() {
+    public void setBonusIsTriggered() {
         setSeedToRandomProb();
-        return getRandomProb().nextInt(10) < 3;
+        bonusIsTriggered = getRandomProb().nextInt(10) < 3;
     }
 }
